@@ -60,6 +60,26 @@ Vector3D operator+(const struct Vector3D& vector, const struct Vector3D& other) 
     return result;
 }
 
+bool operator>(const Vector3D& vector, const Vector3D& other) {
+    return (vector.x > other.x && vector.y > other.y && vector.z > other.z);
+}
+
+bool operator<(const Vector3D& vector, const Vector3D& other) {
+    return (vector.x < other.x && vector.y < other.y && vector.z < other.z);
+}
+
+bool operator==(const Vector3D& vector, const Vector3D& other) {
+    return (vector.x == other.x && vector.y == other.y && vector.z == other.z);
+}
+
+bool operator>=(const Vector3D& vector, const Vector3D& other) {
+    return (vector > other || vector == other);
+}
+
+bool operator<=(const Vector3D& vector, const Vector3D& other) {
+    return (vector < other || vector == other);
+}
+
 ostream& operator<<(ostream& os, const struct Vector3D& vector) {
     os << "(" << vector.x << "," << vector.y << "," << vector.z << ")";
     return os;
