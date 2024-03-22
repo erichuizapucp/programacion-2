@@ -22,12 +22,17 @@ template<typename T> T maxElement(const T[], int);
 
 /*
  * Aquí vamos a combinar plantillas de funciones y sobre carga de operadores.
+
+ * 
  */
-template<typename T> bool equal(const T, const T);
-template<typename T> bool greaterThan(const T, const T);
-template<typename T> bool greaterOrEqualThan(const T, const T);
-template<typename T> bool lessThan(const T, const T);
-template<typename T> bool lessOrEqualThan(const T, const T);
+
+//template<typename T, typename C> C foo(const T, const T);
+
+template<typename T> bool equal(const T&, const T&);
+template<typename T> bool greaterThan(const T&, const T&);
+template<typename T> bool greaterOrEqualThan(const T&, const T&);
+template<typename T> bool lessThan(const T&, const T&);
+template<typename T> bool lessOrEqualThan(const T&, const T&);
 
 template<typename T>
 void sortArray(T arr[], int size) {
@@ -54,27 +59,27 @@ T maxElement(const T arr[], int size) {
 }
 
 template<typename T>
-bool equal(const T a, const T b) {
+bool equal(const T &a, const T &b) {
     return a == b;
 }
 
 template<typename T>
-bool greaterThan(const T a, const T b) {
+bool greaterThan(const T &a, const T &b) {
     return a > b;
 }
 
 template<typename T>
-bool greaterOrEqualThan(const T a, const T b) {
+bool greaterOrEqualThan(const T &a, const T &b) {
     return a >= b;
 }
 
 template<typename T>
-bool lessThan(const T a, const T b) {
+bool lessThan(const T &a, const T &b) {
     return a < b;
 }
 
 template<typename T>
-bool lessOrEqualThan(const T a, const T b) {
+bool lessOrEqualThan(const T &a, const T &b) {
     return a <= b;
 }
 
