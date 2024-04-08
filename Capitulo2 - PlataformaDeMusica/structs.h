@@ -46,6 +46,7 @@ struct ArtistsProduction {
     int *artistId;
     char **artistName;
     char ***artistAlbums;
+    int *numArtistAlbums;
 };
 
 struct ClientPreferences {

@@ -17,11 +17,18 @@
 
 using namespace std;
 
-bool openFile(const char*, ifstream&);
+void openFile(const char*, ifstream&);
+void openFile(const char*, ofstream&);
 void readString(ifstream&, char*&, char);
 void readIntArray(const char*, int *&, int &);
 template<typename T> void incrementMemorySpaces(T*&, int, int&);
 
+/**
+ * Incrementa el espacio de memoria a la que apunta T
+ * @param data es el puntero a los datos
+ * @param numData es el número actual de datos en el espacio de memoria
+ * @param capacity es la capacidad total actual
+ */
 template<typename T> 
 void incrementMemorySpaces(T*& data, int numData, int& capacity) {
     T* aux;

@@ -1,255 +1,351 @@
 #include "platform.h"
-#include "utils.h"
-#include "structs.h"
-#include <iostream>
 
-void loadClients(const char* fileName, struct Client*& clients, int &numClients) {
+/**
+ * Carga todos los clientes usando asignación de memoria por incrementos.
+ * Los nombres de los clientes son cargados usando asignación exacta de memoria.
+ * @param fileName es el nombre del archivo a cargar.
+ * @param clients es la referencia a un puntero / arreglo de clientes.
+ * @param numClients almacena la cantidad de clientes cargados.
+ * @return puntero a los clientes de la plataforma.
+ */
+const struct Client* loadClients(const char* fileName, int &numClients) {
+    struct Client* clients = nullptr;
+    
     int capacity = 0;
     numClients = 0;
     char comma;
     
     struct Client client;
-    clients = nullptr;
     
     ifstream file;
-    if (openFile(fileName, file)) {
-        while (1) {
-            if (file.eof()) {
-                break;
-            }
-            
-            file >> client.id >> comma;
-            readString(file, client.name, ',');
-            readString(file, client.subscriptionDate, ',');
-            readString(file, client.category, '\n');
-            
-            if (numClients == capacity) {
-                incrementMemorySpaces(clients, numClients, capacity);
-            }
-            
-            clients[numClients] = client;
-            numClients++;
+    openFile(fileName, file);
+    
+    while (1) {
+        if (file.eof()) {
+            break;
         }
-        
-        file.close();
+
+        file >> client.id >> comma;
+        readString(file, client.name, ',');
+        readString(file, client.subscriptionDate, ',');
+        readString(file, client.category, '\n');
+
+        if (numClients == capacity) {
+            incrementMemorySpaces(clients, numClients, capacity);
+        }
+
+        clients[numClients] = client;
+        numClients++;
     }
-    else {
-        cout << "Hubo un error al cargar los clientes." << endl;
-    }
+
+    file.close();
+
+    return clients;
 }
 
-void loadArtists(const char* fileName, struct Artist*& artists, int& numArtists) {
+/**
+ * Carga todos los artistas usando asignación de memoria por incrementos.
+ * Los nombres de los artistas son cargados usando asignación exacta de memoria.
+ * @param fileName es el nombre del archivo a cargar.
+ * @param artists es la referencia a un puntero / arreglo de artistas.
+ * @param numArtists almacena la cantidad de artistas cargados.
+ * @return puntero a los artistas de la plataforma.
+ */
+const struct Artist* loadArtists(const char* fileName, int& numArtists) {
+    struct Artist* artists = nullptr;
+    
     int capacity = 0;
     numArtists = 0;
     char comma;
     
     struct Artist artist;
-    artists = nullptr;
     
     ifstream file;
-    if (openFile(fileName, file)) {
-        while (1) {
-            if (file.eof()) {
-                break;
-            }
-            
-            file >> artist.id >> comma;
-            readString(file, artist.name, ',');
-            readString(file, artist.genre, '\n');
-            
-            if (numArtists == capacity) {
-                incrementMemorySpaces(artists, numArtists, capacity);
-            }
-            
-            artists[numArtists] = artist;
-            numArtists++;
+    openFile(fileName, file);
+    
+    while (1) {
+        if (file.eof()) {
+            break;
         }
-        
-        file.close();
+
+        file >> artist.id >> comma;
+        readString(file, artist.name, ',');
+        readString(file, artist.genre, '\n');
+
+        if (numArtists == capacity) {
+            incrementMemorySpaces(artists, numArtists, capacity);
+        }
+
+        artists[numArtists] = artist;
+        numArtists++;
     }
-    else {
-        cout << "Hubo un error al cargar los artistas." << endl;
-    }
+
+    file.close();
+
+    return artists;
 }
 
-void loadAlbums(const char* fileName, struct Album*& albums, int& numAlbums) {
+/**
+ * Carga todos los albumes usando asignación de memoria por incrementos.
+ * Los nombres de los albumes son cargados usando asignación exacta de memoria.
+ * @param fileName es el nombre del archivo a cargar.
+ * @param albums es la referencia a un puntero / arreglo de albumes.
+ * @param numAlbums almacena la cantidad de albumes cargados.
+ * @return puntero a los albumes de la plataforma.
+ */
+const struct Album* loadAlbums(const char* fileName, int& numAlbums) {
+    struct Album* albums = nullptr;
+    
     int capacity = 0;
     numAlbums = 0;
     char comma;
     
     struct Album album;
-    albums = nullptr;
     
     ifstream file;
-    if (openFile(fileName, file)) {
-        while (1) {
-            if (file.eof()) {
-                break;
-            }
-            
-            file >> album.id >> comma >> album.artist >> comma;
-            readString(file, album.name, '\n');
-            
-            if (numAlbums == capacity) {
-                incrementMemorySpaces(albums, numAlbums, capacity);
-            }
-            
-            albums[numAlbums] = album;
-            numAlbums++;
+    openFile(fileName, file);
+    while (1) {
+        if (file.eof()) {
+            break;
         }
-        
-        file.close();
+
+        file >> album.id >> comma;
+        file >> album.artist >> comma;
+        readString(file, album.name, '\n');
+
+        if (numAlbums == capacity) {
+            incrementMemorySpaces(albums, numAlbums, capacity);
+        }
+
+        albums[numAlbums] = album;
+        numAlbums++;
     }
-    else {
-        cout << "Hubo un error al cargar los álbumes." << endl;
-    }
+
+    file.close();
+    
+    return albums;
 }
 
-void loadSongs(const char* fileName, struct Song*& songs, int& numSongs) {
+/**
+ * Carga todas las canciones usando asignación de memoria por incrementos.
+ * Los nombres de las canciones son cargadas usando asignación exacta de 
+ * memoria.
+ * @param fileName es el nombre del archivo a cargar.
+ * @param songs es la referencia a un puntero / arreglo de canciones.
+ * @param numSongs almacena la cantidad de canciones cargadas.
+ * @return puntero a los canciones de la plataforma.
+ */
+const struct Song* loadSongs(const char* fileName, int& numSongs) {
+    struct Song* songs = nullptr;
+    
     int capacity = 0;
     numSongs = 0;
     char comma;
     
     struct Song song;
-    songs = nullptr;
     
     ifstream file;
-    if (openFile(fileName, file)) {
-        while (1) {
-            if (file.eof()) {
-                break;
-            }
-            
-            file >> song.id >> comma >> song.duration >> comma >> song.album >> comma;
-            readString(file, song.name, '\n');
-            
-            if (numSongs == capacity) {
-                incrementMemorySpaces(songs, numSongs, capacity);
-            }
-            
-            songs[numSongs] = song;
-            numSongs++;
+    openFile(fileName, file);
+    while (1) {
+        if (file.eof()) {
+            break;
         }
-        
-        file.close();
+
+        file >> song.id >> comma;
+        file >> song.duration >> comma; 
+        file >> song.album >> comma;
+        readString(file, song.name, '\n');
+
+        if (numSongs == capacity) {
+            incrementMemorySpaces(songs, numSongs, capacity);
+        }
+
+        songs[numSongs] = song;
+        numSongs++;
     }
-    else {
-        cout << "Hubo un error al cargar los canciones." << endl;
-    }
+
+    file.close();
+    
+    return songs;
 }
 
-void loadPlaylists(const char* fileName, struct Playlist*& playlists, int& numPlayLists) {
-    int capacity = 0;
+/**
+ * Carga todas las listas de reproducción usando asignación de memoria por 
+ * incrementos. Los nombres de las listas de de reproducción son cargados usando
+ * asignación exacta de memoria. Los códigos de las canciones pertenecientes a 
+ * las listas de reproducción son cargados usando asignación exacta de memoria.
+ * @param fileName es el nombre del archivo a cargar.
+ * @param playlists es la referencia a un puntero / arreglo de listas de 
+ * reproducción.
+ * @param numPlayLists almacena la cantidad de listas de reproducción cargadas.
+ * @return puntero a las listas de reproducción de la plataforma.
+ */
+const struct Playlist* loadPlaylists(const char* fileName, int& numPlayLists) {
+    struct Playlist* playlists = nullptr;
+    
+    int numSongs, capacity = 0;
+    char comma, *songsStr;
+    
     numPlayLists = 0;
-    char comma;
-    char* songsStr;
-    int numSongs;
     
     struct Playlist playlist;
-    playlists = nullptr;
     
     ifstream file;
-    if (openFile(fileName, file)) {
-        while (1) {
-            if (file.eof()) {
-                break;
-            }
-            
-            file >> playlist.id >> comma >> playlist.clientId >> comma;
-            readString(file, playlist.name, ',');
-            readString(file, songsStr, '\n');
-            
-            const char* input = songsStr;
-            readIntArray(input, playlist.songs, numSongs);
-            playlist.numSongs = numSongs;
-            
-            if (numPlayLists == capacity) {
-                incrementMemorySpaces(playlists, numPlayLists, capacity);
-            }
-            
-            playlists[numPlayLists] = playlist;
-            numPlayLists++;
-        }
-        
-        file.close();
-    }
-    else {
-        cout << "Hubo un error al cargar las listas de reproducción." << endl;
-    }
+    openFile(fileName, file);
     
-    delete[] songsStr;
+    while (1) {
+        if (file.eof()) {
+            break;
+        }
+
+        file >> playlist.id >> comma >> playlist.clientId >> comma;
+        readString(file, playlist.name, ',');
+        readString(file, songsStr, '\n');
+
+        const char* input = songsStr;
+        readIntArray(input, playlist.songs, numSongs);
+        delete[] songsStr;
+
+        playlist.numSongs = numSongs;
+
+        if (numPlayLists == capacity) {
+            incrementMemorySpaces(playlists, numPlayLists, capacity);
+        }
+
+        playlists[numPlayLists] = playlist;
+        numPlayLists++;
+    }
+
+    file.close();
+    
+    return playlists;
 }
 
-const struct Album* getAlbumsByArtist(const struct Album*& albums, const int &numAlbums, const int &artistId, int &numAlbumsByArtist) {
-    struct Album* albumsByArtist;
-    albumsByArtist=nullptr;
+/**
+ * 
+ * Retorna albums pertenecientes a un artista.
+ * @param artistId es el código del artista.
+ * @param allAlbums contiene todos los albums en la plataforma.
+ * @param numTotalAlbums es el número total de albums en la plataforma.
+ * @param numArtistAlbums es el número de albumes del artista.
+ * @return Albums pertenecientes a un artista.
+ */
+const struct Album* getArtistAlbums(
+    const int &artistId, 
+    const struct Album* const& allAlbums,   
+    const int &numTotalAlbums, 
+    int &numArtistAlbums
+) {
+    struct Album* artistAlbums = nullptr;
+    struct Album album;
     
-    struct Album albumByArtist;
     int capacity = 0;
-    numAlbumsByArtist = 0;
+    numArtistAlbums = 0;
     
-    for (int index = 0; index < numAlbums; index++) {
-        if (albums[index].artist == artistId) {
-            albumByArtist.id = albums[index].id;
-            albumByArtist.name = albums[index].name;
-            albumByArtist.artist = albums[index].artist;
+    for (int index = 0; index < numTotalAlbums; index++) {
+        if (allAlbums[index].artist == artistId) {
+            album = allAlbums[index];
             
-            if (numAlbumsByArtist == capacity) {
-                incrementMemorySpaces(albumsByArtist, numAlbumsByArtist, capacity);
+            if (numArtistAlbums == capacity) {
+                incrementMemorySpaces(artistAlbums, numArtistAlbums, capacity);
             }
             
-            albumsByArtist[numAlbumsByArtist] = albumByArtist;
-            numAlbumsByArtist++;
+            artistAlbums[numArtistAlbums] = allAlbums[index];
+            numArtistAlbums++;
         }
     }
     
-    return albumsByArtist;
+    return artistAlbums;
 }
 
-const struct ArtistsProduction* getArtistProduction(const struct Artist*& artists, const int &numArtists, const struct Album*& albums, int &numAlbums) {
-    struct ArtistsProduction* production;
-    production = nullptr;
+/**
+ * Obtiene toda la producción musical de la plataforma.
+ * @param artists referencia a un puntero al arreglo de todos los artistas.
+ * @param numArtists número de artistas en la plataforma.
+ * @param albums referencia a un puntero al arreglo de todos los álbumes.
+ * @param numAlbums número de álbumes.
+ * @return un puntero a una structura ArtistsProduction.
+ */
+const struct ArtistsProduction* getArtistsProduction(
+    const struct Artist* const& artists, 
+    const int &numArtists, 
+    const struct Album* const& albums, 
+    const int &numAlbums
+) {    
+    int* artistsIds = new int[numArtists];
+    int* numAlbumsPerArtist = new int[numArtists];
+    char** artistsNames = new char*[numArtists];
+    char*** artistsAlbumNames = new char**[numArtists];
     
-    int* artistIds = nullptr;
-    char** artistNames;
-    char*** artistAlbums;
-    
-    int idsCapacity = 0;
-    int namesCapacity = 0;
-    int albumsCapacity = 0;
-    int num = 0;
-    
-    for (int index = 0; index < numArtists; index++) {
-        int artistId = artists[index].id;
-        char* artistName = artists[index].name;
+    for (int artistIndex = 0; artistIndex < numArtists; artistIndex++) {
+        const int artistId = artists[artistIndex].id;
+        artistsIds[artistIndex] = artistId;
+        artistsNames[artistIndex] = artists[artistIndex].name;
         
-        if (num == idsCapacity) {
-            incrementMemorySpaces(artistIds, num, idsCapacity);
-        }
-        artistIds[num] = artistId;
+        int numArtistAlbums;
+        const struct Album* const artistAlbums = 
+            getArtistAlbums(
+                artistId, 
+                albums, 
+                numAlbums, 
+                numArtistAlbums
+            );
+        numAlbumsPerArtist[artistIndex] = numArtistAlbums;
         
-        if (num == namesCapacity) {
-            incrementMemorySpaces(artistNames, num, namesCapacity);
-        }
-        artistNames[num] = artistName;
-
-        int numAlbumsByArtist;
-        const struct Album* albumsByArtist = getAlbumsByArtist(albums, numAlbums, artistId, numAlbumsByArtist);
-        
-        for (int aIndex = 0; aIndex < numAlbumsByArtist; aIndex++) {
-            
+        char** albumNames = new char*[numArtistAlbums];
+        for (int albumIndex = 0; albumIndex < numArtistAlbums; albumIndex++) {
+            albumNames[albumIndex] = artistAlbums[albumIndex].name;
         }
         
-        num++;
+        artistsAlbumNames[artistIndex] = albumNames;
     }
     
-    return production;
+    ArtistsProduction* productions = new ArtistsProduction();
+    productions->artistId = artistsIds;
+    productions->artistName = artistsNames;
+    productions->artistAlbums = artistsAlbumNames;
+    productions->numArtistAlbums = numAlbumsPerArtist;
+    
+    return productions;
 }
 
-const struct ClientPreferences* getClientPreferences(const struct Client*& clients, 
-        const struct Playlist*& playlists, 
-        const struct Song*& songs) {
+/**
+ * Carga todos los clientes usando asignación de memoria por incrementos.
+ * Los nombres de los clientes son cargados usando asignación exacta de memoria.
+ * @param fileName es el nombre del archivo a cargar
+ * @param clients es la referencia a un puntero / arreglo de clientes
+ * @param numClients almacena la cantidad de clientes cargados
+ */
+const struct ClientPreferences* getClientPreferences(
+    const struct Client*& clients, 
+    const struct Playlist*& playlists, 
+    const struct Song*& songs
+) {    
     struct ClientPreferences* preferences;
     
     return preferences;
+}
+
+void writeArtistsProductionReport(const char* fileName, const struct ArtistsProduction* const& production, const int& numArtists) {
+    ofstream file;
+    openFile(fileName, file);
+    
+    file << "REPORTE DE LA PRODUCCIÓN DE LA PLATAFORMA" << endl << endl;
+    file << left << setw(20) << "Código Artista" << setw(50) << "Nombre Artista" << "Producción Musical" << endl;
+    for (int index = 0; index < numArtists; index++) {
+        file << setw(20) << production->artistId[index];
+        file << setw(50) << production->artistName[index];
+
+        for (int albumIndex = 0; 
+             albumIndex < production->numArtistAlbums[index];
+             albumIndex++) {
+
+            if (albumIndex > 0) {
+                file << ", ";
+            }
+            file << production->artistAlbums[index][albumIndex];
+        }
+
+        file << endl;
+    }
 }

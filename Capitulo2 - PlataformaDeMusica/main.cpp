@@ -6,46 +6,76 @@
  */
 
 #include <cstdlib>
-#include <iostream>
-#include <fstream>
-#include "utils.h"
+#include <iomanip>
 #include "platform.h"
-#include "structs.h"
 
 using namespace std;
 
 int main(int argc, char** argv) {
-    struct Client* clients;
-    struct Artist* artists;
-    struct Album* albums;
-    struct Song* songs;
-    struct Playlist* playlists;
-    
+    /*
+     * Estas variables almacenan la cantidad de clientes, artistas, albums, 
+     * canciones y listas de reproducción cargadas.
+     */
     int numClients, numArtists, numAlbums, numSongs, numPlaylists;
     
-    loadClients("clients.csv", clients, numClients);
-    loadArtists("artists.csv", artists, numArtists);
-    loadAlbums("albums.csv", albums, numAlbums);
-    loadSongs("songs.csv", songs, numSongs);
-    loadPlaylists("playlists.csv", playlists, numPlaylists);
+    /*
+     * Se realiza la carga de datos.
+     * Los datos cargados no se deben cambiar es por eso que se declaran 
+     * punteros constantes a constantes
+     */
+    const struct Client* const clients = 
+        loadClients("clients.csv", numClients);
     
-//    const struct Artist* readArtists = artists;
-//    const struct Album* readAlbums = albums;
-//    const struct ArtistsProduction* artistProduction = getArtistProduction(readArtists, numArtists, readAlbums, numAlbums);
+    const struct Artist* const artists = 
+        loadArtists("artists.csv", numArtists);
     
-    for (int index = 0; index < numPlaylists; index++) {
-        struct Playlist playlist = playlists[index];
-        
-        cout << playlist.id << endl;
-        cout << playlist.clientId << endl;
-        cout << playlist.name << endl;
-        
-        for (int songIndex = 0; songIndex < playlist.numSongs; songIndex++) {
-            cout << playlist.songs[songIndex] << " ";
-        }
-        
-        cout << endl;
-    }
+    const struct Album* const albums = 
+        loadAlbums("albums.csv", numAlbums);
+    
+    const struct Song* const songs = 
+        loadSongs("songs.csv", numSongs);
+    
+    const struct Playlist* const playlists = 
+        loadPlaylists("playlists.csv", numPlaylists);
+
+    /*
+     * Obtiene toda la producción artística de la plataforma
+     */
+    const struct ArtistsProduction* platformProduction = 
+        getArtistsProduction(
+            artists, 
+            numArtists, 
+            albums, 
+            numAlbums
+        );
+    writeArtistsProductionReport("reporte-producción-musical.txt", platformProduction, numArtists);
+    
+//    const int artistId = 1;
+//    int numArtistAlbums;
+//    const struct Album* const artistAlbums = getArtistAlbums(artistId, albums, numAlbums, numArtistAlbums);
+//    
+//    for (int index = 0; index < numArtistAlbums; index++) {
+//        cout << left << setw(5) << artistAlbums[index].id 
+//                << setw(5) << artistAlbums[index].artist 
+//                << setw(100) << artistAlbums[index].name 
+//                << endl;
+//    }
+//    
+//    delete[] artistAlbums;
+    
+//    for (int index = 0; index < numPlaylists; index++) {
+//        struct Playlist playlist = playlists[index];
+//        
+//        cout << playlist.id << endl;
+//        cout << playlist.clientId << endl;
+//        cout << playlist.name << endl;
+//        
+//        for (int songIndex = 0; songIndex < playlist.numSongs; songIndex++) {
+//            cout << playlist.songs[songIndex] << " ";
+//        }
+//        
+//        cout << endl;
+//    }
     
     delete[] clients;
     delete[] artists;

@@ -1,22 +1,27 @@
 #include "utils.h"
-#include "structs.h"
 #include <cstring>
-#include <sstream>
 
 using namespace std;
 
-bool openFile(const char* fileName, ifstream& file) {
-    file.open(fileName);
+void openFile(const char* fileName, ifstream& file) {
+    file.open(fileName, ios::in);
     
     if (!file.is_open()) {
-        cerr << "Error abriendo el archivo de entrada." << endl;
-        return false;
+        cerr << "Error abriendo el archivo de entrada." << fileName << endl;
+        exit(1);
     }
-    
-    return true;
 }
 
-void readString(ifstream& input, char *&data, char delim) {
+void openFile(const char* fileName, ofstream& file) {
+    file.open(fileName, ios::out);
+    
+    if (!file.is_open()) {
+        cerr << "Error abriendo el archivo de entrada." << fileName << endl;
+        exit(1);
+    }
+}
+
+void readString(ifstream& input, char* &data, char delim) {
     char buffer[50];
     input.getline(buffer, 50, delim);
     
