@@ -18,16 +18,13 @@ const void* loadAlbums(const char*, int&);
 const void* loadPlaylists(const char*, int&);
 
 const void* getArtistAlbums(const int&, 
-                                    const void* const&, 
-                                    const int&, 
-                                    int&);
+                            const void* const&, 
+                            const int&, 
+                            int&);
 const void* getArtistsProduction(const void* const&, 
                                  const int&, 
                                  const void* const&, 
                                  const int&);
-//const struct ClientPreferences* getClientPreferences(const struct Client*&, 
-//                                                     const struct Playlist*&, 
-//                                                     const struct Song*&);
 
 void writeArtistsProductionReport(const char*, const void* const&, const int&);
 
