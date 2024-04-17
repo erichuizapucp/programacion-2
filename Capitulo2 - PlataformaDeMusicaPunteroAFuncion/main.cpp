@@ -23,40 +23,46 @@ int main(int argc, char** argv) {
      * Los datos cargados no se deben cambiar es por eso que se declaran 
      * punteros constantes a constantes
      */
+    
 //    void* (*leeCliente)(ifstream &file);
 //    leeCliente = readClientData;
     
     const void* const clients = loadRecords(
         "clients.csv", 
         numClients, 
-        readClientData
+        readClientData, // Pasa la dirección de memoria de la función readClientData
+        clientsCmp // Pasa la dirección de memoria de la función clientsCmp
     );
     const void* const artists = loadRecords(
         "artists.csv", 
         numArtists, 
-        readArtistData
+        readArtistData, // Pasa la dirección de memoria de la función readArtistData
+        artistsCmp // Pasa la dirección de memoria de la función clientsCmp
     );
     const void* const albums = loadRecords(
         "albums.csv", 
         numAlbums, 
-        readAlbumData
+        readAlbumData, // Pasa la dirección de memoria de la función readAlbumData
+        albumsCmp // Pasa la dirección de memoria de la función albumsCmp
     );
     const void* const songs = loadRecords(
         "songs.csv", 
         numSongs, 
-        readSongData
+        readSongData, // Pasa la dirección de memoria de la función readSongData
+        songsCmp // Pasa la dirección de memoria de la función songsCmp
     );
     const void* const playlists = loadRecords(
         "playlists.csv", 
         numPlaylists, 
-        readPlaylistData
+        readPlaylistData, // Pasa la dirección de memoria de la función readPlaylistData
+        playlistsCmp // Pasa la dirección de memoria de la función playlistsCmp
     );
 
-//    testClientLoad(clients, numClients);
-//    testArtistsLoad(artists, numArtists);
-//    testAlbumsLoad(albums, numAlbums);
-//    testSongsLoad(songs, numSongs);
-//    testPlaylistsLoad(playlists, numPlaylists);
+    testClientLoad(clients, numClients);
+    testArtistsLoad(artists, numArtists);
+    testAlbumsLoad(albums, numAlbums);
+    testSongsLoad(songs, numSongs);
+    testPlaylistsLoad(playlists, numPlaylists);
 
     /*
      * Obtiene toda la producción artística de la plataforma

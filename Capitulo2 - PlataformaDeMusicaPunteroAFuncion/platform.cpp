@@ -1,78 +1,16 @@
 #include "platform.h"
 
-void* readClientData(ifstream &file) {
-    struct Client* client = new struct Client;
-    char comma;
-    
-    file >> client->id >> comma;
-    readString(file, client->name, ',');
-    readString(file, client->subscriptionDate, ',');
-    readString(file, client->category, '\n');
-    
-    return client;
-}
-
-void* readArtistData(ifstream &file) {
-    struct Artist* artist = new struct Artist;
-    char comma;
-    
-    file >> artist->id >> comma;
-    readString(file, artist->name, ',');
-    readString(file, artist->genre, '\n');
-    
-    return artist;
-}
-
-void* readAlbumData(ifstream &file) {
-    struct Album* album = new struct Album;
-    char comma;
-    
-    file >> album->id >> comma;
-    file >> album->artist >> comma;
-    readString(file, album->name, '\n');
-    
-    return album;
-}
-
-void* readSongData(ifstream &file) {
-    struct Song* song = new struct Song;
-    char comma;
-    
-    file >> song->id >> comma;
-    file >> song->duration >> comma; 
-    file >> song->album >> comma;
-    readString(file, song->name, '\n');
-    
-    return song;
-}
-
-void* readPlaylistData(ifstream &file) {
-    struct Playlist* playlist = new struct Playlist;
-    char comma, *songsStr;
-    int numSongs;
-    
-    file >> playlist->id >> comma >> playlist->clientId >> comma;
-    readString(file, playlist->name, ',');
-    readString(file, songsStr, '\n');
-
-    const char* input = songsStr;
-    readIntArray(input, playlist->songs, numSongs);
-    delete[] songsStr;
-
-    playlist->numSongs = numSongs;
-    
-    return playlist;
-}
-
 /**
  * Carga datos usando asignación de memoria por incrementos.
  * @param fileName es el nombre del archivo a cargar.
  * @param numData almacena la cantidad de datos cargados.
  * @return puntero genérico.
  */
-const void* loadRecords(const char* fileName, 
-                        int &numRecords, 
-                        void* (*readRecord)(ifstream &file)
+const void* loadRecords(
+    const char* fileName, 
+    int &numRecords, 
+    void* (*readRecord)(ifstream &file), 
+    int (*cmp)(const void* a, const void* b)
 ) { 
     void** records = nullptr;
     
@@ -86,6 +24,8 @@ const void* loadRecords(const char* fileName,
         if (file.eof()) {
             break;
         }
+        
+        // Ejecuta la función a través del puntero a función
         void* record = readRecord(file);
         
         if (numRecords == capacity) {
@@ -98,6 +38,9 @@ const void* loadRecords(const char* fileName,
 
     file.close();
 
+    // ordenar los registros antes de devolver los resultados.
+    qsort(records, numRecords, sizeof(void*), cmp);
+    
     return records;
 }
 
@@ -194,23 +137,6 @@ const void* getArtistsProduction(
     return productions;
 }
 
-/**
- * Carga todos los clientes usando asignación de memoria por incrementos.
- * Los nombres de los clientes son cargados usando asignación exacta de memoria.
- * @param fileName es el nombre del archivo a cargar
- * @param clients es la referencia a un puntero / arreglo de clientes
- * @param numClients almacena la cantidad de clientes cargados
- */
-const struct ClientPreferences* getClientPreferences(
-    const struct Client*& clients, 
-    const struct Playlist*& playlists, 
-    const struct Song*& songs
-) {    
-    struct ClientPreferences* preferences;
-    
-    return preferences;
-}
-
 void writeArtistsProductionReport(const char* fileName, const void* const& prod, const int& numArtists) {
     ofstream file;
     openFile(fileName, file);
@@ -238,7 +164,109 @@ void writeArtistsProductionReport(const char* fileName, const void* const& prod,
     }
 }
 
-void testClientLoad(const void* const& cli, int& numClients) {
+void* readClientData(ifstream &file) {
+    struct Client* client = new struct Client;
+    char comma;
+    
+    file >> client->id >> comma;
+    readString(file, client->name, ',');
+    readString(file, client->subscriptionDate, ',');
+    readString(file, client->category, '\n');
+    
+    return client;
+}
+
+void* readArtistData(ifstream &file) {
+    struct Artist* artist = new struct Artist;
+    char comma;
+    
+    file >> artist->id >> comma;
+    readString(file, artist->name, ',');
+    readString(file, artist->genre, '\n');
+    
+    return artist;
+}
+
+void* readAlbumData(ifstream &file) {
+    struct Album* album = new struct Album;
+    char comma;
+    
+    file >> album->id >> comma;
+    file >> album->artist >> comma;
+    readString(file, album->name, '\n');
+    
+    return album;
+}
+
+void* readSongData(ifstream &file) {
+    struct Song* song = new struct Song;
+    char comma;
+    
+    file >> song->id >> comma;
+    file >> song->duration >> comma; 
+    file >> song->album >> comma;
+    readString(file, song->name, '\n');
+    
+    return song;
+}
+
+void* readPlaylistData(ifstream &file) {
+    struct Playlist* playlist = new struct Playlist;
+    char comma, *songsStr;
+    int numSongs;
+    
+    file >> playlist->id >> comma >> playlist->clientId >> comma;
+    readString(file, playlist->name, ',');
+    readString(file, songsStr, '\n');
+
+    const char* input = songsStr;
+    readIntArray(input, playlist->songs, numSongs);
+    delete[] songsStr;
+
+    playlist->numSongs = numSongs;
+    
+    return playlist;
+}
+
+int clientsCmp(const void* a, const void* b) {
+    struct Client* client1 = *(struct Client**)a;
+    struct Client* client2 = *(struct Client**)b;
+    
+    return strcmp(client1->name, client2->name);
+}
+
+int artistsCmp(const void* a, const void* b) {
+    struct Artist* artist1 = *(struct Artist**)a;
+    struct Artist* artist2 = *(struct Artist**)b;
+    
+    return strcmp(artist1->name, artist2->name);
+}
+
+int albumsCmp(const void* a, const void* b) {
+    struct Album* album1 = *(struct Album**)a;
+    struct Album* album2 = *(struct Album**)b;
+    
+    return strcmp(album1->name, album2->name);
+}
+
+int songsCmp(const void* a, const void* b) {
+    struct Song* song1 = *(struct Song**)a;
+    struct Song* song2 = *(struct Song**)b;
+    
+    return strcmp(song1->name, song2->name);
+}
+
+int playlistsCmp(const void* a, const void* b) {
+    struct Playlist* playlist1 = *(struct Playlist**)a;
+    struct Playlist* playlist2 = *(struct Playlist**)b;
+    
+    return strcmp(playlist1->name, playlist2->name);
+}
+
+void testClientLoad(
+    const void* const& cli, 
+    int& numClients
+) {
     cout << left << setw(10) << "CÓDIGO" 
          << setw(50) << "NOMBRE" 
          << setw(30) << "CATEGORÍA" 
@@ -246,6 +274,7 @@ void testClientLoad(const void* const& cli, int& numClients) {
     cout << setfill('=') << setw(120) << "=" << setfill(' ') << endl;
     
     void** clients = (void**)cli;
+    
     for (int i = 0; i < numClients; i++) {
         struct Client* client = (struct Client*)clients[i];
         cout << left << setw(10) << client->id
@@ -253,56 +282,94 @@ void testClientLoad(const void* const& cli, int& numClients) {
              << setw(30) << client->category
              << setw(30) << client->subscriptionDate << endl;
     }
+    cout << endl;
 }
 
-void testArtistsLoad(const void* const& art, int& numArtists) {
+void testArtistsLoad(
+    const void* const& art, 
+    int& numArtists
+) {
     cout << left << setw(10) << "CÓDIGO" 
          << setw(50) << "NOMBRE" 
          << setw(30) << "GÉNERO" << endl;
     cout << setfill('=') << setw(90) << "=" << setfill(' ') << endl;
     
     void** artists = (void**)art;
+    
     for (int i = 0; i < numArtists; i++) {
         struct Artist* artist = (struct Artist*)artists[i];
         cout << left << setw(10) << artist->id
              << setw(50) << artist->name
              << setw(30) << artist->genre << endl;
     }
+    cout << endl;
 }
 
-void testSongsLoad(const void* const& son, int& numSongs) {
+void testSongsLoad(
+    const void* const& son, 
+    int& numSongs
+) {
+    cout << left << setw(10) << "CÓDIGO" 
+         << setw(50) << "NOMBRE"
+         << setw(10) << "DURACIÓN"
+         << setw(10) << "ALBUM" << endl;
+    cout << setfill('=') << setw(90) << "=" << setfill(' ') << endl;
+    
     void** songs = (void**)son;
+    
     for (int i = 0; i < numSongs; i++) {
         struct Song* song = (struct Song*)songs[i];
-        cout << song->id << endl;
-        cout << song->album << endl;
-        cout << song->duration << endl;
-        cout << song->name << endl;
+        cout << left << setw(10) << song->id
+             << setw(50) << song->name
+             << setw(10) << song->duration
+             << setw(10) << song->album << endl;
     }
+    cout << endl;
 }
 
-void testAlbumsLoad(const void* const& alb, int& numAlbums) {
+void testAlbumsLoad(
+    const void* const& alb, 
+    int& numAlbums
+) {
+    cout << left << setw(10) << "CÓDIGO" 
+         << setw(50) << "NOMBRE"
+         << setw(10) << "ARTISTA" << endl;
+    cout << setfill('=') << setw(90) << "=" << setfill(' ') << endl;
+    
     void** albums = (void**)alb;
+    
     for (int i = 0; i < numAlbums; i++) {
         struct Album* album = (struct Album*)albums[i];
-        cout << album->id << endl;
-        cout << album->artist << endl;
-        cout << album->name << endl;
+        cout << left << setw(10) << album->id
+             << setw(50) << album->name
+             << setw(10) << album->artist << endl;
     }
+    cout << endl;
 }
 
-void testPlaylistsLoad(const void* const& plst, int& numPlayLists) {
+void testPlaylistsLoad(
+    const void* const& plst, 
+    int& numPlayLists
+) {
+    cout << left << setw(10) << "CÓDIGO" 
+         << setw(60) << "NOMBRE"
+         << setw(10) << "CLIENTE"
+         << setw(80) << "CANCIONES" << endl;
+    cout << setfill('=') << setw(90) << "=" << setfill(' ') << endl;
+    
     void** playlists = (void**)plst;
+    
     for (int i = 0; i < numPlayLists; i++) {
         struct Playlist* playlist = (struct Playlist*)playlists[i];
-        cout << playlist->id << endl;
-        cout << playlist->clientId << endl;
-        cout << playlist->name << endl;
-        
+        cout << left << setw(10) << playlist->id
+             << setw(60) << playlist->name
+             << setw(10) << playlist->clientId;
         for (int j = 0; j < playlist->numSongs; j++) {
             cout << playlist->songs[j] << " ";
         }
+        cout << endl;
     }
+    cout << endl;
 }
 
 void freeMemory(

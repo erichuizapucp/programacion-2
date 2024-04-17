@@ -17,10 +17,18 @@ void* readArtistData(ifstream&);
 void* readAlbumData(ifstream&);
 void* readSongData(ifstream&);
 void* readPlaylistData(ifstream&);
+
+int clientsCmp(const void*, const void*);
+int artistsCmp(const void*, const void*);
+int albumsCmp(const void*, const void*);
+int songsCmp(const void*, const void*);
+int playlistsCmp(const void*, const void*);
+
 const void* loadRecords(
     const char*, 
     int&, 
-    void*(*)(ifstream&)
+    void*(*)(ifstream&),
+    int (*)(const void*, const void*)
 );
 
 const void* getArtistAlbums(

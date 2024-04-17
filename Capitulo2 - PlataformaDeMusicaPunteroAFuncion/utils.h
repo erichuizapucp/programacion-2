@@ -47,5 +47,13 @@ void incrementMemorySpaces(T*& data, int numData, int& capacity) {
     }
 }
 
+template<typename T>
+int cmpByName(const void* a, const void* b) {
+    const T* item1 = *(T**)a;
+    const T* item2 = *(T**)b;
+    
+    return strcmp(item1->name, item2->name);
+}
+
 #endif /* IOUTILS_H */
 
