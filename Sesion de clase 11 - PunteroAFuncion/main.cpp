@@ -81,6 +81,29 @@ int main(int argc, char** argv) {
      */
     
     /*
+     * Ahora creamos la lista enlazada genérica
+    */
+    Node* head;
+    /*
+     * Lista enlazada de enteros
+     */
+    int *p0 = new int(0);
+    int *p1 = new int(1);
+    int *p2 = new int(2);
+    int *p3 = new int(3);
+    
+    head = createNode(p0);
+    head = appendNode(head, p1);
+    head = appendNode(head, p2);
+    head = appendNode(head, p3);
+    printList(head, printInteger);
+    cout << endl;
+    
+    /*
+     * Lista enlazada de Registros / Estructuras
+     */
+    
+    /*
      * Creamos una lista de estructuras de empleados.
      */
     struct Employee *employee1 = createEmployee(
@@ -108,28 +131,6 @@ int main(int argc, char** argv) {
         7000
     );
     
-    /*
-     * Ahora creamos la lista enlazada genérica
-    */
-    Node* head;
-    /*
-     * Lista enlazada de enteros
-     */
-    int *p0 = new int(0);
-    int *p1 = new int(1);
-    int *p2 = new int(2);
-    int *p3 = new int(3);
-    
-    head = createNode(p0);
-    head = appendNode(head, p1);
-    head = appendNode(head, p2);
-    head = appendNode(head, p3);
-    printList(head, printInteger);
-    cout << endl;
-    
-    /*
-     * Lista enlazada de Registros / Estructuras
-     */
     head = createNode(employee1);
     head = appendNode(head, employee2);
     head = appendNode(head, employee3);
