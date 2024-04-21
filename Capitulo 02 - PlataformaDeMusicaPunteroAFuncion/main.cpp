@@ -13,6 +13,18 @@ using namespace std;
 
 int main(int argc, char** argv) {
     /*
+     * Lee los nombres de los archivos desde los argumentos del programa
+     * PlataformaDeMusicaPunteroAFuncion.exe clients.csv artists.csv albums.csv songs.csv playlists.csv
+     * Se inicia desde el segundo argumento argv[1] porque el primero contiene el nombre
+     * del programa
+     */
+    const char* clientsFileName = argv[1];
+    const char* artistsFileName = argv[2];
+    const char* albumsFileName = argv[3];
+    const char* songsFileName = argv[4];
+    const char* playListsFileName = argv[5];
+    
+    /*
      * Estas variables almacenan la cantidad de clientes, artistas, albums, 
      * canciones y listas de reproducción cargadas.
      */
@@ -28,31 +40,31 @@ int main(int argc, char** argv) {
 //    leeCliente = readClientData;
     
     const void* const clients = loadRecords(
-        "clients.csv", 
+        clientsFileName, 
         numClients, 
         readClientData, // Pasa la dirección de memoria de la función readClientData
         clientsCmp // Pasa la dirección de memoria de la función clientsCmp
     );
     const void* const artists = loadRecords(
-        "artists.csv", 
+        artistsFileName, 
         numArtists, 
         readArtistData, // Pasa la dirección de memoria de la función readArtistData
         artistsCmp // Pasa la dirección de memoria de la función clientsCmp
     );
     const void* const albums = loadRecords(
-        "albums.csv", 
+        albumsFileName, 
         numAlbums, 
         readAlbumData, // Pasa la dirección de memoria de la función readAlbumData
         albumsCmp // Pasa la dirección de memoria de la función albumsCmp
     );
     const void* const songs = loadRecords(
-        "songs.csv", 
+        songsFileName, 
         numSongs, 
         readSongData, // Pasa la dirección de memoria de la función readSongData
         songsCmp // Pasa la dirección de memoria de la función songsCmp
     );
     const void* const playlists = loadRecords(
-        "playlists.csv", 
+        playListsFileName, 
         numPlaylists, 
         readPlaylistData, // Pasa la dirección de memoria de la función readPlaylistData
         playlistsCmp // Pasa la dirección de memoria de la función playlistsCmp
@@ -80,6 +92,10 @@ int main(int argc, char** argv) {
         numArtists
     ); 
     
+    /*
+     * Se libera la memoria asignada dinámicamente en el HEAP usando 
+     * el operador `new`
+     */
     freeMemory(
         clients, 
         artists, 

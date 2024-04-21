@@ -74,6 +74,30 @@ int compararCadenas(const void* arr1, const void* arr2) {
     return strcmp(s1, s2);
 }
 
+void myQsort(
+    void* base, 
+    int num, 
+    int size, 
+    int (*compar)(const void*, const void*)
+) {
+    char* char_base = (char*)(base);
+
+    for (int i = 0; i < num - 1; i++) {
+        for (int j = 0; j < num - i - 1; j++) {
+            char* a = char_base + j * size;
+            char* b = char_base + (j + 1) * size;
+            if (compar(a, b) > 0) {
+                // Intercambia los elementos
+                for (int k = 0; k < size; ++k) {
+                    char temp = a[k];
+                    a[k] = b[k];
+                    b[k] = temp;
+                }
+            }
+        }
+    }
+}
+
 int main(int argc, char** argv) {
     /*
      * USO DE PUNTERO A FUNCIONES
@@ -124,13 +148,13 @@ int main(int argc, char** argv) {
     /*
      * Puntero de 6 enteros el cual se encuentra desordenado
      */
-    int *a = new int[6] { 8, 9, 4, 2, 3 };
+    int *a = new int[6] { 8, 9, 4, 2, 3, 1 };
     /*
      * Se ordenan los 6 elementos asignados dinámicamente en la memoria
      * tener en cuenta que la función compararEntero se pasa como puntero en el
      * parámetro cmp.
      */
-    qsort(a, 6, sizeof(int), compararEnteros);
+    myQsort(a, 6, sizeof(int), compararEnteros);
     /*
      * Se imprimen los 6 elementos ordenados
      */
@@ -160,7 +184,7 @@ int main(int argc, char** argv) {
      * Se ordenan las 4 cadenas. Tener en cuenta que la función compararCadenas
      * se pasa como puntero en el parámetro cmp.
      */
-    qsort(nombres, 4, sizeof(char*), compararCadenas);
+    myQsort(nombres, 4, sizeof(char*), compararCadenas);
     /*
      * Se imprimen las 4 cadenas ya ordenadas.
      */
