@@ -10,7 +10,7 @@ Node* createNode(void* data) {
     return newNode;
 }
 
-Node* appendNode(Node* head, void* data) {
+Node* appendNode(Node* &head, void* data) {
     Node* newNode = createNode(data);
     if (head == nullptr) {
         return newNode;
@@ -23,7 +23,7 @@ Node* appendNode(Node* head, void* data) {
     return head;
 }
 
-void printList(Node* head, void (*print)(Node*)) {
+void printList(Node* &head, void (*print)(Node*&)) {
     Node* current = head;
     while (current != nullptr) {
         print(current);
@@ -48,7 +48,7 @@ struct Employee* createEmployee(
     return employee;
 }
 
-void printEmployee(Node* node) {
+void printEmployee(Node* &node) {
     struct Employee* emp = (struct Employee*)node->data;
     cout << "Código: " << right << setw(3) << setfill('0') << emp->id;
     cout << ", Nombre: " << left << emp->name;
@@ -57,7 +57,7 @@ void printEmployee(Node* node) {
     cout << endl;
 }
 
-void printInteger(Node* node) {
+void printInteger(Node* &node) {
     int a = *(int*)node->data;
     cout << a << " ";
 }

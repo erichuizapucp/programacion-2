@@ -23,18 +23,18 @@ Node* createNode(
     void*
 );
 Node* appendNode(
-    Node*, 
+    Node*&, 
     void*
 );
 void printList(
-    Node*, 
-    void(*)(Node*)
+    Node*&, 
+    void(*)(Node*&)
 );
 void printEmployee(
-    Node*
+    Node*&
 );
 void printInteger(
-    Node*
+    Node*&
 );
 
 #endif /* GENERICLIST_H */
