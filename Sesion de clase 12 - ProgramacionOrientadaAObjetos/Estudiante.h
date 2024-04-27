@@ -9,6 +9,7 @@
 #define ESTUDIANTE_H
 
 #include <iostream>
+#include <iomanip>
 
 #include "Persona.h"
 
@@ -18,16 +19,16 @@ private:
     const char* carrera;
     int annosEstudio;
     char categoria;
-    char** cursos;
+    const char** cursos;
 public:
     Estudiante();
-    Estudiante(int, int, const char*, const char*, int, char, int, char**);
+    Estudiante(int, int, const char*, const char*, int, char, int, const char**);
     
     void setCodigo(int);
     void setCarrera(const char*);
     void setAnnosEstudio(int);
     void setCategoria(char);
-    void setCursos(char**);
+    void setCursos(const char**);
     
     void imprimir();
     

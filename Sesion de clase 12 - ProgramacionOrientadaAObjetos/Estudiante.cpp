@@ -14,9 +14,8 @@ Estudiante::Estudiante(
     int annosEstudio, 
     char categoria, 
     int edad, 
-    char** cursos) 
-    : 
-    Persona(nombre, dni, edad),
+    const char** cursos
+) : Persona(nombre, dni, edad),
     codigo(codigo), 
     carrera(carrera), 
     annosEstudio(annosEstudio),
@@ -42,22 +41,35 @@ void Estudiante::setCategoria(char categoria) {
     this->categoria = categoria;
 }
 
-void Estudiante::setCursos(char** cursos) {
+void Estudiante::setCursos(const char** cursos) {
     this->cursos = cursos;
 }
 
-void Estudiante::imprimir() {
-    cout << "DNI: " << this->dni << endl;
-    cout << "Codigo: " << this->codigo << endl;
-    cout << "Nombre: " << this->nombre << endl;
-    cout << "Carrera: " << this->carrera << endl;
-    cout << "Años de Estudio: " << this->annosEstudio << endl;
-    cout << "Categoría: " << this->categoria << endl;
-    cout << "Edad: " << this->edad << endl;
-    cout << "Cursos: ";
-    for (int i = 0; i < 3; i++) {
-        cout << this->cursos[i] << " ";
+void Estudiante::imprimir() {    
+    cout << left << setw(10) << "DNI";
+    cout << setw(10) << "Código";
+    cout << setw(30) << "Nombre"; 
+    cout << setw(30) << "Carrera"; 
+    cout << setw(20) << "Años de Estudio";
+    cout << setw(10) << "Categoría";
+    cout << setw(10) << "Edad";
+    cout << setw(100) << "Cursos" << endl;;
+     
+    cout << left << setw(10) << this->dni;
+    cout << setw(10) << this->codigo;
+    cout << setw(30) << this->nombre;
+    cout << setw(30) << this->carrera;
+    cout << setw(20) << this->annosEstudio;
+    cout << setw(10) << this->categoria;
+    cout << setw(10) << this->edad;
+    cout << setw(100);
+    for (int i = 0; this->cursos[i]; i++) {
+        if (i > 0) {
+            cout << ", ";
+        }
+        cout << this->cursos[i];
     }
+    cout << endl;
 }
 
 Estudiante::~Estudiante() {

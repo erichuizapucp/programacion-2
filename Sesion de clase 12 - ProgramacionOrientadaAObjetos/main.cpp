@@ -8,7 +8,6 @@
 #include <cstdlib>
 #include "Persona.h"
 #include "Estudiante.h"
-#include <cstring>
 
 using namespace std;
 
@@ -28,18 +27,12 @@ int main(int argc, char** argv) {
 //    persona2.setNacionalidad("Peruana");
 //    persona2.imprimir();
     
-    const char* curso1 = "Técnicas de programación 2";
-    const char* curso2 = "Proceso de construcción de Software 1";
-    const char* curso3 = "Economía";
-    
-    char** cursos = new char*[3];
-    cursos[0] = new char[20];
-    cursos[1] = new char[20];
-    cursos[2] = new char[20];
-    
-    strcpy(cursos[0], curso1);
-    strcpy(cursos[1], curso2);
-    strcpy(cursos[2], curso3);
+    const char* cursos[] = { 
+        "Técnicas de programación 2", 
+        "Proceso de construcción de Software 1", 
+        "Economía", 
+        nullptr
+    };
     
     Estudiante* estudiante1 = new Estudiante();
     estudiante1->setCodigo(20215678);
@@ -51,12 +44,9 @@ int main(int argc, char** argv) {
     estudiante1->setNombre("Rodrigo Torres");
     estudiante1->setAnnosEstudio(3);
     
-    estudiante1->imprimir();
-    
-    cout << endl << endl;
-    
+    estudiante1->imprimir();  
     delete estudiante1;
-    
+
     Estudiante* estudiante2 = new Estudiante(
         12345678, 
         20206758,
@@ -67,8 +57,8 @@ int main(int argc, char** argv) {
         20, 
         cursos  
     );
-    estudiante2->imprimir();
     
+    estudiante2->imprimir();
     delete estudiante2;
     
     return 0;

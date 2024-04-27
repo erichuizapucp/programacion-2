@@ -9,7 +9,7 @@ Persona::Persona() : dni(0), edad(0), altura(0.0), peso(0.0) {
 
 Persona::Persona(const char* nombre, int dni, int edad) 
     : nombre(nombre), dni(dni), edad(edad) {
-    cout << "Constructor #1" << endl;
+    cout << "Constructor sobrecargado de Persona #1" << endl;
 }
 
 Persona::Persona(
@@ -26,7 +26,7 @@ Persona::Persona(
     nombre(nombre), 
     nacionalidad(nacionalidad)        
 {
-    cout << "Constructor #2." << endl;
+    cout << "Constructor sobrecargado de Persona #2." << endl;
 //    this->nombre = new char[strlen(nombre) + 1];
 //    strcpy(this->nombre, nombre);
 //
