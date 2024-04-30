@@ -2,26 +2,34 @@
 
 using namespace std;
 
-Estudiante::Estudiante() {
+Estudiante::Estudiante(
+) : Persona(),
+    codigo(0), 
+    carrera(nullptr), 
+    annosEstudio(0), 
+    categoria(0), 
+    cursos(nullptr) {
     cout << "Constructor por defecto de Estudiante" << endl;
 }
 
 Estudiante::Estudiante(
     int dni, 
     int codigo, 
-    const char* nombre, 
-    const char* carrera, 
+    char* nombre, 
+    int edad, 
+    double altura, 
+    double peso, 
+    Nacionalidad nacionalidad, 
+    char* carrera, 
     int annosEstudio, 
     char categoria, 
-    int edad, 
-    const char** cursos
-) : Persona(nombre, dni, edad),
+    char** cursos
+) : Persona(dni, nombre, edad, altura, peso, nacionalidad),
     codigo(codigo), 
     carrera(carrera), 
     annosEstudio(annosEstudio),
     categoria(categoria),
-    cursos(cursos)
-{
+    cursos(cursos) {
     cout << "Constructor sobrecargado de Estudiante" << endl;
 }
 
@@ -29,7 +37,7 @@ void Estudiante::setCodigo(int codigo) {
     this->codigo = codigo;
 }
 
-void Estudiante::setCarrera(const char* carrera) {
+void Estudiante::setCarrera(char* carrera) {
     this->carrera = carrera;
 }
 
@@ -41,35 +49,94 @@ void Estudiante::setCategoria(char categoria) {
     this->categoria = categoria;
 }
 
-void Estudiante::setCursos(const char** cursos) {
+void Estudiante::setCursos(char** cursos) {
     this->cursos = cursos;
 }
 
-void Estudiante::imprimir() {    
-    cout << left << setw(10) << "DNI";
-    cout << setw(10) << "Código";
-    cout << setw(30) << "Nombre"; 
-    cout << setw(30) << "Carrera"; 
-    cout << setw(20) << "Años de Estudio";
-    cout << setw(10) << "Categoría";
-    cout << setw(10) << "Edad";
-    cout << setw(100) << "Cursos" << endl;;
-     
-    cout << left << setw(10) << this->dni;
-    cout << setw(10) << this->codigo;
-    cout << setw(30) << this->nombre;
-    cout << setw(30) << this->carrera;
-    cout << setw(20) << this->annosEstudio;
-    cout << setw(10) << this->categoria;
-    cout << setw(10) << this->edad;
-    cout << setw(100);
-    for (int i = 0; this->cursos[i]; i++) {
+char** Estudiante::leerCursos(char* &cadenaCursos) {
+    int num = 0;
+    int capacidad = 0;
+    char* curso;
+    char** cursos = nullptr;
+    
+    istringstream ss(cadenaCursos);
+    
+    while(!ss.eof()) {
+        curso = leerCadena(ss);
+        if (num == capacidad) {
+            incrementMemorySpaces(cursos, num, capacidad);
+        }
+        cursos[num] = curso;
+        num++;
+    } 
+    
+    return cursos;
+}
+
+void Estudiante::cargar(ifstream &archivo) {
+    Persona::cargar(archivo);
+    
+    char comma;
+    this->carrera = leerCadena(archivo);
+    archivo >> this->annosEstudio >> comma;
+    archivo >> this->categoria >> comma;
+    
+    char* cadenaCursos = leerCadena(archivo, '\n');
+    this->cursos = leerCursos(cadenaCursos);
+}
+
+void Estudiante::imprimirCursos() {
+    cout << "Cursos: ";
+    for (int i = 0; this->cursos[i] != nullptr; i++) {
         if (i > 0) {
             cout << ", ";
         }
         cout << this->cursos[i];
     }
     cout << endl;
+}
+
+void Estudiante::imprimir() {
+    Persona::imprimir();
+    
+    if (codigo > 0) {
+        cout << "Código: " << codigo << endl;
+    }
+    if (carrera != nullptr) {
+        cout << "Carrera: " << carrera << endl;
+    }
+    if (annosEstudio > 0) {
+        cout << "Años de estudio: " << annosEstudio << endl;
+    }
+    if (categoria > 0) {
+        cout << "Categoría: " << categoria << endl;
+    }
+    
+    if (cursos != nullptr) {
+        imprimirCursos();
+    }
+    
+    if (nacionalidad != Nacionalidad::Peru) {
+        cout << "El estudiante es extranjero." << endl;
+    }
+    
+    cout << endl;
+}
+
+void Estudiante::grabarCursos(ofstream &archivo) {
+    for (int i = 0; this->cursos[i] != nullptr; i++) {
+        if (i > 0) {
+            archivo << ",";
+        }
+        archivo << this->cursos[i];
+    }
+}
+
+void Estudiante::grabar(ofstream &archivo) {
+    Persona::grabar(archivo);
+    archivo << carrera << "," << annosEstudio << "," << categoria << ",";
+    grabarCursos(archivo);
+    archivo << endl;
 }
 
 Estudiante::~Estudiante() {

@@ -10,29 +10,37 @@
 
 #include <iostream>
 #include <iomanip>
+#include <sstream>
 
 #include "Persona.h"
 
 class Estudiante : public Persona {
 private:
     int codigo;
-    const char* carrera;
+    char* carrera;
     int annosEstudio;
     char categoria;
-    const char** cursos;
+    char** cursos;
+    
+    char** leerCursos(char*&);
+    void imprimirCursos();
+    void grabarCursos(ofstream&);
 public:
     Estudiante();
-    Estudiante(int, int, const char*, const char*, int, char, int, const char**);
+    Estudiante(int, int, char*, int, double, double, Nacionalidad, 
+               char*, int, char, char**);
     
     void setCodigo(int);
-    void setCarrera(const char*);
+    void setCarrera(char*);
     void setAnnosEstudio(int);
     void setCategoria(char);
-    void setCursos(const char**);
+    void setCursos(char**);
     
-    void imprimir();
+    void cargar(ifstream&) override;
+    void imprimir() override;
+    void grabar(ofstream &) override;
     
-    ~Estudiante();
+    ~Estudiante() override;
 };
 
 #endif /* ESTUDIANTE_H */

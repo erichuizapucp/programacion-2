@@ -8,35 +8,44 @@
 #ifndef PERSONA_H
 #define PERSONA_H
 
+#include <fstream>
 #include <iostream>
 #include <cstring>
 
+#include "Enums.h"
+#include "Registro.h"
+#include "AsignaMemoria.h"
+
 using namespace std;
 
-class Persona {
+class Persona : public Registro, public AsignaMemoria {
 private:
+    int dni;
+    char* nombre;
+    int edad;
     double altura;
     double peso;
-    const char* nacionalidad;
+    
+    const char* nacionalidadACadena(Nacionalidad);
+    Nacionalidad nacionalidadAEnum(char*);
 protected:
-    int dni;
-    int edad;
-    const char* nombre;
+    Nacionalidad nacionalidad;
 public:
     Persona();
-    Persona(const char*, int, int);
-    Persona(const char*, int, int, double, double, const char*);
+    Persona(int, char*, int, double, double, Nacionalidad);
     
-    void setNombre(const char*);
+    void setNombre(char*);
     void setDni(int);
     void setEdad(int);
     void setAltura(double);
     void setPeso(double);
-    void setNacionalidad(const char*);
+    void setNacionalidad(const Nacionalidad);
     
-    void imprimir();
+    virtual void cargar(ifstream&);
+    virtual void imprimir();
+    virtual void grabar(ofstream&);
     
-    ~Persona();
+    virtual ~Persona();
 };
 
 #endif /* PERSONA_H */
