@@ -20,8 +20,8 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-    Estudiante e;
-    e.
+    Persona p;
+    p.
     
     
     return 0;

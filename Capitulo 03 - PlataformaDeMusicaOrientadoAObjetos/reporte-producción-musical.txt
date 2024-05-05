@@ -1,0 +1,10 @@
+REPORTE DE LA PRODUCCIÓN DE LA PLATAFORMA
+
+Código Artista     Nombre Artista                                    Producción Musical
+4                   Beyoncé                                          BEYONCÉ, I Am... Sasha Fierce, Lemonade
+6                   Coldplay                                          Ghost Stories, Parachutes, Viva la Vida or Death and All His Friends
+3                   Eminem                                            Kamikaze, Recovery, The Marshall Mathers LP
+5                   Ludwig van Beethoven                              For the Love of Piano, Moonlight Sonata & Other Works, Symphony No. 5 & Other Orchestral Works
+2                   Michael Jackson                                   Bad, Dangerous, Thriller
+7                   Pink Floyd                                        The Dark Side of the Moon, Wish You Were Here
+1                   The Beatles                                       Abbey Road, Revolver, Sgt. Pepper's Lonely Hearts Club Band

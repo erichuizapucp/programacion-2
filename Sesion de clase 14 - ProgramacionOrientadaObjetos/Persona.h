@@ -8,14 +8,20 @@
 #ifndef PERSONA_H
 #define PERSONA_H
 
+//class Persona {
+//private:
+//    int dni;
+//    char* nombre;
+//    int edad;
+//    double altura;
+//public:
+//    void imprimir();
+//};
+
 class Persona {
-private:
+public: 
     int dni;
     char* nombre;
-    int edad;
-    double altura;
-public:
-    void imprimir();
 };
 
 #endif /* PERSONA_H */
