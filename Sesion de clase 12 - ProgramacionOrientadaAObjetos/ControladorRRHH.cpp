@@ -17,7 +17,7 @@ ControladorRRHH::ControladorRRHH(
     this->personas = nullptr;
     
     this->archivoEstudiantes.open(nombreArchivoEstudiantes, ios::in);
-    cargaEstudiantes(this->personas);
+    cargaDatos(this->personas);
     
     this->archivoSalida.open(nombreArchivo, ios::out);
 }
@@ -30,20 +30,20 @@ ControladorRRHH::ControladorRRHH(
     this->archivoSalida.open(nombreArchivo, ios::out);
 }
 
-void ControladorRRHH::cargaEstudiantes(Persona** &personas) {
-    Estudiante* estudiante;
+void ControladorRRHH::cargaDatos(Persona** &personas) {
+    Persona* persona;
     int num = 0;
     int capacidad = 0;
     
     while (!this->archivoEstudiantes.eof()) {
-        estudiante = new Estudiante();
-        estudiante->cargar(this->archivoEstudiantes);
+        persona = new Estudiante();
+        persona->cargar(this->archivoEstudiantes);
         
         if (num == capacidad) {
             incrementMemorySpaces(personas, num, capacidad);
         }
         
-        personas[num] = estudiante;
+        personas[num] = persona;
         num++;
     }
 }

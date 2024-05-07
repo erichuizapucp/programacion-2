@@ -9,9 +9,9 @@ Vector3D::~Vector3D() {
 
 Vector3D Vector3D::operator+(Vector3D& other) {
     Vector3D result;
-    result.x = x + other.x;
-    result.y = y + other.y;
-    result.z = z + other.z;
+    result.x = this->x + other.x;
+    result.y = this->y + other.y;
+    result.z = this->z + other.z;
     
     return result;
 }

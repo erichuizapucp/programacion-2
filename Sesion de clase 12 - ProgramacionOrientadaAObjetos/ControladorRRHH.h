@@ -20,7 +20,7 @@ private:
     ifstream archivoEstudiantes;
     ofstream archivoSalida;
     
-    void cargaEstudiantes(Persona**&);
+    void cargaDatos(Persona**&);
 public:
     ControladorRRHH();
     ControladorRRHH(
