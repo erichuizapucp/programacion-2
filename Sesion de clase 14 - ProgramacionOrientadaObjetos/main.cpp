@@ -1,28 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/cppFiles/main.cc to edit this template
- */
-
 /* 
  * File:   main.cpp
  * Author: erichuiza
  *
- * Created on April 29, 2024, 3:19 PM
+ * Created on April 21, 2024, 10:16 AM
  */
 
 #include <cstdlib>
 #include "Persona.h"
 #include "Estudiante.h"
+#include "ControladorRRHH.h"
 
 using namespace std;
 
-/*
- * 
- */
 int main(int argc, char** argv) {
-    Persona p;
-    p.
+    if (argc <= 1) {
+        cerr << "Número de parámetros incorrecto.";
+        exit(1);
+    }
     
+    const char* nombreArchivo = argv[1];
+    const char* nombreArchivoEstudiantes = argv[2];
+    
+    ControladorRRHH* controlador = new ControladorRRHH(
+        nombreArchivo,
+        nombreArchivoEstudiantes
+    );
+    controlador->imprimir();
+    controlador->grabar();
+    
+    delete controlador;
     
     return 0;
 }
