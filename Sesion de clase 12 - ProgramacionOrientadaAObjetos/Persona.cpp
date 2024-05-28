@@ -88,10 +88,10 @@ void Persona::imprimir() {
     }
 }
 
-//void Persona::grabar(ofstream& archivo) {
-//    archivo << dni << "," << nombre << "," << edad << "," << altura << ","
-//            << peso << "," << nacionalidadACadena(nacionalidad) << ",";
-//}
+void Persona::grabar(ofstream& archivo) {
+    archivo << dni << "," << nombre << "," << edad << "," << altura << ","
+            << peso << "," << nacionalidadACadena(nacionalidad) << ",";
+}
 
 const char* Persona::nacionalidadACadena(Nacionalidad nac) {
     const char* nacionalidad;

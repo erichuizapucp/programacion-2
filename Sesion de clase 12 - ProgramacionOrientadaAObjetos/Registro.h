@@ -22,6 +22,7 @@ public:
     virtual void cargar(ifstream&) = 0;
     virtual void imprimir() = 0;
     virtual void grabar(ofstream &) = 0;
+//    virtual void foo() = 0;
 };
 
 #endif /* REGISTRO_H */
