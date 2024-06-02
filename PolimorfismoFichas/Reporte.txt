@@ -1,0 +1,46 @@
+Posiciones iniciales de las fichas: 
+Tipo C: F1      15    0
+Tipo C: F2       9    0
+Tipo A: F3       9    0
+Tipo A: F4       9    0
+Tipo A: F5       4    0
+Tipo B: F6      24    0
+Tipo C: F7      13    0
+Tipo A: F8      11    0
+Tipo C: F9       9    0
+Tipo B: F10      9    0
+Tipo C: F11     14    0
+Tipo C: F12     12    0
+Tipo C: F13     22    0
+Tipo C: F14      2    0
+Tipo B: F15     20    0
+Tipo C: F16     23    0
+Tipo C: F17     10    0
+Tipo A: F18      2    0
+Tipo B: F19     14    0
+Tipo A: F20     19    0
+Tipo C: F21     23    0
+
+
+Posiciones finales: 
+Tipo C: F1      19   -2
+Tipo C: F2       6   -1
+Tipo A: F3      -8   15
+Tipo A: F4       9   -6
+Tipo A: F5       5    0
+Tipo B: F6      41   27
+Tipo C: F7      16   -4
+Tipo A: F8       9    0
+Tipo C: F9       7    1
+Tipo B: F10     27  -68
+Tipo C: F11     14    0
+Tipo C: F12     13    2
+Tipo C: F13     23    2
+Tipo C: F14      4   -1
+Tipo B: F15     14   -6
+Tipo C: F16     16    1
+Tipo C: F17     13    1
+Tipo A: F18      8    4
+Tipo B: F19    -19   -7
+Tipo A: F20     19    7
+Tipo C: F21     24    2

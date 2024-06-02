@@ -23,7 +23,10 @@ public:
     int getX();
     int getY();
     
-    Vector2D operator+(Vector2D&);
+//    Vector2D operator+(Vector2D&);
+    friend Vector2D operator+(Vector2D&, Vector2D&);
+    friend ostream& operator<< (ostream&, Vector2D&);
+    
     ~Vector2D();
 };
 

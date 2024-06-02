@@ -12,6 +12,7 @@
 #include "fichab.h"
 #include "fichac.h"
 #include "cola.h"
+#include "arreglo.h"
 
 using namespace std;
 
@@ -32,7 +33,6 @@ int main(int argc, char** argv) {
     f4->mover(1, 2);
     f5->mover(4, 6);
     f6->mover(9, 1);
-    
     
     f1->imprimir();
     f2->imprimir();
@@ -69,6 +69,31 @@ int main(int argc, char** argv) {
     cout << *dato3 << endl;
     
     delete cola;
+    
+    cout << "Plantillas" << endl;
+    
+    Arreglo<int> arr;
+    arr.insetar(0, 1);
+    arr.insetar(1, 2);
+    arr.insetar(2, 3);
+    arr.insetar(3, 4);
+    arr.insetar(4, 5);
+    
+    for (int i = 0; i < 5; i++) {
+        cout << arr.obtener(i) << endl;
+    }
+    
+    Arreglo<double> arrd;
+    arrd.insetar(0, 1.4);
+    arrd.insetar(1, 2.3);
+    arrd.insetar(2, 3.6);
+    arrd.insetar(3, 4.2);
+    arrd.insetar(4, 5.9);
+    
+    cout << endl;
+    for (int i = 0; i < 5; i++) {
+        cout << arrd.obtener(i) << endl;
+    }
     
     return 0;
 }
