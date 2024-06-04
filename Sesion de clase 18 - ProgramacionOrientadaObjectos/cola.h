@@ -10,21 +10,75 @@
 
 #include "nodo.h"
 
+template <typename T>
 class Cola {
 private:
-    Nodo* frente;
-    Nodo* fondo;
+    Nodo<T>* frente;
+    Nodo<T>* fondo;
 public:
     Cola();
-    void encola(void* dato);
-    void* desencola();
+    void encola(T);
+    bool desencola(T&);
     bool colaVacia();
-    
-    Nodo* getFrente();
-    Nodo* getFondo();
     
     ~Cola();
 };
+
+template <typename T>
+Cola<T>::Cola() {
+    frente = nullptr;
+    fondo = nullptr;
+}
+
+template <typename T>
+void Cola<T>::encola(T dato) {
+    Nodo<T>* nuevoNodo = new Nodo<T>(dato);
+    
+    if (colaVacia()) {    
+        frente = nuevoNodo;
+        fondo = nuevoNodo;
+    }
+    else {
+        if (fondo != nullptr) {
+            fondo->siguiente = nuevoNodo;
+        }
+        fondo = nuevoNodo;
+    }
+}
+
+template <typename T>
+bool Cola<T>::desencola(T& v) {
+    if (colaVacia()) {
+        return false;
+    }
+    
+    T valor = frente->dato;
+    Nodo<T>* temp = frente;
+    frente = frente->siguiente;
+    
+    if (frente == nullptr) {
+        fondo = nullptr;
+    }
+    
+    delete temp;
+    
+    v = valor;
+    return true;
+}
+
+template <typename T>
+bool Cola<T>::colaVacia() {
+    return frente == nullptr;
+}
+
+template <typename T>
+Cola<T>::~Cola() {
+    while (!colaVacia()) {
+        Nodo<T>* temp = frente;
+        frente = frente->siguiente;
+        delete temp;
+    }
+}
 
 #endif /* COLA_H */
 

@@ -13,24 +13,19 @@ class Arreglo {
 private:
     T elementos[100];
 public:
-//    void insetar(int, T);
-//    T obtener(int);
-    void insetar(int pos, T valor) {
-        elementos[pos] = valor;
-    }
-
-    T obtener(int pos) {
-        return elementos[pos];
-    }
+    void insertar(int, T);
+    T obtener(int);
 };
 
-//template <typename T, typename Q>
-//class OtroArreglo : public Arreglo<T> {
-//private:
-//    T otrosElementos[100];
-//    Q otrosOtrosElementos[100]; 
-//};
+template <typename T>
+void Arreglo<T>::insertar(int pos, T valor) {
+    elementos[pos] = valor;
+}
 
+template <typename T>
+T  Arreglo<T>::obtener(int pos) {
+    return elementos[pos];
+}
 
 #endif /* ARREGLO_H */
 

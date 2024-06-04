@@ -49,51 +49,65 @@ int main(int argc, char** argv) {
     delete f6;
     
     int* numeros = new int[5] { 4, 5, 2, 8, 6 };
-    Cola* cola = new Cola();
+    Cola<int>* cola = new Cola<int>();
     
     for (int i = 0; i < 5; i++) {
-        cola->encola(&numeros[i]);
+        cola->encola(numeros[i]);
     }
     
-    int* dato = (int*)cola->desencola();
-    cout << *dato << endl;
+    //    int* x = new int(10);
+    //    Nodo* nuevoNodo = new Nodo(x);
+    //    cola->getFrente()->
     
-//    int* x = new int(10);
-//    Nodo* nuevoNodo = new Nodo(x);
-//    cola->getFrente()->
+    int dato;
+    if (cola->desencola(dato)) {
+        cout << dato << endl;
+    }
     
-    int* dato2 = (int*)cola->desencola();
-    cout << *dato2 << endl;
+    int dato2;
+    if (cola->desencola(dato2)) {
+        cout << dato2 << endl;
+    }
     
-    int* dato3 = (int*)cola->desencola();
-    cout << *dato3 << endl;
+    
+    int dato3;
+    if (cola->desencola(dato3)) {
+        cout << dato3 << endl;
+    }
     
     delete cola;
     
     cout << "Plantillas" << endl;
     
     Arreglo<int> arr;
-    arr.insetar(0, 1);
-    arr.insetar(1, 2);
-    arr.insetar(2, 3);
-    arr.insetar(3, 4);
-    arr.insetar(4, 5);
+    arr.insertar(0, 1);
+    arr.insertar(1, 2);
+    arr.insertar(2, 3);
+    arr.insertar(3, 4);
+    arr.insertar(4, 5);
     
     for (int i = 0; i < 5; i++) {
         cout << arr.obtener(i) << endl;
     }
     
     Arreglo<double> arrd;
-    arrd.insetar(0, 1.4);
-    arrd.insetar(1, 2.3);
-    arrd.insetar(2, 3.6);
-    arrd.insetar(3, 4.2);
-    arrd.insetar(4, 5.9);
+    arrd.insertar(0, 1.4);
+    arrd.insertar(1, 2.3);
+    arrd.insertar(2, 3.6);
+    arrd.insertar(3, 4.2);
+    arrd.insertar(4, 5.9);
     
     cout << endl;
     for (int i = 0; i < 5; i++) {
         cout << arrd.obtener(i) << endl;
     }
+    
+    Arreglo<const char*> arrc;
+    arrc.insertar(0, "1");
+    arrc.insertar(1, "2");
+    arrc.insertar(2, "3");
+    arrc.insertar(3, "4");
+    arrc.insertar(4, "5");
     
     return 0;
 }

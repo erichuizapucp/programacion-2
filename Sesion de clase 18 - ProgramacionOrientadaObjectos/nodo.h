@@ -8,22 +8,29 @@
 #ifndef NODO_H
 #define NODO_H
 
+template <typename T>
 class Cola;
 
+template <typename T>
 class Nodo {
 private:
-    void* dato;
-    Nodo* siguiente;
+    T dato;
+    Nodo<T>* siguiente;
 public:
-    Nodo(void* dato);
-//    Nodo* getSiguiente();
-//    void setSiguiente(Nodo* siguiente);
-//    void* getDato();
-    
-    friend class Cola;
+    Nodo(T dato);
+
+    friend class Cola<T>;
     
     ~Nodo();
 };
+
+template <typename T>
+Nodo<T>::Nodo(T dato) : dato(dato), siguiente(nullptr) {
+}
+
+template <typename T>
+Nodo<T>::~Nodo() {
+}
 
 #endif /* NODO_H */
 
