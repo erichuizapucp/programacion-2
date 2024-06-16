@@ -44,6 +44,8 @@ public:
     void imprimir(ostream& = cout);
     void grabar(ofstream&);
     
+    virtual bool operator <(const Persona&) const;
+    
     ~Persona();
 };
 

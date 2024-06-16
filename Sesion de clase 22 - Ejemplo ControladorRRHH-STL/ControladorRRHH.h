@@ -14,6 +14,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class ControladorRRHH final {
 private:

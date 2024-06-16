@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
     string str2 = "segunda cadena";
     
     string str3 = str1 + ", " + str2;
-    cout << str3; // Ejemplo de concatenación de cadenas usando <string>
+    cout << str3 << endl; // Ejemplo de concatenación de cadenas usando <string>
     
     string texto = "Created on June 10, 2024, 3:53 PM";
     string buscar = "June";

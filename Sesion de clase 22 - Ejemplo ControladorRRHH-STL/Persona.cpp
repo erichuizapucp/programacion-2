@@ -204,6 +204,10 @@ Nacionalidad Persona::nacionalidadAEnum(char* strNacionalidad) {
     return nac;
 }
 
+bool Persona::operator <(const Persona& per) const {
+    return strcmp(nombre, per.nombre) < 0;
+}
+
 Persona::~Persona() {
     cout << "Destructor de Persona" << endl;
 }

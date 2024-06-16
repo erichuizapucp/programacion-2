@@ -4,8 +4,6 @@
 
 ControladorRRHH::ControladorRRHH() {
     cout << "Constructor por defecto de ControladorRRHH" << endl;
-    
-//    this->estudiantes = new Estudiante*[] { };
     this->archivoSalida.open("Reporte.csv", ios::out);
 }
 
@@ -13,8 +11,6 @@ ControladorRRHH::ControladorRRHH(
     const char* nombreArchivo, 
     const char* nombreArchivoEstudiantes) {
     cout << "Constructor sobrecargado de ControladorRRHH #1" << endl;
-    
-//    this->estudiantes = nullptr;
     
     this->archivoEstudiantes.open(nombreArchivoEstudiantes, ios::in);
     cargaDatos(this->estudiantes);
@@ -40,43 +36,22 @@ void ControladorRRHH::cargaDatos(vector<Estudiante> &estudiantes) {
         estudiantes.push_back(estudiante);
     }
     
-//    while (archivoEstudiantes >> estudiante) {
-//        if (num == capacidad) {
-//            incrementMemorySpaces(estudiantes, num, capacidad);
-//        }
-//        
-//        estudiantes[num] = estudiante;
-//        num++;
-//    }
+    sort(estudiantes.begin(), estudiantes.end());
 }
 
 void ControladorRRHH::imprimir() {
-    for (auto e : estudiantes) {
+    for (Estudiante e : estudiantes) {
         e.imprimir(cout);
     }
-    
-//    for (int i = 0; estudiantes[i] != nullptr; i++) {
-//        cout << estudiantes[i];
-//        cout << endl;
-//    }
 }
 
 void ControladorRRHH::grabar() {
-    for (auto e : estudiantes) {
+    for (Estudiante e : estudiantes) {
         e.grabar(archivoSalida);
     }
-    
-//    for (int i = 0; estudiantes[i] != nullptr; i++) {
-//        estudiantes[i]->grabar(this->archivoSalida);
-//    }
 }
 
 ControladorRRHH::~ControladorRRHH() {
-//    for (int i = 0; estudiantes[i] != nullptr; i++) {
-//        delete estudiantes[i];
-//    }
-//    
-//    delete[] estudiantes;
     this->archivoEstudiantes.close();
     this->archivoSalida.close();
     
