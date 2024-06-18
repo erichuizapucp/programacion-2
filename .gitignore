@@ -3,3 +3,4 @@ build
 dist
 nbproject
 */.dep.inc
+*.class
