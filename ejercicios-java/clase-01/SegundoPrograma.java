@@ -35,7 +35,8 @@ public class SegundoPrograma {
 
 		Persona per = new Persona();
 		per.setCodigo(50);
-		cambiarPersona(per);
-		System.out.println(per.getCodigo());
+		cambiarPersona(per); // cambia a 100;
+		per.setNombre("Juan Perez");
+		per.imprimirDatos();
 	}
 }
