@@ -4,3 +4,7 @@ dist
 nbproject
 */.dep.inc
 *.class
+*.xlsx
+Clases_Profesores
+*.docx
+*.pdf
