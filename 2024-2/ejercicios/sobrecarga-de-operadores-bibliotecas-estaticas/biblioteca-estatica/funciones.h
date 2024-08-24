@@ -38,7 +38,6 @@ void calcular(Empleado*&);
 void calcular(double, double, double&);
 void descuento(Empleado*&, double=0.08);
 
-
 template<typename T>
 void operator>>(Datos& datos, T*& registros) {
     int num;
