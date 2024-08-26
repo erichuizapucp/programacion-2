@@ -11,6 +11,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <cstring>
 #include "estructuras.h"
 
 using namespace std;
@@ -20,10 +21,10 @@ void operator>>(ifstream&, Empleado*&); // carga los datos de clientes
 bool operator>>(ifstream&, Cliente&); // inserta un cliente
 bool operator>>(ifstream&, Empleado&); // inserta un empleado
 
-ofstream& operator<<(ofstream&, Cliente*); // imprime todos los clientes
-ofstream& operator<<(ofstream&, Empleado*); // imprime todos los empleados
-ofstream& operator<<(ofstream&, Cliente&); // imprime un cliente
-ofstream& operator<<(ofstream&, Empleado&); // imprime un empleado
+ofstream& operator<<(ofstream&, const Cliente*); // imprime todos los clientes
+ofstream& operator<<(ofstream&, const Empleado*); // imprime todos los empleados
+ofstream& operator<<(ofstream&, const Cliente&); // imprime un cliente
+ofstream& operator<<(ofstream&, const Empleado&); // imprime un empleado
 
 void calcularTotales(Cliente*&, double=180.00);
 void calcular(Cliente*&); // calcula los totales de un cliente

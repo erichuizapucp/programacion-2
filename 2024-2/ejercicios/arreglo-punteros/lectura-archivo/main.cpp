@@ -22,6 +22,7 @@ int main(int argc, char** argv) {
     ifstream archivoClientes("clientes.csv");
     if (!archivoClientes.is_open()) {
         cerr << "El archivo clientes.csv no se pudo abrir" << endl;
+        exit(1);
     } 
     
     Cliente* clientes;

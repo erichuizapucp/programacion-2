@@ -68,7 +68,7 @@ void calcularTotales(Cliente*& clientes, double limiteDesc) {
     }
 }
 
-ofstream& operator<<(ofstream& os, Cliente* clientes) {
+ofstream& operator<<(ofstream& os, const Cliente* clientes) {
     os   << setw(8) << "DNI" 
             << setw(10) << "SUBTOTAL" 
             << setw(10) << "DESCUENTO" 
@@ -77,7 +77,7 @@ ofstream& operator<<(ofstream& os, Cliente* clientes) {
             << setw(10) << "TOTAL" 
             << endl;
     
-    for (Cliente* cliente = clientes; cliente->dni != -1; cliente++) {
+    for (const Cliente* cliente = clientes; cliente->dni != -1; cliente++) {
         os << *cliente;
     }
     
@@ -105,7 +105,7 @@ void descuento(double monto, double& descuento, double tarifa) {
 }
 
 
-ofstream& operator<<(ofstream& os, Cliente& cliente) {
+ofstream& operator<<(ofstream& os, const Cliente& cliente) {
     os << left << setw(8) << cliente.dni 
             << right
             << setw(10) << fixed << setprecision(2) << cliente.subTotal 
@@ -118,21 +118,21 @@ ofstream& operator<<(ofstream& os, Cliente& cliente) {
     return os;
 }
 
-ofstream& operator<<(ofstream& os, Empleado* empleados) {
+ofstream& operator<<(ofstream& os, const Empleado* empleados) {
     os  << setw(8) << "DNI" 
             << setw(15) << "SUELDOBRUTO" 
             << setw(10) << "IMPUESTOS" 
             << setw(15) << "SUELDONETO" 
             << endl;
     
-    for (Empleado* empleado = empleados; empleado->dni != -1; empleado++) {
+    for (const Empleado* empleado = empleados; empleado->dni != -1; empleado++) {
         os << *empleado;
     }
     
     return os;
 }
 
-ofstream& operator<<(ofstream& os, Empleado& empleado) {
+ofstream& operator<<(ofstream& os, const Empleado& empleado) {
     os << left << setw(8) << empleado.dni 
             << right 
             << setw(15) << fixed << setprecision(2) << empleado.sueldoBruto 

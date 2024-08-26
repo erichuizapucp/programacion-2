@@ -18,13 +18,13 @@ using namespace std;
 template<typename T>
 void operator>>(Datos&, T*&); // carga los datos genérico
 
-ostream& operator<<(ostream&, Cliente*); // imprime todos los clientes
-ostream& operator<<(ostream&, Empleado*); // imprime todos los empleados
+ostream& operator<<(ostream&, const Cliente*); // imprime todos los clientes
+ostream& operator<<(ostream&, const Empleado*); // imprime todos los empleados
 
 bool operator>>(Datos&, Cliente&); // inserta un cliente
-ostream& operator<<(ostream&, Cliente&); // imprime un cliente
+ostream& operator<<(ostream&, const Cliente&); // imprime un cliente
 bool operator>>(Datos&, Empleado&); // inserta un empleado
-ostream& operator<<(ostream&, Empleado&); // imprime un empleado
+ostream& operator<<(ostream&, const Empleado&); // imprime un empleado
 
 void calcularTotales(Cliente*&, double=180.00);
 void calcular(Cliente*&); // calcula los totales de un cliente
