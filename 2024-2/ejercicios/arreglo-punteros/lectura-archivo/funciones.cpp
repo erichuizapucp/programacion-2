@@ -14,10 +14,14 @@ bool operator>>(ifstream& archivo, Cliente& cliente) {
     if (!archivo.eof() && archivo >> cliente.dni) {
         char c;
         
-        archivo >> c;
+        archivo >> c; // lee la coma
         cliente.nombre = new char[100];
+        // lee el nombre del cliente del archivo y 
+        // coloca esos caracteres en la memoria asignada
+        // dinámicamente. También salta la coma.
         archivo.getline(cliente.nombre, 100, ',');
         archivo >> cliente.subTotal;
+        // Lee el salto de línea
         archivo >> c;
         
         return true;
