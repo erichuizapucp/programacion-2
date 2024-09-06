@@ -106,3 +106,19 @@ ostream& operator<<(ostream& os, const Empleado* empleado) {
     
     return os;
 }
+
+bool operator<=(const Empleado& e1, const Empleado& e2) {
+    return e1.sueldoBruto <= e2.sueldoBruto;
+}
+
+bool operator>=(const Empleado& e1, const Empleado& e2) {
+    return e1.sueldoBruto >= e2.sueldoBruto;
+}
+
+bool operator<=(const Empleado& e1, const Empleado& e2) {
+    return strcmp(e1.nombre, e2.nombre) <= 0;
+}
+
+bool operator>=(const Empleado& e1, const Empleado& e2) {
+    return strcmp(e1.nombre, e2.nombre) >= 0;
+}

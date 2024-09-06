@@ -14,6 +14,8 @@
 
 using namespace std;
 
+const int INCREMENTO = 5;
+
 void cargarNumeros(const char*, int*&, int&);
 void cargarNumeros(const char*, int*&);
 void cargarEmpleados(const char*, Empleado*&, int&);
@@ -21,6 +23,9 @@ void cargarEmpleados(const char*, Empleado*&);
 
 bool operator>>(ifstream&, Empleado&);
 ostream& operator<<(ostream&,const Empleado*);
+
+bool operator<=(const Empleado&, const Empleado&);
+bool operator>=(const Empleado&, const Empleado&);
 
 char* leerCadena(ifstream&, char=',');
 

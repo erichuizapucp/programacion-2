@@ -24,13 +24,10 @@ void cargarDatos(const char* nombreArchivoMesas, const char* nombreArchivoMesero
     abrirArchivo(nombreArchivoMeseros, archivoMeseros);
     
     meseros = new Mesero[MAX_NO_MESEROS];
-    Mesero* meseroPtr = meseros;
-    while (archivoMeseros >> meseroPtr) {
-        meseroPtr++;
-    }
+      
 }
 
-void procesarReservas(const char* nombreArchivo, Mesa*& mesas, Mesero*& meseros, ListaReservas& reservas) {
+void   (const char* nombreArchivo, Mesa*& mesas, Mesero*& meseros, ListaReservas& reservas) {
     ifstream archivo;
     abrirArchivo(nombreArchivo, archivo);
     
