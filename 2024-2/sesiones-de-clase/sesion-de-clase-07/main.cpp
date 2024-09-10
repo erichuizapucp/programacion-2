@@ -34,5 +34,9 @@ int main(int argc, char** argv) {
     delete[] reservas;
     delete[] nombres;
     
+    // TODO: liberar memoria para punteros bi-dimensionales
+    // TODO: libnerar memoria para punteros unidimensionales
+    delete[] propinas;
+    
     return 0;
 }

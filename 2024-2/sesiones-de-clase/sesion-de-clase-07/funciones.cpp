@@ -83,7 +83,7 @@ void cargarPropinasExactas(const char* nombreArchivo, double***& propinas) {
 }
 
 void cargarPropinasExactas(ifstream& archivo, double***& propinas) {
-    int numMesero, numDia = 0;
+    int numMesero = 0, numDia = 0;
     int numDias[BUFFER_CAP] { 0 }, numPropinas[BUFFER_CAP][BUFFER_CAP] { 0 };
     double buffer[BUFFER_CAP][BUFFER_CAP][BUFFER_CAP], propina;    
     char c;
