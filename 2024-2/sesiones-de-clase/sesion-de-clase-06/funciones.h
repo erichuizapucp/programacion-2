@@ -36,16 +36,16 @@ void asignarValorDeCorte(Empleado&);
 char* leerCadena(ifstream&, char=',');
 
 template<typename T>
-void cargarDatos(const char*, T*&, int&);
+void cargarDatos(const char*, T*&, int&, bool=false);
 
 template<typename T>
 void cargarDatos(const char*, T*&);
 
 template<typename T>
-void incrementarEspacios(T*&, int&, int&);
+void incrementarEspacios(T*&, int&, int&, bool);
 
 template<typename T>
-void cargarDatos(const char* nombreArchivo, T*& datos, int& numDatos) {
+void cargarDatos(const char* nombreArchivo, T*& datos, int& numDatos, bool corte) {
     int cap = 0;
     numDatos = 0;
     datos = nullptr;
@@ -55,10 +55,17 @@ void cargarDatos(const char* nombreArchivo, T*& datos, int& numDatos) {
     T dato;
     while (archivo >> dato) {
         if (numDatos == cap) {
-            incrementarEspacios(datos, numDatos, cap);
+            incrementarEspacios(datos, numDatos, cap, corte);
         }
         
-        datos[numDatos] = dato;
+        if (corte) {
+            asignarValorDeCorte(datos[numDatos]);
+            datos[numDatos - 1] = dato;
+        }
+        else {
+            datos[numDatos] = dato;
+        }
+        
         numDatos++;
     }
 }
@@ -67,16 +74,19 @@ template<typename T>
 void cargarDatos(const char* nombreArchivo, T*& datos) {
     int numDatos = 0;
     
-    cargarDatos(nombreArchivo, datos, numDatos);
-    asignarValorDeCorte(datos[numDatos]);
+    cargarDatos(nombreArchivo, datos, numDatos, true);
 }
 
 template<typename T>
-void incrementarEspacios(T*& datos, int& numDatos, int& cap) {
+void incrementarEspacios(T*& datos, int& numDatos, int& cap, bool corte) {
     cap += INCREMENTO;
     
     if (datos == nullptr) {
         datos = new T[cap];
+        if (corte) {
+            asignarValorDeCorte(datos[numDatos]);
+            numDatos++;
+        }
     }
     else {
         T* aux = new T[cap];

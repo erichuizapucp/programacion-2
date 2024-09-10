@@ -1,16 +1,14 @@
 #include "funciones.h"
 
-void cargarMesas(const char* nombreArchivo, int**& mesas) {
+void cargarMesasExactas(const char* nombreArchivo, int**& mesas) {
     ifstream archivo(nombreArchivo, ios::in);
-    cargarMesas(archivo, mesas);
+    cargarMesasExactas(archivo, mesas);
 }
 
-void cargarMesas(ifstream& archivo, int**& mesas) {
+void cargarMesasExactas(ifstream& archivo, int**& mesas) {
     int numMesas = 0;
     
-    int buffer[2][BUFFER_CAP];
-    int* bufferCodigos = *buffer;
-    int* bufferCapacidades = *(buffer + 1);
+    int buffer[BUFFER_CAP][2];
     
     int codigo;
     int capacidad;
@@ -19,8 +17,8 @@ void cargarMesas(ifstream& archivo, int**& mesas) {
         archivo >> capacidad;
         archivo.ignore();
         
-        bufferCodigos[numMesas] = codigo;
-        bufferCapacidades[numMesas] = capacidad;
+        buffer[numMesas][MESAS_POS::CODIGO] = codigo;
+        buffer[numMesas][MESAS_POS::CAPACIDAD] = capacidad;
         
         numMesas++;
     }
@@ -29,26 +27,21 @@ void cargarMesas(ifstream& archivo, int**& mesas) {
     int* codigos = mesas[MESAS_POS::CODIGO] = new int[numMesas + 1];
     int* capacidades = mesas[MESAS_POS::CAPACIDAD] = new int[numMesas + 1];
     
-//    mesas[0] = new int[numMesas + 1];
-//    mesas[1] = new int[numMesas + 1];
-    
     for (int i = 0; i < numMesas; i++) {
-//        mesas[0][i] = bufferCodigos[i];
-//        mesas[1][i] = bufferCapacidades[i];
-        codigos[i] = bufferCodigos[i];
-        capacidades[i] = bufferCapacidades[i];
+        codigos[i] = buffer[i][MESAS_POS::CODIGO];
+        capacidades[i] = buffer[i][MESAS_POS::CAPACIDAD];
     }
     
     codigos[numMesas] = -1;
     capacidades[numMesas] = -1;
 }
 
-void cargarReservas(const char* nombreArchivo, int**& reservas, char**& nombres) {
+void cargarReservasIncremento(const char* nombreArchivo, int**& reservas, char**& nombres) {
     ifstream archivo(nombreArchivo, ios::in);
-    cargarReservas(archivo, reservas, nombres);
+    cargarReservasIncremento(archivo, reservas, nombres);
 }
 
-void cargarReservas(ifstream& archivo, int**& reservas, char**& nombres) {
+void cargarReservasIncremento(ifstream& archivo, int**& reservas, char**& nombres) {
     int numReservas = 0;
     int cap = 0;
     
@@ -74,26 +67,103 @@ void cargarReservas(ifstream& archivo, int**& reservas, char**& nombres) {
                 numReservas++;
             }
         }
-        
-//        reservas[0][numReservas] = dni;
-//        reservas[1][numReservas] = noPersonas;
-        
         asignarValores(dnis, noPersonasPtr, nombres, numReservas, -1, -1, nullptr);
         asignarValores(dnis, noPersonasPtr, nombres, numReservas - 1, dni, noPersonas, nombre);
-        
-//        dnis[numReservas] = -1;
-//        capacidades[numReservas] = -1;
-//        nombres[numReservas] = nullptr;
-//        
-//        dnis[numReservas - 1] = dni;
-//        capacidades[numReservas - 1] = noPersonas;
-//        nombres[numReservas - 1] = nombre;
         
         numReservas++;
     }
     reservas = new int*[2];
     reservas[RESERVAS_POS::DNI] = dnis;
     reservas[RESERVAS_POS::NO_PERSONAS] = noPersonasPtr;
+}
+
+void cargarPropinasExactas(const char* nombreArchivo, double***& propinas) {
+    ifstream archivo(nombreArchivo, ios::in);
+    cargarPropinasExactas(archivo, propinas);
+}
+
+void cargarPropinasExactas(ifstream& archivo, double***& propinas) {
+    int numMesero, numDia = 0;
+    int numDias[BUFFER_CAP] { 0 }, numPropinas[BUFFER_CAP][BUFFER_CAP] { 0 };
+    double buffer[BUFFER_CAP][BUFFER_CAP][BUFFER_CAP], propina;    
+    char c;
+    
+    while (!archivo.eof() && archivo >> propina) {
+        if (propina > 0.00) { // cuando se dejó propina
+            int numPropina = numPropinas[numMesero][numDia]++;
+            buffer[numMesero][numDia][numPropina] = propina;
+        }
+        
+        c = archivo.get(); // Leer el siguiente carácter        
+        if (c == ',') {
+            // Si es una coma, pasa al siguiente conjunto de propinas (día)
+            numDia = ++numDias[numMesero];
+        }
+        else if (c == '\n') { 
+            // Si es un salto de línea, cambia al siguiente mesero
+            numDia = 0;
+            numMesero++;
+        }
+    }
+    
+    propinas = new double**[numMesero + 1];
+    for (int i = 0; i < numMesero; i++) {
+        int noDias = numDias[i];
+        asignarPropinasMesero(buffer[i], noDias, numPropinas[i], propinas[i]);
+    }
+    propinas[numMesero] = nullptr;
+}
+
+void asignarPropinasMesero(const double buffPropMesero[][BUFFER_CAP], const int numDias, const int* numPropinas, double**& propinasMesero) {
+    propinasMesero = new double*[numDias + 1];
+    
+    for (int i = 0; i < numDias; i++) {
+        asignarPropinasDiarias(buffPropMesero[i], numPropinas[i], propinasMesero[i]);
+    }
+    
+    propinasMesero[numDias] = nullptr;
+}
+
+void asignarPropinasDiarias(const double buffPropDiarias[BUFFER_CAP], const int num, double*& propDiarias) {
+    propDiarias = new double[num + 1];
+    
+    for (int i = 0; i < num; i++) {
+        propDiarias[i] = buffPropDiarias[i];
+    }
+    
+    propDiarias[num] = -1.00;
+}
+
+void mostrarPropinas(const char* nombreArchivo, const double*** propinas) {
+    ofstream archivo(nombreArchivo, ios::out);
+    mostrarPropinas(archivo, propinas);
+}
+
+void mostrarPropinas(ofstream& archivo, const double*** propinas) {
+    for (int i = 0; propinas[i]; i++) {
+        const double** propinasMesero = propinas[i];
+        archivo << "Mesero: " << i + 1 << endl;
+        archivo << propinasMesero << endl;
+    }
+}
+
+ofstream& operator<<(ofstream& archivo, const double** propinasMesero) {
+    for (int i = 0; propinasMesero[i]; i++) {
+        const double* propinasDiarias = propinasMesero[i];
+        archivo << "Día: " << i + 1 << endl; 
+        archivo << propinasDiarias << endl;
+    }
+    
+    return archivo;
+}
+
+ofstream& operator<<(ofstream& archivo, const double* propinasDiarias) {
+    for (int i = 0; propinasDiarias[i] != -1.00; i++) {
+        double propina = propinasDiarias[i];
+        archivo << setw(6) << fixed << setprecision(2) << propina;
+    }
+    
+    return archivo;
 }
 
 void asignarValores(int*& dnis, int*& capacidades, char**& nombres, int numDatos, int dni, int capacidad, char* nombre) {

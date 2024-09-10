@@ -1,0 +1,21 @@
+DNI     NOMBRE                                  NO      
+13254768Martín González                       2       
+24837691Lucía Fernández                       4       
+35947126Andrés Moreno                          6       
+46958132Carla López                            3       
+57483920José Álvarez                          5       
+68924735Isabel Ruiz                             2       
+79458391Javier Morales                          8       
+80529647Patricia Martínez                      2       
+91372846Manuel Torres                           3       
+12489056Elena Ramírez                          1       
+23567904Antonio Pérez                          3       
+34679123Sofía Gómez                           6       
+45789214David Castro                            2       
+56890325Claudia Vargas                          2       
+67901436Francisco Sánchez                      5       
+78123547María López                           3       
+89234658Óscar Reyes                            4       
+90345769Laura Morales                           2       
+1456870 Juan Carlos López                      9       
+12567984Paola Herrera                           2       
