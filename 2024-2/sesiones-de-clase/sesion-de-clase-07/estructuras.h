@@ -8,12 +8,12 @@
 #ifndef ESTRUCTURAS_H
 #define ESTRUCTURAS_H
 
-struct Empleado {
+struct Mesero {
     int dni;
     char* nombre;
     double sueldoBruto;
     int experiencia;
-    double** propinas;
+    double propinas;
 };
 
 #endif /* ESTRUCTURAS_H */

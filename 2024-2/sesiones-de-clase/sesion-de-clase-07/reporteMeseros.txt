@@ -1,0 +1,10 @@
+DNI            NOMBRE                                            SUELDO              EXPERIENCIA         PROPINAS       
+93054678       Miguel González                                  2000.00             2                            854.65
+46587913       Carlos Rodríguez                                 2000.00             2                            830.22
+57698134       Laura Sánchez                                    2100.00             1                            770.08
+28374652       Ana Martínez                                     1800.00             1                            763.69
+19283745       María Gómez                                     2300.00             2                            756.85
+82943567       Sofía Ruiz                                       3400.00             6                            753.59
+37465829       Pedro López                                      4400.00             8                            723.45
+79832456       Juan Pérez                                       1900.00             2                            691.64
+68721345       Alejandro Díaz                                   3500.00             5                            654.41
