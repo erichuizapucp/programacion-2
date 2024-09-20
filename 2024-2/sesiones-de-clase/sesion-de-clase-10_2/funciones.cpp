@@ -172,6 +172,10 @@ bool buscar(const int dni, const void* datos, void*& mesero) {
     // recibe un puntero al elemento que se va a buscar.
     // el elemento que se buscará es un void**, entonces &llave
     void* res = bsearch(&llave, datos, num, sizeof(void*), compararDni);
+    
+    delete (int*)llave[Mesero::DNI];
+    delete[] llave;
+    
     if (res != nullptr) {
         // retorna un puntero al elemento encontrado
         // como el elemento es un void** un puntero a un void** es un void***
@@ -181,9 +185,6 @@ bool buscar(const int dni, const void* datos, void*& mesero) {
         
         return true;
     }
-    
-    delete (int*)llave[Mesero::DNI];
-    delete[] llave;
     
     return false;
 }
