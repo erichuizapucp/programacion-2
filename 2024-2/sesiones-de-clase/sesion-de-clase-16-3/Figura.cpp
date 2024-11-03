@@ -18,6 +18,11 @@ ostream& operator<<(ostream& os, const Figura& f) {
     return os;
 }
 
+ifstream& operator>>(ifstream& is, const Figura& f) {
+    f.imprimir(is);
+    return is;
+}
+
 Figura::~Figura() {
     cout << "Destructor de Figura" << endl;
 }

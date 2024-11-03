@@ -9,20 +9,22 @@
 #define FIGURA_H
 
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
 class Figura {
+protected:
+    virtual void imprimir(ostream&) const = 0;
+    virtual void cargar(ifstream&) const = 0;
 public:
     Figura();
     Figura(const Figura& orig);
     
-    virtual void imprimir(ostream&) const = 0;
+    friend ostream& operator<<(ostream&, const Figura&);
+    friend ifstream& operator>>(ifstream&, const Figura&);
     
     virtual ~Figura();
 };
 
-ostream& operator<<(ostream&, const Figura&);
-
 #endif /* FIGURA_H */
-

@@ -13,6 +13,8 @@
 class Tuberia : public Cilindro { 
 private:
     double radio2;
+protected:
+    virtual void imprimir(ostream&) const;
 public:
     Tuberia();
     Tuberia(double radio, double altura, double radio2);
@@ -20,7 +22,6 @@ public:
     
     double getRadio2() const;
     virtual double calcularArea() const;
-    void imprimir(ostream&) const;
     void operator=(const Tuberia&);
     
     virtual ~Tuberia();

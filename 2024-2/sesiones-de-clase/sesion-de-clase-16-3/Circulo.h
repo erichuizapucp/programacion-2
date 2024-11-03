@@ -16,6 +16,8 @@ using namespace std;
 class Circulo : public Figura {
 private:
     double radio;
+protected:
+    virtual void imprimir(ostream&) const;
 public:
     Circulo();
     Circulo(double);
@@ -24,7 +26,6 @@ public:
     double getRadio() const;
     virtual double calcularArea() const;
     double calcularCircunferencia() const;
-    virtual void imprimir(ostream&) const;
     
     void operator=(const Circulo&);
     
@@ -32,4 +33,3 @@ public:
 };
 
 #endif /* CIRCULO_H */
-

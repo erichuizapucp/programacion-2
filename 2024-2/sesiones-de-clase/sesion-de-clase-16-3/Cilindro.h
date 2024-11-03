@@ -16,6 +16,8 @@ using namespace std;
 class Cilindro : public Circulo {
 private:
     double altura;
+protected:
+    virtual void imprimir(ostream&) const;
 public:
     Cilindro();
     Cilindro(double radio, double altura);
@@ -23,7 +25,6 @@ public:
     
     double getAltura() const;
     virtual double calcularArea() const;
-    virtual void imprimir(ostream&) const;
     
     void operator=(const Cilindro&);
     
