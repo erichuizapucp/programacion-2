@@ -1,0 +1,106 @@
+============================= Menú del día ======================================
+Café: Espresso Doble
+Un espresso intenso con una mezcla de Café Arábica y Robusta para un sabor equilibrado y fuerte
+Precio: S/ 2.50
+Disponible: Si
+---------------------------------------------------------------------------------
+Café: Café Latte
+Suave y cremoso elaborado con una mezcla de cafés y leche vaporizada para una textura delicada
+Precio: S/ 3.20
+Disponible: Si
+---------------------------------------------------------------------------------
+Café: Cappuccino Clásico
+Clásico cappuccino con una perfecta proporción de espresso leche espumosa y un toque de cacao
+Precio: S/ 3.00
+Disponible: Si
+---------------------------------------------------------------------------------
+Café: Americano
+Un café Robusta diluido ofreciendo un sabor fuerte pero menos concentrado
+Precio: S/ 2.00
+Disponible: Si
+---------------------------------------------------------------------------------
+Chocolate: Mocha de Chocolate Oscuro
+Una deliciosa combinación de espresso y chocolate oscuro coronado con crema batida
+Precio: S/ 3.80
+Disponible: Si
+---------------------------------------------------------------------------------
+Chocolate: Chocolate Caliente Cremoso
+Chocolate caliente espeso con un toque cremoso ideal para los días fríos
+Precio: S/ 4.00
+Disponible: Si
+---------------------------------------------------------------------------------
+Té: Té Verde Matcha
+Té verde matcha en polvo con un sabor terroso y ligeramente dulce
+Precio: S/ 2.70
+Disponible: Si
+---------------------------------------------------------------------------------
+Té: Té Negro Earl Grey
+Té negro de alta calidad con el aroma cítrico del aceite de bergamota
+Precio: S/ 2.50
+Disponible: Si
+---------------------------------------------------------------------------------
+Infusión: Infusión de Manzanilla
+Suave infusión de flores de manzanilla perfecta para relajarse
+Precio: S/ 2.20
+Disponible: Si
+---------------------------------------------------------------------------------
+Infusión: Infusión de Lavanda
+Relajante infusión de lavanda seca ideal para calmar los sentidos
+Precio: S/ 2.50
+Disponible: Si
+---------------------------------------------------------------------------------
+Café: Café con Leche Descremada
+Café suave con leche descremada para un sabor ligero pero satisfactorio
+Precio: S/ 3.00
+Disponible: Si
+---------------------------------------------------------------------------------
+Café: Café Cold Brew
+Café infusionado en frío con un sabor suave y menos ácido
+Precio: S/ 3.50
+Disponible: Si
+---------------------------------------------------------------------------------
+Té: Té Rooibos Vainilla
+Infusión de rooibos con un toque de vainilla naturalmente dulce y sin cafeína
+Precio: S/ 2.60
+Disponible: Si
+---------------------------------------------------------------------------------
+Té: Chai Latte
+Mezcla especiada de té negro leche vaporizada y especias como canela y cardamomo
+Precio: S/ 3.20
+Disponible: Si
+---------------------------------------------------------------------------------
+Infusión: Té de Jengibre con Miel
+Infusión picante de jengibre fresco y miel de abeja para calentar el cuerpo
+Precio: S/ 2.80
+Disponible: Si
+---------------------------------------------------------------------------------
+Chocolate: Chocolate con Canela
+Delicioso chocolate caliente con un toque de canela molida
+Precio: S/ 3.90
+Disponible: Si
+---------------------------------------------------------------------------------
+Infusión: Infusión de Jengibre y Nuez Moscada
+Infusión exótica de jengibre fresco y nuez moscada para un sabor cálido y especiado
+Precio: S/ 3.10
+Disponible: Si
+---------------------------------------------------------------------------------
+Café: Latte de Almendra y Vainilla
+Café latte con leche de almendra y un toque de vainilla líquida perfecto para intolerantes a la lactosa
+Precio: S/ 3.60
+Disponible: Si
+---------------------------------------------------------------------------------
+Té: Té Verde con Jengibre y Miel
+Fusión de té verde con jengibre fresco y un toque de miel para una combinación refrescante y cálida
+Precio: S/ 3.00
+Disponible: Si
+---------------------------------------------------------------------------------
+Chocolate: Chocolate Blanco Caliente
+Dulce y cremoso chocolate blanco caliente una indulgencia suave
+Precio: S/ 4.20
+Disponible: Si
+---------------------------------------------------------------------------------
+Café: Flat White
+Café fuerte con una capa fina de leche vaporizada ideal para los amantes del café más intenso
+Precio: S/ 3.50
+Disponible: Si
+---------------------------------------------------------------------------------
