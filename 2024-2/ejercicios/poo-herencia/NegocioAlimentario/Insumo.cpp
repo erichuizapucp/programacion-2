@@ -8,8 +8,6 @@
 #include "Insumo.h"
 
 Insumo::Insumo() {
-    cout << "Constructor Insumo" << endl;
-    
     codigo = {};
     nombre = {};
     cantDisponible = {};
@@ -42,13 +40,11 @@ char* Insumo::getUnidadMedida() const {
 }
 
 void Insumo::setCodigo(const char* codigo) {
-    this->codigo = new char[strlen(codigo) + 1];
-    strcpy(this->codigo, codigo);
+    copiarCadena(this->codigo, codigo);
 }
 
 void Insumo::setNombre(const char* nombre) {
-    this->nombre = new char[strlen(nombre) + 1];
-    strcpy(this->nombre, nombre);
+    copiarCadena(this->nombre, nombre);
 }
 
 void Insumo::setCantDisponible(const double cantDisponible) {
@@ -60,8 +56,27 @@ void Insumo::setCantRequerida(const double cantRequerida) {
 }
 
 void Insumo::setUnidadMedida(const char* unidadMedida) {
-    this->unidadMedida = new char[strlen(unidadMedida) + 1];
-    strcpy(this->unidadMedida, unidadMedida);
+    copiarCadena(this->unidadMedida, unidadMedida);
+}
+
+bool Insumo::crear(ifstream& archivo) {
+    if (!archivo.eof()) {
+        this->codigo = leeCadena(archivo);
+        this->nombre = leeCadena(archivo);
+        
+        archivo >> this->cantDisponible;
+        this->cantRequerida = 0.00;
+        archivo.ignore();
+        
+        this->unidadMedida = leeCadena(archivo, '\n');
+        
+        return true;
+    }
+    
+    return false;
+}
+
+void Insumo::imprimir(ofstream&) const {
 }
 
 void Insumo::operator=(const Insumo& insumo) {
@@ -73,8 +88,6 @@ void Insumo::operator=(const Insumo& insumo) {
 }
 
 Insumo::~Insumo() {
-    cout << "Destructor Insumo" << endl;
-    
     delete[] codigo;
     delete[] nombre;
     delete[] unidadMedida;

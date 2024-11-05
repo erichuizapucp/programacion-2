@@ -19,7 +19,7 @@ ostream& operator<<(ostream& os, const Figura& f) {
 }
 
 ifstream& operator>>(ifstream& is, const Figura& f) {
-    f.imprimir(is);
+    f.cargar(is);
     return is;
 }
 

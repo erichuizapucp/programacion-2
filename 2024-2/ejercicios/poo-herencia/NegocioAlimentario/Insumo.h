@@ -11,15 +11,20 @@
 #include <iostream>
 #include <cstring>
 
+#include "Registro.h"
+
 using namespace std;
 
-class Insumo {
+class Insumo : public Registro {
 private:
     char* codigo;
     char* nombre;
     double cantDisponible;
     double cantRequerida;
     char* unidadMedida;
+protected:
+    virtual bool crear(ifstream&);
+    virtual void imprimir(ofstream&) const;
 public:
     Insumo();
     Insumo(const Insumo& orig);
@@ -38,7 +43,7 @@ public:
     
     void operator=(const Insumo&);
     
-    ~Insumo();
+    virtual ~Insumo();
 };
 
 #endif /* INSUMOINVENTARIO_H */

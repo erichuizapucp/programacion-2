@@ -11,11 +11,14 @@
 #include "Insumo.h"
 
 
-class Ingrediente {
+class Ingrediente : public Registro {
 private:
     double cantidad;
     char* unidadMedida;
     Insumo* insumo;
+protected:
+    virtual bool crear(ifstream&);
+    virtual void imprimir(ofstream&) const;
 public:
     Ingrediente();
     Ingrediente(const Ingrediente& orig);
@@ -30,7 +33,7 @@ public:
     
     void operator=(const Ingrediente&);
     
-    ~Ingrediente();
+    virtual ~Ingrediente();
 };
 
 #endif /* INGREDIENTE_H */

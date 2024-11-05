@@ -8,6 +8,7 @@
 #include "Ingrediente.h"
 
 Ingrediente::Ingrediente() {
+    unidadMedida = {};
 }
 
 Ingrediente::Ingrediente(const Ingrediente& orig) {
@@ -31,12 +32,18 @@ void Ingrediente::setInsumo(Insumo* insumo) {
 }
 
 void Ingrediente::setUnidadMedida(const char* unidadMedida) {
-    this->unidadMedida = new char[strlen(unidadMedida) + 1];
-    strcpy(this->unidadMedida, unidadMedida);
+    copiarCadena(this->unidadMedida, unidadMedida);
 }
     
 void Ingrediente::setCantidad(const double cantidad) {
     this->cantidad = cantidad;
+}
+
+bool Ingrediente::crear(ifstream& archivo) {
+    return false;
+}
+
+void Ingrediente::imprimir(ofstream&) const {
 }
 
 void Ingrediente::operator=(const Ingrediente& ingrediente) {
