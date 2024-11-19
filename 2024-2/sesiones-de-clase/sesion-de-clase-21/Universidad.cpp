@@ -164,12 +164,13 @@ void Universidad::imprimirMatricula(ofstream& archivo) {
         archivo << "Nombre del Curso: " << curso.getNombre() << endl;
         archivo << "Lista de matriculados: " << endl;
         
-        list<AlumnoUniversitario> listaMatriculados = 
-                matricula[curso];
+        list<AlumnoUniversitario> listaMatriculados = matricula[curso];
         
         for (list<AlumnoUniversitario>::iterator itMat = listaMatriculados.begin(); itMat != listaMatriculados.end(); ++itMat) {
             AlumnoUniversitario alumno = *itMat;
-            archivo << "Código del Alumno: " << alumno.getCodigo() << ", Nombre del Alumno: " << alumno.getNombre() << " " << alumno.getApellido() << endl;
+            archivo << "Código del Alumno: " << alumno.getCodigo() 
+                    << ", Nombre del Alumno: " << alumno.getNombre() 
+                    << " " << alumno.getApellido() << endl;
         }
         archivo << "============================================================" << endl;
     }
@@ -177,4 +178,3 @@ void Universidad::imprimirMatricula(ofstream& archivo) {
 
 Universidad::~Universidad() {
 }
-

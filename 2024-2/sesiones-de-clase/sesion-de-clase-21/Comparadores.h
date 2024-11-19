@@ -12,12 +12,12 @@
 
 class OrdenaAlumnoPorNombre {
 public:
-    bool operator()(AlumnoUniversitario&, AlumnoUniversitario&) const;
+    bool operator()(const AlumnoUniversitario&, const AlumnoUniversitario&) const;
 };
 
 class OrdenaAlumnoPorCodigo {
 public:
-    bool operator()(AlumnoUniversitario&, AlumnoUniversitario&) const;
+    bool operator()(const AlumnoUniversitario&, const AlumnoUniversitario&) const;
 };
 
 #endif /* COMPARADORES_H */
