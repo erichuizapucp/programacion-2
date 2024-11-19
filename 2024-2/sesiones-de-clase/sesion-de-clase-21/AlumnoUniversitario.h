@@ -14,7 +14,7 @@ using namespace std;
 
 class AlumnoUniversitario {
 private:
-    Alumno* alumnoPtr;
+    Alumno* alumnoPtr; // Raw Pointer
 public:
     AlumnoUniversitario();
     AlumnoUniversitario(const AlumnoUniversitario& orig);
@@ -24,8 +24,11 @@ public:
     char getTipo() const;
     string getNombre() const;
     string getApellido() const;
+    // Sobrecarga del operador less - Inmutable
     bool operator<(const AlumnoUniversitario&) const;
+    // Sobrecarga del operador greather - Inmutable
     bool operator>(const AlumnoUniversitario&) const;
+    // Sobrecarga del operador de asignación de copia - Mutable
     AlumnoUniversitario& operator=(const AlumnoUniversitario&);
     
     friend ifstream& operator>>(ifstream&, AlumnoUniversitario&);

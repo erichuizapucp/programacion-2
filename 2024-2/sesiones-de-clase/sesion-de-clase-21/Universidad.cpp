@@ -97,11 +97,14 @@ MapaInscripciones Universidad::cargarInscripciones(ifstream& archivo) {
         archivo >> codigoAlumno;
         archivo.ignore();
         
+        // Se busca en el vector de cursos. Se puede reemplazar por un una función de búsqueda
+        // for -> if (codigoCurso == curso.getCodigoCurso).
         Curso curso = *find_if(cursos.begin(), cursos.end(), 
                 [codigoCurso](const Curso& curso) {
             return curso.getCodigo() == codigoCurso;
         });
         
+        // Si aún no hay inscripciones para el curso se crea el mapa
         if (inscripciones.find(curso) == inscripciones.end()) {
             InscripcionesCurso inscripcionAlumno;
             inscripciones[curso] = inscripcionAlumno;
@@ -112,6 +115,8 @@ MapaInscripciones Universidad::cargarInscripciones(ifstream& archivo) {
             return alumno.getCodigo() == codigoAlumno;
         });
         
+        // inscripciones[curso] devuelve la Priority Queue de inscripciones en el curso
+        // .push registra la inscripción de un alumno en el Curso.
         inscripciones[curso].push(alumno);
     }
     

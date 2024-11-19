@@ -19,7 +19,11 @@
 
 using namespace std;
 
-using InscripcionesCurso = priority_queue<AlumnoUniversitario, vector<AlumnoUniversitario>, greater<AlumnoUniversitario>>;
+using InscripcionesCurso = priority_queue<
+    AlumnoUniversitario, // tipo de dato
+    vector<AlumnoUniversitario>, // estructura interna
+    greater<AlumnoUniversitario> // comparador
+>;
 using MapaInscripciones = map<Curso, InscripcionesCurso>;
 
 class Universidad {
