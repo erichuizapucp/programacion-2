@@ -20,7 +20,11 @@ private:
 public:
     AlumnoUniversitario();
     AlumnoUniversitario(const AlumnoUniversitario&);
+    AlumnoUniversitario(AlumnoUniversitario&&);
     virtual ~AlumnoUniversitario();
+    
+    AlumnoUniversitario& operator=(const AlumnoUniversitario&);
+    AlumnoUniversitario& operator=(AlumnoUniversitario&&);
     
     friend bool operator>>(ifstream&, AlumnoUniversitario&);
     friend ofstream& operator<<(ofstream&, const AlumnoUniversitario&);

@@ -1,0 +1,7 @@
+    100003                 Ana              Gómez   19    1   12 2023
+    100007              Carlos               Lopez   20    2   11 2022
+    100006               Emily             Johnson   23    3   12   FranciaUniversidad-de-Paris    4
+    100001                Juan              Pérez   20    3   16 2021
+    100005                Luis           Martínez   22    5   13 2020
+    100004               Marco               Rossi   21    4   18    Italia Universidad-de-Roma   12
+    100002               Sarah               Smith   22    2   18Estados-UnidosUniversidad-de-California    6

@@ -1,0 +1,7 @@
+                Juan              Pérez   20    3 2021
+               Sarah               Smith   22    2Estados-UnidosUniversidad-de-California    6
+                 Ana              Gómez   19    1 2023
+               Marco               Rossi   21    4    Italia Universidad-de-Roma   12
+                Luis           Martínez   22    5 2020
+               Emily             Johnson   23    3   FranciaUniversidad-de-Paris    4
+              Carlos               Lopez   20    2 2022

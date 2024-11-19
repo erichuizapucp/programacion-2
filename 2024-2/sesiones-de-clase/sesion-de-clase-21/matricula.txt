@@ -1,0 +1,80 @@
+============================================================
+Código del Curso: 101
+Nombre del Curso: Matemáticas Básicas
+Lista de matriculados: 
+Código del Alumno: 100003, Nombre del Alumno: Ana Gómez
+Código del Alumno: 100001, Nombre del Alumno: Juan Pérez
+Código del Alumno: 100002, Nombre del Alumno: Sarah Smith
+============================================================
+============================================================
+Código del Curso: 102
+Nombre del Curso: Física General
+Lista de matriculados: 
+Código del Alumno: 100006, Nombre del Alumno: Emily Johnson
+Código del Alumno: 100005, Nombre del Alumno: Luis Martínez
+Código del Alumno: 100001, Nombre del Alumno: Juan Pérez
+============================================================
+============================================================
+Código del Curso: 103
+Nombre del Curso: Programación I
+Lista de matriculados: 
+Código del Alumno: 100003, Nombre del Alumno: Ana Gómez
+Código del Alumno: 100006, Nombre del Alumno: Emily Johnson
+Código del Alumno: 100001, Nombre del Alumno: Juan Pérez
+============================================================
+============================================================
+Código del Curso: 104
+Nombre del Curso: Química Orgánica
+Lista de matriculados: 
+Código del Alumno: 100003, Nombre del Alumno: Ana Gómez
+Código del Alumno: 100006, Nombre del Alumno: Emily Johnson
+Código del Alumno: 100005, Nombre del Alumno: Luis Martínez
+============================================================
+============================================================
+Código del Curso: 105
+Nombre del Curso: Historia Universal
+Lista de matriculados: 
+Código del Alumno: 100005, Nombre del Alumno: Luis Martínez
+Código del Alumno: 100001, Nombre del Alumno: Juan Pérez
+Código del Alumno: 100002, Nombre del Alumno: Sarah Smith
+============================================================
+============================================================
+Código del Curso: 106
+Nombre del Curso: Ética Profesional
+Lista de matriculados: 
+Código del Alumno: 100003, Nombre del Alumno: Ana Gómez
+Código del Alumno: 100006, Nombre del Alumno: Emily Johnson
+Código del Alumno: 100005, Nombre del Alumno: Luis Martínez
+============================================================
+============================================================
+Código del Curso: 107
+Nombre del Curso: Microeconomía
+Lista de matriculados: 
+Código del Alumno: 100006, Nombre del Alumno: Emily Johnson
+Código del Alumno: 100001, Nombre del Alumno: Juan Pérez
+Código del Alumno: 100002, Nombre del Alumno: Sarah Smith
+============================================================
+============================================================
+Código del Curso: 108
+Nombre del Curso: Introducción a la Filosofía
+Lista de matriculados: 
+Código del Alumno: 100003, Nombre del Alumno: Ana Gómez
+Código del Alumno: 100006, Nombre del Alumno: Emily Johnson
+Código del Alumno: 100005, Nombre del Alumno: Luis Martínez
+============================================================
+============================================================
+Código del Curso: 109
+Nombre del Curso: Álgebra Lineal
+Lista de matriculados: 
+Código del Alumno: 100003, Nombre del Alumno: Ana Gómez
+Código del Alumno: 100006, Nombre del Alumno: Emily Johnson
+Código del Alumno: 100005, Nombre del Alumno: Luis Martínez
+============================================================
+============================================================
+Código del Curso: 110
+Nombre del Curso: Literatura Clásica
+Lista de matriculados: 
+Código del Alumno: 100006, Nombre del Alumno: Emily Johnson
+Código del Alumno: 100006, Nombre del Alumno: Emily Johnson
+Código del Alumno: 100005, Nombre del Alumno: Luis Martínez
+============================================================
