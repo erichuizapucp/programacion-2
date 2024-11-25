@@ -38,7 +38,7 @@ void Pila<T>::apilar(T dato) {
 
 template<typename T>
 bool Pila<T>::desapilar(T& dato) {
-    return this->remover(nullptr, dato);
+    return this->remover(this->getCabeza(), dato);
 }
 
 template<typename T>
