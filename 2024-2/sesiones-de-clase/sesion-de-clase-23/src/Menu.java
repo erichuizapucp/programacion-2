@@ -65,8 +65,6 @@ class Menu {
             writer.newLine();
             writer.write("---------------------------------------------------------------------------------");
             writer.newLine();
-
-            System.out.println(".....");
         }
     }
     
