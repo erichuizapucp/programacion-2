@@ -38,6 +38,7 @@ public class Cafeteria {
 
         menu.imprimir(buffer);
         writer.close();
+        buffer.close();
     }
     
     public void reporteMenu() {
