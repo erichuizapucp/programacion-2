@@ -18,7 +18,6 @@ class Inventario {
     
     public void cargarInsumos(File archivo) 
             throws FileNotFoundException {
-        
         Scanner scanner = new Scanner(archivo);
         scanner.useDelimiter(",|\\n");
         

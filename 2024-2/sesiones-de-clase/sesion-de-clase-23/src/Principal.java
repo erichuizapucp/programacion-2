@@ -11,6 +11,7 @@ public class Principal {
         Cafeteria cafeteria = new Cafeteria();
         cafeteria.cargarInventario("inventario.csv");
         cafeteria.cargarMenu("menu.csv");
-        cafeteria.reporteMenu("menu.txt");
+//        cafeteria.reporteMenu("menu.txt");
+        cafeteria.reporteMenu();
     }
 }

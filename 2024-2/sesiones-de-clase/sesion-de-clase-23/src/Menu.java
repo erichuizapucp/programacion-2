@@ -1,7 +1,6 @@
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +53,7 @@ class Menu {
     
     public void imprimir(BufferedWriter writer) throws IOException {
         writer.write("============================= Menú del día ======================================");
+        writer.newLine();
         for (Bebida bebida : bebidas) {
             writer.write(bebida.getTipo() + ": " + bebida.getNombre());
             writer.newLine();
@@ -65,6 +65,17 @@ class Menu {
             writer.newLine();
             writer.write("---------------------------------------------------------------------------------");
             writer.newLine();
+        }
+    }
+    
+    public void imprimir() {
+        System.out.println("============================= Menú del día ======================================");
+        for (Bebida bebida : bebidas) {
+            System.out.println(bebida.getTipo() + ": " + bebida.getNombre());
+            System.out.println(bebida.getDescripcion());
+            System.out.println("Precio: S/ " + String.format("%.2f", bebida.getPrecio()));
+            System.out.println("Disponible: " + (bebida.isDisponible() ? "Si" : "No"));
+            System.out.println("---------------------------------------------------------------------------------");
         }
     }
     
