@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
     cout << "Tamaño: " << v1.size() << endl;
     cout << "Capacidad: " << v1.capacity() << endl;
     
-    list<int> l1();
+    list<int> l1;
     l1.push_back(2);
     l1.push_back(3);
     l1.push_back(4);
@@ -58,6 +58,28 @@ int main(int argc, char** argv) {
     m1[2] = "Test 3";
     
     m1[0] = "Test 0";
+    
+    
+    string s1 = "hola mundo desde Perú";
+    s1.append(", Lima 27 de Noviembre del 2024");
+    
+    cout << s1 << endl;
+    
+    string sb = "Lima";
+    int pos = s1.find(sb);
+    if (pos != -1) {
+        cout << "Se encontró la cadena " << sb << endl;
+        
+        string ss = s1.substr(pos, s1.length() - pos);
+        cout << ss << endl;
+        
+        string ss1 = s1.replace(pos, s1.length() - pos, "");
+        cout << ss1 << endl;
+    }
+    else {
+        cout << "No se encontró la cadena " << sb << endl;
+    }
+    
     
     return 0;
 }
