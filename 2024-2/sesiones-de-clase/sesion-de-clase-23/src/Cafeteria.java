@@ -7,28 +7,33 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Cafeteria {
     private Inventario inventario;
     private Menu menu;
+    private Scanner archivo;
     
     public Cafeteria() {
         inventario = new Inventario();
         menu = new Menu();
+        
+        archivo = new Scanner(System.in);
     }
     
-    public void cargarInventario(final String nombreArchivo) 
-            throws FileNotFoundException {
-        File archivo = new File(nombreArchivo);
+    public Cafeteria(String nombreArchivo) throws FileNotFoundException {
+        inventario = new Inventario();
+        menu = new Menu();
+        
+        archivo = new Scanner(new File(nombreArchivo));
+    }
+    
+    public void cargarInventario() {
         inventario.cargarInsumos(archivo);
     }
     
-    public void cargarMenu(final String nombreArchivo) throws FileNotFoundException {
-        File archivo = new File(nombreArchivo);
+    public void cargarMenu() {
         menu.cargarBebidas(archivo);
-    }
-    
-    public void actualizarMenu(final String nombreArchivo) {
     }
     
     public void reporteMenu(final String nombreArchivo) throws IOException {

@@ -17,18 +17,18 @@ class Menu {
         bebidas = new ArrayList<>();
     }
     
-    public void cargarBebidas(File archivo) throws FileNotFoundException {
-        Scanner scanner = new Scanner(archivo);
-        scanner.useDelimiter(",|\\n");
-        
-        while (scanner.hasNext()) {
+    public void cargarBebidas(Scanner archivo) {
+        while (archivo.hasNext()) {
+            String codigo = archivo.next();
+            if (codigo.equals("FIN")) break;
+            
             Bebida bebida = new Bebida();
-            bebida.setCodigo(scanner.next());
-            bebida.setNombre(scanner.next());
-            bebida.setDescripcion(scanner.next());
-            bebida.setTipo(scanner.next().charAt(0));
-            bebida.setPrecio(scanner.nextDouble());
-            bebida.setCantVent(scanner.nextInt());
+            bebida.setCodigo(codigo);
+            bebida.setNombre(archivo.next());
+            bebida.setDescripcion(archivo.next());
+            bebida.setTipo(archivo.next().charAt(0));
+            bebida.setPrecio(archivo.nextDouble());
+            bebida.setCantVent(archivo.nextInt());
             bebida.setDisponible(true);
             
             bebidas.add(bebida);

@@ -8,6 +8,8 @@
 #ifndef ALUMNOUNIVERSITARIO_H
 #define ALUMNOUNIVERSITARIO_H
 
+#include <memory>
+
 #include "Alumno.h"
 
 using namespace std;

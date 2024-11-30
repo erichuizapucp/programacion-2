@@ -5,7 +5,7 @@ import java.util.Scanner;
  *
  * @author erichuiza
  */
-abstract class Alumno extends Registro {
+abstract class Alumno {
     private char tipo;
     private int codigo;
     private String nombre;
@@ -78,7 +78,6 @@ abstract class Alumno extends Registro {
         return promedio;
     }
     
-    @Override
     public void cargar(Scanner scanner) {
         codigo = scanner.nextInt();
         nombre = scanner.next();
@@ -88,7 +87,6 @@ abstract class Alumno extends Registro {
         promedio = scanner.nextDouble();
     }
     
-    @Override
     public void imprimir() {
         System.out.println("Tipo: " + tipo);
         System.out.println("Codigo: " + codigo);

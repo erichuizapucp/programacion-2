@@ -38,7 +38,9 @@ void Universidad::imprimirAlumnos(const char* nombreArchivo) {
 
 void Universidad::cargarAlumnos(ifstream& archivo) {
     AlumnoUniversitario alumno;
-    while (archivo >> alumno) alumnos.push_back(std::move(alumno));
+    while (archivo >> alumno) {
+        alumnos.push_back(std::move(alumno));
+    }
 }
 
 void Universidad::imprimirAlumnos(ofstream& archivo) {
