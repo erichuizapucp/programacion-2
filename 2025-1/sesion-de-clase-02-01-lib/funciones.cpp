@@ -10,7 +10,7 @@ Pedido& operator+=(Pedido& pedido, Producto& producto) {
     return pedido;
 }
 
-ostream& operator<<(ostream& os, Cliente& cliente) {
+ostream& operator<<(ostream& os, const Cliente& cliente) {
     os << "CLIENTE (Código: " << cliente.codigo << ")" << endl;
     os << "NOMBRE: " << cliente.nombre << endl;
     os << "PEDIDOS (" << cliente.cantPedidos << ")" << endl;

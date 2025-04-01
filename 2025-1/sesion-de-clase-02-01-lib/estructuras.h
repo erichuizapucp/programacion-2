@@ -10,21 +10,21 @@
 
 struct Producto {
     int codigo;
-    char nombre[50];
     double precio;
+    char* nombre;
 };
 
 struct Pedido {
     int codigo;
-    Producto productos[10];
+    Producto* productos;
     int cantProductos;
 };
 
 struct Cliente {
     int codigo;
-    char nombre[50];
-    char apellido[50];
-    Pedido pedidos[10];
+    char* nombre;
+    char* apellido;
+    Pedido* pedidos;
     int cantPedidos;
 };
 

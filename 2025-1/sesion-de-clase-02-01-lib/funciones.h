@@ -33,7 +33,7 @@ bool operator!=(T& a, T& b) {
     return a.codigo != b.codigo;
 }
 
-ostream& operator<<(ostream&, Cliente&);
+ostream& operator<<(ostream&, const Cliente&);
 
 #endif /* FUNCIONES_H */
 
