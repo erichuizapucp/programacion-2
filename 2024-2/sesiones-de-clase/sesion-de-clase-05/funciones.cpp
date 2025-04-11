@@ -1,8 +1,8 @@
 #include "funciones.h"
 
 void cargarNumeros(const char* nombreArchivo, int*& numeros, int& numDatos) {
-    int buffer[1000];
-    numDatos = 0;
+    int buffer[1000]; // buffer temporal - es local - estático
+    numDatos = 0; // es un contador
     
     ifstream archivo(nombreArchivo, ios::in);
     
@@ -18,9 +18,9 @@ void cargarNumeros(const char* nombreArchivo, int*& numeros, int& numDatos) {
     }
 }
 
-void cargarNumeros(const char* nombreArchivo, int*& numeros) {
-    int buffer[1000];
-    int numDatos = 0;
+void cargarNumeros(const char* nombreArchivo, int*& numeros, int& numDatos) {
+    int buffer[1000]; // buffer temporal - es local - estático
+    numDatos = 0; // es un contador
     
     ifstream archivo(nombreArchivo, ios::in);
     
@@ -29,13 +29,11 @@ void cargarNumeros(const char* nombreArchivo, int*& numeros) {
         numDatos++;
     }
     
-    numeros = new int[numDatos + 1];
+    numeros = new int[numDatos];
     
     for (int i = 0; i < numDatos; i++) {
         numeros[i] = buffer[i];
     }
-    
-    numeros[numDatos] = -1;
 }
 
 char* leerCadena(ifstream& archivo, char delimitador) {

@@ -29,5 +29,22 @@ bool operator>=(const Empleado&, const Empleado&);
 
 char* leerCadena(ifstream&, char=',');
 
+template<typename T>
+void cargar(const char* nombreArchivo, T*& datos, int& numDatos) {
+    T buffer[1000];
+    
+    ifstream archivo(nombreArchivo, ios::in);
+    numDatos = 0;
+    while (archivo >> buffer[numDatos]) {
+        numDatos++;
+    }
+    
+    datos = new T[numDatos];
+    
+    for (int i = 0; i < numDatos; i++) {
+        datos[i] = buffer[i];
+    }
+}
+
 #endif /* FUNCIONES_H */
 

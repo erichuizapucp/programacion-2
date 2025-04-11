@@ -58,8 +58,9 @@ int main(int argc, char** argv) {
     
     cargarEmpleados("empleados.csv", empleados);
     
+    ofstream salida("salida.txt");
     for (int i = 0; empleados[i].dni != -1; i++) {
-        cout << &empleados[i];
+        salida << &empleados[i];
     }
     
     delete[] empleados;
