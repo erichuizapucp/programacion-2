@@ -124,16 +124,7 @@ void asignarPedidosClientes(Pedido*& pedidos, int numPedidos, Cliente*& clientes
         int codigoCliente = pedido.codigoCliente;
         
         Cliente* cliente = buscarClientePorCodigo(clientes, codigoCliente);
-        if (cliente) {
-            *cliente += pedido;
-//            int capacidad = cliente->cantPedidos;
-//            
-//            if (cliente->cantPedidos == capacidad) {
-//                incrementarPedidos(cliente->pedidos, cliente->cantPedidos, capacidad);
-//            }
-//
-//            cliente->pedidos[cliente->cantPedidos++] = pedido;
-        }
+        if (cliente) *cliente += pedido;
     }
 }
 
