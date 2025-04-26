@@ -1,3 +1,10 @@
+/* 
+ * File:   main.cpp
+ * Author: erichuiza
+ *
+ * Created on September 15, 2024, 10:09 PM
+ */
+
 #include <cstdlib>
 #include "lista.h"
 #include "cola.h"
@@ -5,8 +12,28 @@
 
 using namespace std;
 
+//int suma(int a, int b) {
+//    return a + b;
+//}
+//
+//int resta(int a, int b) {
+//    return a - b;
+//}
+//
+//int operacion(int a, int b, int (*suma)(int, int), int(*resta)(int, int)) {
+//    int c = suma(a, b);
+//    int d = resta(a, b);
+//    
+//    return c * d;
+//}
 
-int main(int argc, char** argv) {    
+int main(int argc, char** argv) {
+//    int (*p)(int a, int b);
+//    p = suma;
+//    cout << p(2, 3);
+//    int c = operacion(2, 3, suma, resta);
+//    cout << c;
+    
     cout << "Lista de Enteros" << endl;
     Lista lista {};
     inicializar(lista, destruirEntero);

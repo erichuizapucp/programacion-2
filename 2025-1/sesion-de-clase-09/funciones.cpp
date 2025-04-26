@@ -16,8 +16,7 @@ void cargarDatos(
 ) {
     void* dato;
     while (cargar(archivo, dato)) {
-//        insertar(datos, datos.cabeza, dato); // pila
-        insertar(datos, datos.cola, dato); // cola
+        insertar(datos, datos.cabeza, dato);
     }
 }
 

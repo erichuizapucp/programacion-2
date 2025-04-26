@@ -10,7 +10,6 @@
 
 #include <fstream>
 #include "lista.h"
-#include <iomanip>
 
 using namespace std;
 

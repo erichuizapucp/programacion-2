@@ -9,7 +9,8 @@ void cargarInventario(const char* nombreArchivo, void*& inventario) {
 void cargarInventario(ifstream& archivo, void*& inventario) {
     void** buffer = new void*[tam::buffer];
     int num = 0;
-    while (cargarInsumoInventario(archivo, buffer[num])) num++;
+    while (cargarInsumoInventario(archivo, 
+            buffer[num])) num++;
     
     void** vv = new void*[num + 1] {};
     for (int i = 0; i < num; i++) {
