@@ -25,13 +25,12 @@ void Restaurante::cargarMeseros(const char* nombreArchivo) {
             this->incrementar(num, cap);
         }
         
-        this->meseros[num].setDni(mesero.getDni());
-        this->meseros[num].setNombre(mesero.getNombre());
-        this->meseros[num].setSueldo(mesero.getSueldo());
-        this->meseros[num].setExperiencia(mesero.getExperiencia());
+        this->meseros[num] = new Mesero();
+        *this->meseros[num] = mesero;
+        
         num++;
     }
-    this->meseros[num].setDni(-1);
+    this->meseros[num] = nullptr;
 }
 
 bool operator>>(ifstream& archivo, Mesero& mesero) {
@@ -46,10 +45,8 @@ bool operator>>(ifstream& archivo, Mesero& mesero) {
         archivo >> experiencia;
         archivo.ignore();
         
-        mesero.setDni(dni);
-        mesero.setNombre(nombre);
-        mesero.setSueldo(sueldo);
-        mesero.setExperiencia(experiencia);        
+        Mesero temp(dni, nombre, sueldo, experiencia);
+        mesero = temp;
         
         return true;
     }
@@ -60,16 +57,14 @@ bool operator>>(ifstream& archivo, Mesero& mesero) {
 void Restaurante::incrementar(int& num, int& cap) {
     cap += 5;
     if (num == 0 && this->meseros == nullptr) {
-        this->meseros = new Mesero[cap + 1] {};
+        this->meseros = new Mesero*[cap + 1] {};
     }
     else {
-        Mesero* aux = new Mesero[cap + 1] {};
+        Mesero** aux = new Mesero*[cap + 1] {};
 
         for (int i = 0; i < num; i++) {
-            aux[i].setDni(this->meseros[i].getDni());
-            aux[i].setNombre(this->meseros[i].getNombre());
-            aux[i].setSueldo(this->meseros[i].getSueldo());
-            aux[i].setExperiencia(this->meseros[i].getExperiencia());            
+            aux[i] = new Mesero();
+            *aux[i] = *this->meseros[i];
         }
 
         delete[] this->meseros;
@@ -95,9 +90,9 @@ void Restaurante::mostrarMeseros() {
         << setw(15) << "EXPERIENCIA"
         << endl;
 
-    for (int i = 0; this->meseros[i].getDni() != -1; i++) {
-        Mesero mesero = this->meseros[i];
-        cout << mesero;
+    for (int i = 0; this->meseros[i]; i++) {
+        Mesero* mesero = this->meseros[i];
+        cout << *mesero;
     }
 }
 
@@ -112,5 +107,9 @@ char* leerCadena(ifstream& archivo, char delimitador) {
 }
 
 Restaurante::~Restaurante() {
+    for (int i = 0; this->meseros[i]; i++) {
+        delete this->meseros[i];
+    }
+    
     delete[] this->meseros;
 }

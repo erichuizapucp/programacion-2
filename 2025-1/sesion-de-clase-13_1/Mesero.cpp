@@ -11,10 +11,6 @@ Mesero::Mesero() {
 //    cout << "El mesero se instancia." << endl;
 }
 
-Mesero::Mesero(const Mesero& orig) {
-    *this=orig;
-}
-
 int Mesero::getDni() const {
     return dni;
 }
@@ -55,6 +51,10 @@ Mesero& Mesero::operator=(const Mesero& mesero) {
     this->setExperiencia(mesero.getExperiencia());
     
     return *this;
+}
+
+Mesero::Mesero(const Mesero& orig) {
+    *this=orig;
 }
 
 Mesero::~Mesero() {

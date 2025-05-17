@@ -8,6 +8,7 @@
 #include "Restaurante.h"
 
 Restaurante::Restaurante() {
+//    cout << "El restaurante se instancia." << endl;
 }
 
 Restaurante::Restaurante(const Restaurante& orig) {
@@ -45,11 +46,14 @@ bool operator>>(ifstream& archivo, Mesero& mesero) {
         archivo.ignore();
         archivo >> experiencia;
         archivo.ignore();
+
+//        Mesero* m1 = new Mesero(dni, nombre, sueldo, experiencia);
         
         mesero.setDni(dni);
         mesero.setNombre(nombre);
         mesero.setSueldo(sueldo);
         mesero.setExperiencia(experiencia);        
+//        delete[] nombre;
         
         return true;
     }
@@ -112,5 +116,9 @@ char* leerCadena(ifstream& archivo, char delimitador) {
 }
 
 Restaurante::~Restaurante() {
-    delete[] this->meseros;
+    for (int i = 0; this->meseros[i].getDni() != -1; i++) {
+        delete this->meseros[i];
+    }
+//    cout << "El restaurante se destruye." << endl;
 }
+
