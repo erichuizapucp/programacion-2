@@ -11,12 +11,12 @@
 #include <cstring>
 #include <iostream>
 
+#include "Persona.h"
+
 using namespace std;
 
-class Mesero {
+class Mesero : public Persona {
 private:
-    int dni;
-    char* nombre;
     double sueldo;
     int experiencia;
 public:
@@ -24,18 +24,14 @@ public:
     Mesero(int, const char*, double, int);
     Mesero(const Mesero&);
     
-    int getDni() const;
-    void setDni(int);
-    char* getNombre() const;
-    void setNombre(const char*);
     double getSueldo() const;
     void setSueldo(double);
     int getExperiencia() const;
     void setExperiencia(int);
     
     Mesero& operator=(const Mesero&);
-    bool operator>(const Mesero&);
-    bool operator<(const Mesero&);
+    
+    void imprimir(ostream&) const;
     
     virtual ~Mesero();
 };

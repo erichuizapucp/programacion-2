@@ -11,6 +11,17 @@ Mesero::Mesero() {
 //    cout << "El mesero se instancia." << endl;
 }
 
+Mesero::Mesero(int dni, const char* nombre, double sueldo, int experiencia) {
+    this->dni = dni;
+    this->setNombre(nombre);
+    this->sueldo = sueldo;
+    this->experiencia = experiencia;
+}
+
+Mesero::Mesero(const Mesero& orig) {
+    *this=orig;
+}
+
 int Mesero::getDni() const {
     return dni;
 }
@@ -23,7 +34,7 @@ char* Mesero::getNombre() const {
     return this->nombre;
 }
 
-void Mesero::setNombre(char* nombre) {
+void Mesero::setNombre(const char* nombre) {
     this->nombre = new char[strlen(nombre) + 1];
     strcpy(this->nombre, nombre);
 }
@@ -53,11 +64,16 @@ Mesero& Mesero::operator=(const Mesero& mesero) {
     return *this;
 }
 
-Mesero::Mesero(const Mesero& orig) {
-    *this=orig;
+bool Mesero::operator>(const Mesero& mesero) {
+    return this->sueldo > mesero.getSueldo();
+}
+
+bool Mesero::operator<(const Mesero& mesero) {
+    return this->sueldo < mesero.getSueldo();
 }
 
 Mesero::~Mesero() {
+//    cout << "Se libera memoria de un mesero" << endl;
     delete[] nombre;
 }
 

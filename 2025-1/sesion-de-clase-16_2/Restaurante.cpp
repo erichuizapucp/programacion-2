@@ -25,9 +25,8 @@ void Restaurante::cargarMeseros(const char* nombreArchivo) {
             this->incrementar(num, cap);
         }
         
-        this->meseros[num] = new Mesero(mesero);
-//        this->meseros[num] = new Mesero();
-//        *this->meseros[num] = mesero;
+        this->meseros[num] = new Mesero();
+        *this->meseros[num] = mesero;
         
         num++;
     }
@@ -46,8 +45,8 @@ bool operator>>(ifstream& archivo, Mesero& mesero) {
         archivo >> experiencia;
         archivo.ignore();
         
-        Mesero aux(dni, nombre, sueldo, experiencia);
-        mesero = aux;
+        Mesero temp(dni, nombre, sueldo, experiencia);
+        mesero = temp;
         
         return true;
     }
@@ -64,9 +63,8 @@ void Restaurante::incrementar(int& num, int& cap) {
         Mesero** aux = new Mesero*[cap + 1] {};
 
         for (int i = 0; i < num; i++) {
-            aux[i] = new Mesero(*this->meseros[i]);
-//            aux[i] = new Mesero();
-//            *aux[i] = *this->meseros[i];
+            aux[i] = new Mesero();
+            *aux[i] = *this->meseros[i];
         }
 
         delete[] this->meseros;
@@ -75,13 +73,7 @@ void Restaurante::incrementar(int& num, int& cap) {
 }
 
 ostream& operator<<(ostream& os, const Mesero& mesero) {
-    os << left << setw(15) << mesero.getDni()
-        << setw(50) << mesero.getNombre()
-        << right << setw(15) << fixed 
-            << setprecision(2) << mesero.getSueldo()
-        << setw(15) << mesero.getExperiencia()
-        << endl;
-
+    mesero.imprimir(os);
     return os;
 }
 
@@ -93,8 +85,8 @@ void Restaurante::mostrarMeseros() {
         << endl;
 
     for (int i = 0; this->meseros[i]; i++) {
-        Mesero mesero = *this->meseros[i];
-        cout << mesero;
+        Mesero* mesero = this->meseros[i];
+        cout << *mesero;
     }
 }
 
@@ -109,7 +101,6 @@ char* leerCadena(ifstream& archivo, char delimitador) {
 }
 
 Restaurante::~Restaurante() {
-//    cout << "Se libera memoria del objeto Restaurante" << endl;
     for (int i = 0; this->meseros[i]; i++) {
         delete this->meseros[i];
     }
