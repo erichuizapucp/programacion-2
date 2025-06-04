@@ -1,0 +1,10 @@
+DNI            NOMBRE                                            SUELDO         EXPERIENCIA    
+19283745       María Gómez                                             2300.00              2
+28374652       Ana Martínez                                             1800.00              1
+37465829       Pedro López                                              4400.00              8
+46587913       Carlos Rodríguez                                         2000.00              2
+57698134       Laura Sánchez                                            2100.00              1
+68721345       Alejandro Díaz                                           3500.00              5
+79832456       Juan Pérez                                               1900.00              2
+82943567       Sofía Ruiz                                               3400.00              6
+93054678       Miguel González                                          2000.00              2
