@@ -7,17 +7,14 @@
 
 #include "Persona.h"
 
-Persona::Persona() {
-}
-
-Persona::Persona(int dni, const string nombre) {
+Persona::Persona(int dni, const string nombre) : Registro() {
     this->dni = dni;
     this->setNombre(nombre);
 }
 
-Persona::Persona(const Persona& orig) {
-    *this = orig;
-}
+//Persona::Persona(const Persona& orig) : Registro(orig) {
+//    *this = orig;
+//}
 
 int Persona::getDni() const {
     return dni;
@@ -31,7 +28,7 @@ string Persona::getNombre() const {
     return this->nombre;
 }
 
-void Persona::setNombre(const string nombre) {
+void Persona::setNombre(string nombre) {
     this->nombre = nombre;
 }
 
@@ -39,7 +36,7 @@ bool Persona::cargarDatos(ifstream& archivo) {
     int dni;
     if (!archivo.eof() && archivo >> dni) {
         archivo.ignore();
-        char *nombre = leerCadena(archivo);
+        getline(archivo, this->nombre, ',');
         
         this->setDni(dni);
         this->setNombre(nombre);
@@ -50,27 +47,7 @@ bool Persona::cargarDatos(ifstream& archivo) {
     return false;
 }
 
-bool operator>>(ifstream& archivo, Persona& persona) {
-    return persona.cargarDatos(archivo);
-}
-
-ostream& operator<<(ostream& os, const Persona& persona) {
-    persona.imprimir(os);
-    return os;
-}
-
-Persona& Persona::operator=(const Persona& persona) {
-    this->setDni(persona.getDni());
-    this->setNombre(persona.getNombre());
-    
-    return *this;
-}
-
 void Persona::imprimir(ostream& os) const {
     os << left << setw(15) << this->dni
         << setw(50) << this->nombre;
 }
-
-Persona::~Persona() {
-}
-
