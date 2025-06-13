@@ -9,6 +9,8 @@
 #include "Cliente.h"
 #include "PedidoRegular.h"
 #include "PedidoPrioritario.h"
+#include "PedidoInfo.h"
+#include "Comparadores.h"
 
 
 void Restaurante::cargarMeseros(const string nombreArchivo) {
@@ -18,6 +20,10 @@ void Restaurante::cargarMeseros(const string nombreArchivo) {
     while (archivo >> mesero) {
         this->meseros.push_back(mesero);
     }
+    
+    sort(this->meseros.begin(), 
+            this->meseros.end(), 
+            OrdenarMeseroPorExperiencia());
 }
 
 void Restaurante::cargarClientes(const string nombreArchivo) {
@@ -47,7 +53,8 @@ void Restaurante::cargarPedidos(const string nombreArchivo) {
         }
         
         if (archivo >> *pedido) {
-            this->colaPedidos.encolar(pedido);
+            PedidoInfo pedidoInfo(pedido);
+            this->colaPedidos.push(pedidoInfo);
         }
     }
 }
@@ -62,7 +69,16 @@ void Restaurante::reportePedidos(const string nombreArchivo) {
         << setw(50) << "PLATO"
         << endl;
     
-    this->colaPedidos.imprimir(archivo);
+    // Copio la cola porque la cola prioritaria de la STL no tiene
+    // iteradores directamente, así que copiamos para mantener la cola de pedidos 
+    // intacta.
+    auto copia = this->colaPedidos;
+    while (!copia.empty()) {
+        const PedidoInfo& pedido = copia.top();
+        archivo << *pedido.getPedido();
+        
+        copia.pop();
+    }
 }
 
 void Restaurante::reporteMeseros(const string nombreArchivo) {
@@ -75,9 +91,9 @@ void Restaurante::reporteMeseros(const string nombreArchivo) {
         << setw(15) << "EXPERIENCIA"
         << endl;
 
-    for (auto it = this->meseros.begin();
-            it != this->meseros.end(); it++) {
-        
+    for (auto it = 
+            this->meseros.begin();it != 
+            this->meseros.end(); it++) {
         os << *it;
     }
 }
@@ -92,12 +108,7 @@ void Restaurante::reporteClientes(const string nombreArchivo) {
         << setw(20) << "CORREO"
         << endl;
 
-    for (vector<Cliente>::iterator it = 
-            this->clientes.begin();
-            it != this->clientes.end(); it++) {
+    for (vector<Cliente>::iterator it = this->clientes.begin();it != this->clientes.end(); it++) {
         os << *it;
     }
 }
-
-//Restaurante::~Restaurante() {
-//}

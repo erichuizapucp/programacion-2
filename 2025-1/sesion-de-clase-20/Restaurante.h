@@ -15,9 +15,10 @@
 #include "Mesero.h"
 #include "Cliente.h"
 #include "Reclamo.h"
-#include "Cola.h"
-#include "ColaPrioritaria.h"
+#include "PedidoInfo.h"
 #include <vector>
+#include <queue> // para manejar colas y colas prioritarias
+#include <algorithm>
 
 
 using namespace std;
@@ -27,15 +28,12 @@ private:
     vector<Mesero> meseros;
     vector<Cliente> clientes;
     
-    ColaPrioritaria<Pedido> colaPedidos;
-    Cola<Reclamo> reclamos;
+    priority_queue<PedidoInfo> colaPedidos;
+    queue<Reclamo> reclamos;
     
 //    void incrementarMeseros(int&, int&);
 //    void incrementarClientes(int&, int&);
-public:
-//    Restaurante();
-//    Restaurante(const Restaurante&);
-    
+public:    
     void cargarMeseros(const string);
     void reporteMeseros(const string);
     
@@ -44,8 +42,6 @@ public:
     
     void cargarPedidos(const string);
     void reportePedidos(const string);
-    
-//    virtual ~Restaurante();
 };
 
 #endif /* RESTAURANTE_H */

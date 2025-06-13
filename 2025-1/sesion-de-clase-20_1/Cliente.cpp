@@ -38,7 +38,10 @@ bool Cliente::cargarDatos(ifstream& archivo) {
     if (Persona::cargarDatos(archivo)) {
         getline(archivo, telefono, ',');
         getline(archivo, correo, '\n');
-                
+        
+        this->setTelefono(telefono);
+        this->setCorreo(correo);
+        
         return true;
     }
     return false;

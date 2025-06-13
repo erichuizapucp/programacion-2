@@ -9,6 +9,7 @@
 #include "Cliente.h"
 #include "PedidoRegular.h"
 #include "PedidoPrioritario.h"
+#include "PedidoInfo.h"
 
 
 void Restaurante::cargarMeseros(const string nombreArchivo) {
@@ -36,18 +37,19 @@ void Restaurante::cargarPedidos(const string nombreArchivo) {
     while (!archivo.eof() && archivo >> prioridad) {
         archivo.ignore();
         
-        Pedido *pedido;
+        unique_ptr<Pedido> pedido;
         switch (prioridad) {
             case 0:
-                pedido = new PedidoRegular();
+                pedido = std::make_unique<PedidoRegular>();
                 break;
             case 1:
-                pedido = new PedidoPrioritario();
+                pedido = std::make_unique<PedidoPrioritario>();
                 break;
         }
         
         if (archivo >> *pedido) {
-            this->colaPedidos.encolar(pedido);
+            PedidoInfo pedidoInfo(std::move(pedido));
+            this->colaPedidos.push(std::move(pedidoInfo));
         }
     }
 }
@@ -62,7 +64,16 @@ void Restaurante::reportePedidos(const string nombreArchivo) {
         << setw(50) << "PLATO"
         << endl;
     
-    this->colaPedidos.imprimir(archivo);
+    // Copio la cola porque la cola prioritaria de la STL no tiene
+    // iteradores directamente, así que copiamos para mantener la cola de pedidos 
+    // intacta.
+    auto copia = this->colaPedidos;
+    while (!copia.empty()) {
+        const PedidoInfo& pedido = copia.top();
+        archivo << *pedido.getPedido();
+        
+        copia.pop();
+    }
 }
 
 void Restaurante::reporteMeseros(const string nombreArchivo) {
@@ -75,9 +86,7 @@ void Restaurante::reporteMeseros(const string nombreArchivo) {
         << setw(15) << "EXPERIENCIA"
         << endl;
 
-    for (auto it = this->meseros.begin();
-            it != this->meseros.end(); it++) {
-        
+    for (vector<Mesero>::iterator it = this->meseros.begin();it != this->meseros.end(); it++) {
         os << *it;
     }
 }
@@ -92,12 +101,7 @@ void Restaurante::reporteClientes(const string nombreArchivo) {
         << setw(20) << "CORREO"
         << endl;
 
-    for (vector<Cliente>::iterator it = 
-            this->clientes.begin();
-            it != this->clientes.end(); it++) {
+    for (vector<Cliente>::iterator it = this->clientes.begin();it != this->clientes.end(); it++) {
         os << *it;
     }
 }
-
-//Restaurante::~Restaurante() {
-//}

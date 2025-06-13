@@ -1,0 +1,11 @@
+PRIORITARIOCODIGO         DNI            PLATO                                             
+Si        P009           79864312       Causa Limeña                                     
+Si        P005           79234658       Arroz Chaufa                                      
+Si        P007           76543198       Anticuchos                                        
+Si        P002           81356249       Aji de Gallina                                    
+No        P004           80561734       Tallarines Verdes                                 
+No        P006           83491276       Seco de Cabrito                                   
+No        P010           72651984       Pollo a la Brasa                                  
+No        P008           84927153       Ocopa Arequipeña                                 
+No        P003           72914583       Ceviche Mixto                                     
+No        P001           76839152       Lomo Saltado                                      
