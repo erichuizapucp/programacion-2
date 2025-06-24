@@ -17,16 +17,17 @@ public class Programa {
        juan.setEdad(30);
        juan.setNombre("Juan Perez");
        
-       System.out.println(juan.getDni());
-       System.out.println(juan.getEdad());
-       System.out.println(juan.getNombre());
+       juan.imprimir();
        
        System.out.println();
        
        Persona maria = new Persona(45678923, "María Gonzales", 25);
-       System.out.println(maria.getDni());
-       System.out.println(maria.getEdad());
-       System.out.println(maria.getNombre());
+       System.out.println(maria);
+       
+       System.out.println();
+       
+       Persona pedro = new Alumno(45678928, "Pedro Gonzales", 24, 6, 22);
+       System.out.println(pedro);
        
     }
     

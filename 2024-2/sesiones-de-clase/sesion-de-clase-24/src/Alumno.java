@@ -5,7 +5,7 @@ import java.util.Scanner;
  *
  * @author erichuiza
  */
-abstract class Alumno extends Registro {
+public abstract class Alumno extends Registro {
     private char tipo;
     private int codigo;
     private String nombre;

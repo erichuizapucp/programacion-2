@@ -1,5 +1,6 @@
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,7 +9,7 @@ import java.util.Scanner;
  * @author erichuiza
  */
 public class Universidad {
-    private List<Alumno> alumnos;
+    private final List<Alumno> alumnos;
     
     public Universidad() {
         alumnos = new ArrayList<>();
@@ -30,7 +31,7 @@ public class Universidad {
                 case 'I':
                     alumno = new AlumnoIntercambio(tipo);
                     break;
-                case 'R': 
+                case 'R':
                     alumno = new AlumnoRegular(tipo);
                     break;
                 default:
@@ -47,5 +48,12 @@ public class Universidad {
             alumno.imprimir();
             System.out.println("---------------------------------------------");
         }
+        
+//        Iterator<Alumno> it = alumnos.iterator();
+//        while (it.hasNext()) {
+//            Alumno alumno = it.next();
+//            alumno.imprimir();
+//            System.out.println("---------------------------------------------");
+//        }
     }
 }

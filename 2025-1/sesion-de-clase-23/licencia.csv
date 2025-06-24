@@ -1,0 +1,10 @@
+1,A-I,Permite manejar autos particulares como sedanes, SUV, pickups y furgones.
+2,A-IIa,Incluye A-I y también taxis, buses, ambulancias y transporte interprovincial.
+3,A-IIb,Incluye A-I y A-IIa, además de microbuses de hasta 16 asientos y minibuses hasta 33 asientos.
+4,A-IIIa,Incluye A-I, A-IIa y A-IIb; además permite manejar ómnibus urbanos e interurbanos.
+5,A-IIIb,Incluye A-I, A-IIa y A-IIb, además de chasis cabinado, remolques, grúas y volquetes.
+6,A-IIIc,Permite manejar todos los vehículos de las categorías anteriores.
+7,B-I,Triciclos no motorizados de transporte público especial.
+8,B-IIa,Bicimotos destinadas al transporte de pasajeros o mercancías.
+9,B-IIb,Incluye B-IIa y motocicletas de dos ruedas o motocicletas con sidecar.
+10,B-IIc,Incluye B-IIa y B-IIb, además de mototaxis y trimotos para transporte de pasajeros.

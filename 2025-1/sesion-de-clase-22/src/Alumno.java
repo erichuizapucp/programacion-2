@@ -10,7 +10,8 @@ public class Alumno extends Persona {
         super();
     }
     
-    public Alumno(int dni, String nombre, int edad, int ciclo, int numCreditos) {
+    public Alumno(int dni, String nombre, int edad, 
+            int ciclo, int numCreditos) {
         super(dni, nombre, edad);
         this.ciclo = ciclo;
         this.numCreditos = numCreditos;
@@ -31,4 +32,23 @@ public class Alumno extends Persona {
     public void setNumCreditos(int numCreditos) {
         this.numCreditos = numCreditos;
     }
+
+    @Override
+    public void imprimir() {
+        super.imprimir();
+        System.out.println("Ciclo: " + ciclo);
+        System.out.println("Num Créditos: " + numCreditos);
+    }
+
+    @Override
+    public String toString() {
+        String str = super.toString();
+        str += "Ciclo: " + ciclo + "\n";
+        str += "Num Creditos" + numCreditos  + "\n";
+        
+        return str;
+    }
+    
+    
+    
 }

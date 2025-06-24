@@ -6,6 +6,7 @@ public class Persona {
     private int dni;
     private String nombre;
     private int edad;
+    private String apellido;
     
     public Persona() {
     }
@@ -39,4 +40,20 @@ public class Persona {
     public void setEdad(int edad) {
         this.edad = edad;
     }
+    
+    public void imprimir() {
+        System.out.println("DNI: " + dni);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + edad);
+    }
+
+    @Override
+    public String toString() {
+        String str = "DNI: " + dni + "\n";
+        str += "Nombre: " + nombre + "\n";
+        str += "Edad: " + edad + "\n";
+        return str;
+    }
+    
+    
 }

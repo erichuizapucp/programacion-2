@@ -1,0 +1,5 @@
+1,Conducir con exceso de velocidad,950.00,GRAVE,50
+2,Conducir en estado de ebriedad,4300.00,MUY_GRAVE,100
+3,Estacionar en zona rígida,240.00,LEVE,20
+4,No usar cinturón de seguridad,240.00,LEVE,20
+5,Usar celular mientras conduce,950.00,GRAVE,50
