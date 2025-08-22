@@ -9,6 +9,7 @@ Clases_Profesores
 *.docx
 *.pdf
 *.pptx
+*.zip
 Evaluaciones-2024-1
 clion
 .idea
@@ -16,3 +17,4 @@ notas
 Evaluaciones-2025-1
 2025-1/EX2-PREG01-2024-1
 2025-1/Lab10 - 2024-2 - Temp
+cmake-build-debug
