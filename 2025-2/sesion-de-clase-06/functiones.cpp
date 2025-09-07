@@ -301,8 +301,10 @@ void imprimirUsuario(ofstream& archivo, const char** usuario, const int* fechaEd
             << setw(10) << "Cuenta:" << setw(15) << cuenta   << endl
             << setw(10) << "Nombre:" << setw(20) << nombre   << endl
             << setw(10) << "Correo:" << setw(25) << correo   << endl
-            << setw(10) << "Facultad:" << setw(15) << facultad << endl;
+            << setw(10) << "Facultad:" << setw(15) << facultad << endl
+            << setw(10) << "Fecha: ";
     imprimirFecha(archivo, fecha);
+    archivo << endl;
     archivo << setw(10) << "Edad:" << setw(3)  << edad
             << endl;
 }
