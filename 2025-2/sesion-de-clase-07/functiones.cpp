@@ -323,15 +323,6 @@ void imprimirMencionesUsuario(ofstream& archivo, const void** pubsMencionan) {
 
         imprimirMencion(archivo, regPub, cuentaUsuario);
     }
-
-    // for (int i = 0; publicaciones[i]; i++) {
-    //     const char** mencionesPub = menciones[i];
-    //     if (mencionadoEnPublicacion(cuentaUsuario, mencionesPub)) {
-    //         const int* idFecha = idsFechas[i];
-    //         const char** publicacion = publicaciones[i];
-    //         imprimirMencion(archivo, idFecha, publicacion, cuentaUsuario);
-    //     }
-    // }
 }
 
 void imprimirMencion(ofstream& archivo, const void** pub, const char* cuentaUsuario) {
