@@ -245,7 +245,15 @@ bool leerMencion(ifstream& archivo, char*& mencion) {
 void insertarOrdenado(char***& usuarios, int**& fechasEdades, char** usuario,
                       int* fechaEdad, int num) {
     int i;
-    for (i = num - 1; i >= 0 && fechasEdades[i][0] > fechaEdad[0]; i--) {
+    int nuevaFechaRegistro = fechaEdad[0];
+
+
+    for (i = num - 1; i >= 0; i--) {
+        int fechaRegistroActual = fechaRegistro(fechasEdades[i]);
+        if (fechaRegistroActual <= nuevaFechaRegistro) {
+            break;
+        }
+
         usuarios[i + 1] = usuarios[i];
         fechasEdades[i + 1] = fechasEdades[i];
     }
@@ -258,7 +266,15 @@ void insertarOrdenado(int**& idsFecha, char***& publicaciones, char***& mencione
                       int* idFecha, char** publicacion, char** mencionesPub,
                       int num) {
     int i;
-    for (i = num - 1; i >= 0 && idsFecha[i][1] > idFecha[1]; i--) {
+    int nuevaFechaPublicacion = idFecha[1];
+
+    for (i = num - 1; i >= 0; i--) {
+        int fechaPublicacionActual = fechaPublicacion(idsFecha[i]);
+
+        if (fechaPublicacionActual <= nuevaFechaPublicacion) {
+            break;
+        }
+
         publicaciones[i + 1] = publicaciones[i];
         idsFecha[i + 1] = idsFecha[i];
         menciones[i + 1] = menciones[i];
@@ -269,8 +285,10 @@ void insertarOrdenado(int**& idsFecha, char***& publicaciones, char***& mencione
     menciones[i + 1] = mencionesPub;
 }
 
-void imprimirReporte(const char* nombreArchivo, const char*** usuarios, const int** fechasEdades,
-                     const int** idsFechas, const char*** publicaciones, const char*** menciones) {
+void imprimirReporte(const char* nombreArchivo, const char*** usuarios,
+                     const int** fechasEdades,
+                     const int** idsFechas, const char*** publicaciones,
+                     const char*** menciones) {
     ofstream archivo(nombreArchivo, ios::out);
 
     for (int i = 0; usuarios[i]; i++) {
@@ -309,7 +327,8 @@ void imprimirUsuario(ofstream& archivo, const char** usuario, const int* fechaEd
             << endl;
 }
 
-void imprimirPubsUsuario(ofstream& archivo, const char* cuentaUsuario, const int** idsFechas,
+void imprimirPubsUsuario(ofstream& archivo, const char* cuentaUsuario,
+                         const int** idsFechas,
                          const char*** publicaciones) {
     archivo << setfill('-') << setw(40) << "" << setfill(' ') << endl;
     archivo << "PUBLICACIONES REALIZADAS" << endl;
@@ -393,4 +412,12 @@ void imprimirFecha(ofstream& archivo, int fecha) {
             << (anho / 100) % 10
             << (anho / 10) % 10
             << anho % 10;
+}
+
+int fechaRegistro(const int* fechaEdad) {
+    return fechaEdad[0];
+}
+
+int fechaPublicacion(const int* idFecha) {
+    return idFecha[1];
 }

@@ -33,6 +33,7 @@ void insertarPublicacionOrdenado(void**&, void**, int);
 
 int fechaRegistro(void*);
 int fechaPublicacion(void*);
+bool mencionadoEnPublicacion(const char*, const char**);
 char* leerCadena(ifstream&, char=',');
 
 void imprimirReporte(const char*, const void*);
@@ -42,6 +43,5 @@ void imprimirPubUsuario(ofstream&, const void**);
 void imprimirFecha(ofstream&, int);
 void imprimirMencionesUsuario(ofstream&, const void**);
 void imprimirMencion(ofstream&, const void**, const char*);
-bool mencionadoEnPublicacion(const char*, const char**);
 
 #endif //EJERCICIO03_FUNCIONES_H

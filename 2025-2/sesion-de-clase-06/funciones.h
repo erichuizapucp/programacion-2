@@ -29,6 +29,9 @@ bool leerPublicacion(ifstream&, char**&, char**&);
 bool leerIdFecha(ifstream&, int*&);
 bool leerMencion(ifstream&, char*&);
 
+int fechaRegistro(const int*);
+int fechaPublicacion(const int*);
+
 void insertarOrdenado(char***&, int**&, char**, int*, int);
 void insertarOrdenado(int**&, char***&, char***&, int*, char**, char**, int);
 

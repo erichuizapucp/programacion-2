@@ -10,7 +10,8 @@ int main() {
     int** idsFechas;
     char*** publicaciones;
     char*** menciones;
-    cargarPublicaciones("publicaciones.csv", idsFechas,publicaciones, menciones);
+    cargarPublicaciones("publicaciones.csv", idsFechas,
+        publicaciones, menciones);
 
     imprimirReporte("reporte.txt",
                     (const char***)usuarios,
