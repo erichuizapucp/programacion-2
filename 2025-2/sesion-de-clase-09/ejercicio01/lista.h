@@ -12,17 +12,17 @@
 using namespace std;
 
 void* crearLista();
-bool listaVacia(void* lista);
-void insertarSiguiente(void* lista, void* nodo, void* dato);
-bool removerSiguiente(void* lista, void* nodo, void*& datp);
-void* buscar(void* lista, void* valor);
-void imprimirLista(ostream&, void* lista, void (*)(ostream&, void*));
-void destruir(void* lista);
-void* primero(void* lista);
-void* ultimo(void* lista);
+bool listaVacia(void*);
+void insertarSiguiente(void*, void*, void*);
+bool removerSiguiente(void*, void*, void*&);
+void* buscar(void*, void*);
+void imprimirLista(ostream&, void*, void (*)(ostream&, void*));
+void destruir(void*);
+void* primero(void*);
+void* ultimo(void*);
 
 void imprimirEntero(ostream &, void*);
-void imprimirDoubles(ostream &, void*);
+void imprimirDouble(ostream &, void*);
 void imprimirCadena(ostream &, void*);
 
 #endif //EJERCICIO01_LISTA_H

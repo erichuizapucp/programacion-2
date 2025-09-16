@@ -14,9 +14,9 @@ int main() {
     const char* b = "Ana Gomez";
     const char* c = "Luis Martinez";
 
-    apilar(pila, &a);
-    apilar(pila, &b);
-    apilar(pila, &c);
+    apilar(pila, &a); // &a es un char**
+    apilar(pila, &b); // &b es un char**
+    apilar(pila, &c); // &c es un char**
 
     imprimirPila(cout, pila, imprimirCadena);
 
@@ -25,7 +25,7 @@ int main() {
         cout << "Valor desencolado: " << *(const char**)datoDesapilado << endl;
     }
 
-    cout << "Cola luego de remover el dato: " << endl;
+    cout << "Pila luego de desapilar el dato: " << endl;
     imprimirPila(cout, pila, imprimirCadena);
 
     destruir(pila);

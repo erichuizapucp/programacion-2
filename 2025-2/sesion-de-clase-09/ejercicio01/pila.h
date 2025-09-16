@@ -8,10 +8,10 @@
 #include "lista.h"
 
 void* crearPila();
-bool pilaVacia(void* pila);
-void apilar(void* pila, void* dato);
-bool desapilar(void* pila, void*& dato);
-void imprimirPila(ostream& os, void* pila, void (*)(ostream&, void*));
-void destruirPila(void* pila);
+bool pilaVacia(void*);
+void apilar(void*, void*);
+bool desapilar(void*, void*&);
+void imprimirPila(ostream&, void*, void (*)(ostream&, void*));
+void destruirPila(void*);
 
 #endif //EJERCICIO01_PILA_H

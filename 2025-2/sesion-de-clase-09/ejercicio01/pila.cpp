@@ -16,7 +16,7 @@ void apilar(void* pila, void* dato) {
 }
 
 bool desapilar(void* pila, void*& dato) {
-    removerSiguiente(pila, nullptr, dato);
+    return removerSiguiente(pila, nullptr, dato);
 }
 
 void imprimirPila(ostream& os, void* pila, void (*imp)(ostream&, void*)) {

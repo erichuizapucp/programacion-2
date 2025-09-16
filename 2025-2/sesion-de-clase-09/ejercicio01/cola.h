@@ -10,10 +10,10 @@
 using namespace std;
 
 void* crearCola();
-bool colaVacia(void* cola);
-void encolar(void* cola, void* dato);
-bool desencolar(void* cola, void*& dato);
-void imprimirCola(ostream& os, void* cola, void (*)(ostream&, void*));
-void destruirCola(void* cola);
+bool colaVacia(void*);
+void encolar(void*, void*);
+bool desencolar(void*, void*&);
+void imprimirCola(ostream&, void*, void (*)(ostream&, void*));
+void destruirCola(void*);
 
 #endif //EJERCICIO01_COLA_H

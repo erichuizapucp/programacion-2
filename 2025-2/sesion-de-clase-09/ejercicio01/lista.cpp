@@ -110,8 +110,8 @@ void* ultimo(void* lista) {
 }
 
 void imprimirLista(ostream& os,
-                  void* lista,
-                  void (*imp)(ostream& archivo, void* dato)) {
+                   void* lista,
+                   void (*imp)(ostream&, void*)) {
     void** auxLista = (void**)lista;
     void** actual = (void**)auxLista[CABEZA];
 
@@ -135,11 +135,11 @@ void destruir(void* lista) {
 }
 
 void imprimirEntero(ostream &os, void *dato) {
-    os << *(int *) dato << endl;
+    os << *(int*) dato << endl;
 }
 
-void imprimirDoubles(ostream &os, void* dato) {
-    os << *(double *) dato << endl;
+void imprimirDouble(ostream &os, void* dato) {
+    os << *(double*) dato << endl;
 }
 
 void imprimirCadena(ostream & os, void* dato) {
