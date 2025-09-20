@@ -1,0 +1,28 @@
+//
+// Created by Eric Huiza on 9/15/25.
+//
+#include "../includes/pila.h"
+
+void* crearPila() {
+    return crearLista();
+}
+
+bool pilaVacia(void* pila) {
+    return listaVacia(pila);
+}
+
+void apilar(void* pila, void* dato) {
+    insertarSiguiente(pila, nullptr, dato);
+}
+
+bool desapilar(void* pila, void*& dato) {
+    return removerSiguiente(pila, nullptr, dato);
+}
+
+void imprimirPila(ostream& os, void* pila, void (*imp)(ostream&, void*)) {
+    imprimirLista(os, pila, imp);
+}
+
+void destruirPila(void* pila) {
+    destruir(pila);
+}
