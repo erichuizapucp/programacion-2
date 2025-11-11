@@ -4,23 +4,13 @@
 
 #include "Universidad.h"
 
-bool compararAlumnos(const AlumnoInfo& a, const AlumnoInfo& b) {
-    return a > b;
-}
-
 void Universidad::cargarAlumnos(const string& nombreArchivo) {
     ifstream archivo(nombreArchivo);
     AlumnoInfo alumno;
     while (archivo >> alumno) {
         alumnos.push_back(alumno);
     }
-    // sort(alumnos.begin(), alumnos.end());
-    // sort(alumnos.begin(), alumnos.end(),
-    //     [](const AlumnoInfo& a, const AlumnoInfo& b) {
-    //         return a > b;
-    //     });
-    // sort(alumnos.begin(), alumnos.end(), compararAlumnos);
-    sort(alumnos.begin(), alumnos.end(), ComparadorAlumnos(ascendente));
+    sort(alumnos.begin(), alumnos.end());
 }
 
 void Universidad::reporteAlumnos(const string& nombreArchivo) const {

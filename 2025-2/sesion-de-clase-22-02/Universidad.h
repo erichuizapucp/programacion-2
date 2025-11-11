@@ -11,7 +11,6 @@
 #include "Alumno.h"
 #include "AlumnoInfo.h"
 #include <algorithm>
-#include "ComparadorAlumnos.h"
 
 using namespace std;
 class Universidad {
@@ -19,8 +18,6 @@ class Universidad {
 public:
     void cargarAlumnos(const string& nombreArchivo);
     void reporteAlumnos(const string& nombreArchivo) const;
-
-    friend bool compararAlumnos(const AlumnoInfo&, const AlumnoInfo&);
 };
 
 

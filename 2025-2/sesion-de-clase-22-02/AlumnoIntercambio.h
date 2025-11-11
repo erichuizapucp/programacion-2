@@ -12,7 +12,7 @@ class AlumnoIntercambio : public Alumno {
     string pais;
     int duracion {};
 public:
-    Alumno* clonar() const override;
+    unique_ptr<Alumno> clonar() const override;
 
     istream& leer(istream &) override;
     ostream& imprimir(ostream &) const override;

@@ -22,7 +22,7 @@ public:
     // Alumno() = default;
     // Alumno() : codigo(0), edad(0), ciclo(0) {}
 
-    virtual Alumno* clonar() const = 0;
+    virtual unique_ptr<Alumno> clonar() const = 0;
 
     friend class AlumnoInfo;
 

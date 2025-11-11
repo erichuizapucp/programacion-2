@@ -7,7 +7,7 @@
 #include "AlumnoIntercambio.h"
 #include "AlumnoRegular.h"
 
-AlumnoInfo::AlumnoInfo(const AlumnoInfo& origen) : AlumnoInfo() {
+AlumnoInfo::AlumnoInfo(const AlumnoInfo& origen) {
     *this = origen;
 }
 
@@ -15,15 +15,10 @@ bool AlumnoInfo::operator<(const AlumnoInfo& origen) const {
     return this->alumnoPtr->nombre < origen.alumnoPtr->nombre;
 }
 
-bool AlumnoInfo::operator>(const AlumnoInfo& origen) const {
-    return this->alumnoPtr->nombre > origen.alumnoPtr->nombre;
-}
-
 AlumnoInfo& AlumnoInfo::operator=(const AlumnoInfo& origen) {
     if (this == &origen) {
         return *this;
     }
-    delete this->alumnoPtr;
     this->alumnoPtr = origen.alumnoPtr->clonar();
     return *this;
 }
@@ -35,17 +30,15 @@ istream& operator>>(istream& archivo, AlumnoInfo& alumno) {
         return archivo;
     }
     archivo.ignore();
-
-    delete alumno.alumnoPtr;
     switch (tipoAlumno) {
         case 0:
-            alumno.alumnoPtr = new AlumnoRegular();
+            alumno.alumnoPtr = make_unique<AlumnoRegular>();
             break;
         case 1:
-            alumno.alumnoPtr = new AlumnoIntercambio();
+            alumno.alumnoPtr = make_unique<AlumnoIntercambio>();
             break;
         default:
-            alumno.alumnoPtr = new AlumnoRegular();
+            alumno.alumnoPtr = make_unique<AlumnoRegular>();
             break;
     }
 
@@ -56,8 +49,4 @@ istream& operator>>(istream& archivo, AlumnoInfo& alumno) {
 ostream& operator<<(ostream& archivo, const AlumnoInfo& alumno) {
     archivo << *alumno.alumnoPtr;
     return archivo;
-}
-
-AlumnoInfo::~AlumnoInfo() {
-    delete alumnoPtr;
 }

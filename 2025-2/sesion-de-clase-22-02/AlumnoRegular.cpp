@@ -4,8 +4,9 @@
 
 #include "AlumnoRegular.h"
 
-Alumno* AlumnoRegular::clonar() const {
-    return new AlumnoRegular(*this);
+unique_ptr<Alumno> AlumnoRegular::clonar() const {
+    // return new AlumnoRegular(*this);
+    return make_unique<AlumnoRegular>(*this);
 }
 
 istream& AlumnoRegular::leer(istream& archivo) {

@@ -4,8 +4,9 @@
 
 #include "AlumnoIntercambio.h"
 
-Alumno* AlumnoIntercambio::clonar() const {
-    return new AlumnoIntercambio(*this);
+unique_ptr<Alumno> AlumnoIntercambio::clonar() const {
+    // return new AlumnoIntercambio(*this);
+    return make_unique<AlumnoIntercambio>(*this);
 }
 
 istream& AlumnoIntercambio::leer(istream& archivo) {

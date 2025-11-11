@@ -6,25 +6,19 @@
 #define SESION_DE_CLASE_22_01_ALUMNOINFO_H
 #include "Alumno.h"
 
-class ComparardorAlumnos;
 
 using namespace std;
 class AlumnoInfo {
-    Alumno* alumnoPtr;
+    unique_ptr<Alumno> alumnoPtr;
 public:
-    AlumnoInfo() : alumnoPtr(nullptr) {};
+    AlumnoInfo() = default;
     AlumnoInfo(const AlumnoInfo&);
     AlumnoInfo& operator=(const AlumnoInfo&);
 
     bool operator<(const AlumnoInfo&) const;
-    bool operator>(const AlumnoInfo&) const;
 
     friend istream& operator>>(istream& is, AlumnoInfo& alumno);
     friend ostream& operator<<(ostream&, const AlumnoInfo&);
-
-    friend class ComparardorAlumnos;
-
-    ~AlumnoInfo();
 };
 
 

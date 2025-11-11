@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 4.0)
-project(sesion_de_clase_22_01)
+project(sesion_de_clase_22_02)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(sesion_de_clase_22_01 main.cpp
+add_executable(sesion_de_clase_22_02 main.cpp
         Registro.cpp
         Registro.h
         Alumno.cpp
@@ -16,8 +16,4 @@ add_executable(sesion_de_clase_22_01 main.cpp
         AlumnoRegular.h
         AlumnoIntercambio.cpp
         AlumnoIntercambio.h
-        ComparadorAlumnos.cpp
-        ComparadorAlumnos.h
-        SortOrder.cpp
-        SortOrder.h
 )
