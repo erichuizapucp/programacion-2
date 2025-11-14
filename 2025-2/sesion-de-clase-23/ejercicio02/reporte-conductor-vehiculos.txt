@@ -1,0 +1,78 @@
+    1                   JUAN CARLOS              GARCIA               PEREZ Q45678912                                  0
+
+
+** Lista de vehiculos del conductor **
+
+    1   ABC-123         TOYOTA        COROLLA      2022
+
+    2   DEF-456        HYUNDAI         TUCSON      2021
+
+    2                     ANA MARIA            MARTINEZ           RODRIGUEZ W78945612                                  5
+
+
+** Lista de vehiculos del conductor **
+
+    2   DEF-456        HYUNDAI         TUCSON      2021
+
+    3                   PEDRO PABLO               LOPEZ                     E12345678                                  8
+
+
+** Lista de vehiculos del conductor **
+
+    3   GHI-789         NISSAN         SENTRA      2023
+
+    4   JKL-012            KIA       SPORTAGE      2022
+
+    4                   MARIA ELENA              TORRES              VARGAS R98765432                                  2
+
+
+** Lista de vehiculos del conductor **
+
+    4   JKL-012            KIA       SPORTAGE      2022
+
+    5                     JOSE LUIS             RAMIREZ               SILVA T45612378                                 15
+
+
+** Lista de vehiculos del conductor **
+
+    5   MNO-345     VOLKSWAGEN            GOL      2021
+
+    6   PQR-678      CHEVROLET           SAIL      2023
+
+    6                   CARMEN ROSA              FLORES              CASTRO Y78912345                                  0
+
+
+** Lista de vehiculos del conductor **
+
+    6   PQR-678      CHEVROLET           SAIL      2023
+
+    7                  MIGUEL ANGEL                DIAZ             MENDOZA U14725836                                  4
+
+
+** Lista de vehiculos del conductor **
+
+    7   STU-901         SUZUKI          SWIFT      2022
+
+    8   VWX-234          HONDA          CIVIC      2021
+
+    8                 LAURA BEATRIZ              CHAVEZ                RIOS I36925814                                  6
+
+
+** Lista de vehiculos del conductor **
+
+    8   VWX-234          HONDA          CIVIC      2021
+
+    9                CARLOS ALBERTO             SANCHEZ               ORTIZ O25836914                                 12
+
+
+** Lista de vehiculos del conductor **
+
+    9   YZA-567          MAZDA          CX-30      2023
+
+   10                PATRICIA ELENA             MORALES                CRUZ P74185296                                  3
+
+
+** Lista de vehiculos del conductor **
+
+   10   BCD-890     MITSUBISHI           L200      2022
+

@@ -1,0 +1,6 @@
+enum GRAVEDAD_INFRACCION {
+    GRAVE, 
+    MUY_GRAVE, 
+    LEVE
+};
+
