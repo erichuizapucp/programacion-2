@@ -31,6 +31,6 @@ public class Programa {
 //        a.setMatriculado(true);
         
 //        System.out.println("Nuevo Alumno: " + alumno);
-        System.out.println("Nuevo Alumno: " + alumno);
+        System.out.println(alumno);
     }
 }
