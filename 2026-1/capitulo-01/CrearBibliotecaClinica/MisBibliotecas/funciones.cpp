@@ -74,7 +74,7 @@ Cita& operator!(Cita& cita) {
     return cita;
 }
 
-ostream& operator<<(ostream& os, const Paciente& paciente) {
+ostream& operator<<(ostream& os, Paciente& paciente) {
     os << "DNI: " << paciente.dni << endl;
     os << "Edad: " << paciente.edad << endl;
     os << "Genero: " << paciente.genero << endl;
@@ -82,14 +82,14 @@ ostream& operator<<(ostream& os, const Paciente& paciente) {
     return os;
 }
 
-ostream& operator<<(ostream& os, const Doctor& doctor) {
+ostream& operator<<(ostream& os, Doctor& doctor) {
     os << "DNI: " << doctor.dni << endl;
     imprimirEspecialidad(os, doctor.especialidad);
 
     return os;
 }
 
-ostream& operator<<(ostream& os, const Cita& cita) {
+ostream& operator<<(ostream& os, Cita& cita) {
     os << "DATOS DEL PACIENTE" << endl;
     os << "------------------" << endl;
     os << cita.paciente << endl;
@@ -105,7 +105,7 @@ ostream& operator<<(ostream& os, const Cita& cita) {
     return os;
 }
 
-ostream& operator<<(ostream& os, const Clinica& clinica) {
+ostream& operator<<(ostream& os, Clinica& clinica) {
     for (int i = 0; i < clinica.numCitas; i++) {
         cout << clinica.citas[i] << endl;
     }

@@ -23,10 +23,10 @@ Clinica& operator+=(Clinica&, Cita&);
 bool operator<(Cita&, Cita&);
 Cita& operator!(Cita&);
 
-ostream& operator<<(ostream&, const Paciente&);
-ostream& operator<<(ostream&, const Doctor&);
-ostream& operator<<(ostream&, const Cita&);
-ostream& operator<<(ostream&, const Clinica&);
+ostream& operator<<(ostream&, Paciente&);
+ostream& operator<<(ostream&, Doctor&);
+ostream& operator<<(ostream&, Cita&);
+ostream& operator<<(ostream&, Clinica&);
 
 void insertarOrdenado(Clinica&, Cita&);
 void imprimirFecha(ostream&, int);
