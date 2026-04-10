@@ -8,70 +8,102 @@
 #include "funciones.h"
 #include <cstring>
 
-void cargarPacientes(const char* nombreArchivo,
-    Paciente*& pacientes, int& num) {
-
-    num = 0;
-    Paciente buffer[100];
-
-    ifstream archivo(nombreArchivo, ios::in);
-    while (archivo >> buffer[num]) {
-        num++;
-    }
-
-    pacientes = new Paciente[num];
-    for (int i = 0; i < num; i++) {
-        pacientes[i] = buffer[i];
-    }
-}
-
 void cargarPacientes(const char* nombreArchivo, Paciente*& pacientes) {
-    int num = 0;
-    Paciente buffer[100];
+    int num = 0, capacidad = 0;
+    pacientes = nullptr;
+    Paciente paciente; // dato o fila en el archivo
 
     ifstream archivo(nombreArchivo, ios::in);
-    while (archivo >> buffer[num]) {
+    while (archivo >> paciente) {
+        if (num == capacidad) {
+            incrementarPacientes(pacientes, num, capacidad);
+        }
+        pacientes[num] = paciente;
         num++;
-    }
-
-    pacientes = new Paciente[num + 1];
-    for (int i = 0; i < num; i++) {
-        pacientes[i] = buffer[i];
     }
     pacientes[num] = { -1 };
 }
 
+void incrementarPacientes(Paciente*& pacientes, int num, int& capacidad) {
+    Paciente* aux;
+    capacidad += 5;
+
+    if (pacientes == nullptr) { // primer incremento
+        pacientes = new Paciente[capacidad + 1];
+    }
+    else {
+        aux = new Paciente[capacidad + 1];
+        for (int i = 0; i < num; i++) {
+            aux[i] = pacientes[i];
+        }
+        delete pacientes;
+        pacientes = aux;
+    }
+}
+
 void cargarDoctores(const char* nombreArchivo, Doctor*& doctores) {
-    int num = 0;
-    Doctor buffer[100];
+    int num = 0, capacidad = 0;
+    doctores = nullptr;
+    Doctor doctor;
 
     ifstream archivo(nombreArchivo, ios::in);
-    while (archivo >> buffer[num]) {
+    while (archivo >> doctor) {
+        if (num == capacidad) {
+            incrementarDoctores(doctores, num, capacidad);
+        }
+        doctores[num] = doctor;
         num++;
     }
 
-    doctores = new Doctor[num + 1];
-    for (int i = 0; i < num; i++) {
-        doctores[i] = buffer[i];
-    }
     doctores[num] = { -1 };
 }
 
+void incrementarDoctores(Doctor*& doctores, int num, int& capacidad) {
+    Doctor* aux;
+    capacidad += 5;
+    if (doctores == nullptr) {
+        doctores = new Doctor[capacidad + 1];
+    }
+    else {
+        aux = new Doctor[capacidad + 1];
+        for (int i = 0; i < num; i++) {
+            aux[i] = doctores[i];
+        }
+        delete doctores;
+        doctores = aux;
+    }
+}
+
 void cargarCitas(const char* nombreArchivo, Cita*& citas) {
-    int num = 0;
-    Cita buffer[300];
+    int num = 0, capacidad = 0;
+    citas = nullptr;
+    Cita cita; // dato, fila
 
     ifstream archivo(nombreArchivo, ios::in);
-    while (archivo >> buffer[num]) {
+    while (archivo >> cita) { // lee una fila en el archivo
+        if (num == capacidad) {
+            incrementarCitas(citas, num, capacidad);
+        }
+        citas[num] = cita;
         num++;
     }
+    citas[num] = { -1 };
+}
 
-    citas = new Cita[num + 1];
-    int numCitas = 0;
-    for (int i = 0; i < num; i++) {
-        insertarOrdenado(citas, numCitas, buffer[i]);
+void incrementarCitas(Cita*& citas, int num, int& capacidad) {
+    Cita* aux;
+    capacidad += 5;
+    if (citas == nullptr) {
+        citas = new Cita[capacidad + 1];
     }
-    citas[numCitas] = { -1 };
+    else {
+        aux = new Cita[capacidad + 1];
+        for (int i = 0; i < num; i++) {
+            aux[i] = citas[i];
+        }
+        delete citas;
+        citas = aux;
+    }
 }
 
 bool operator>>(ifstream& archivo, Paciente& paciente) {

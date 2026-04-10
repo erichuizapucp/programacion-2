@@ -13,10 +13,13 @@
 
 using namespace std;
 
-void cargarPacientes(const char*, Paciente*&, int&);
 void cargarPacientes(const char*, Paciente*&);
 void cargarDoctores(const char*, Doctor*&);
 void cargarCitas(const char*, Cita*&);
+
+void incrementarCitas(Cita*&, int, int&);
+void incrementarPacientes(Paciente*&, int, int&);
+void incrementarDoctores(Doctor*&, int, int&);
 
 bool operator>>(ifstream&, Paciente&);
 bool operator>>(ifstream&, Doctor&);
