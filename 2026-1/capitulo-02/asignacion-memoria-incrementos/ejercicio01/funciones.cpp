@@ -257,7 +257,7 @@ ostream& operator<<(ostream& os, const Cita& cita) {
 }
 
 ostream& operator<<(ostream& os, const Clinica& clinica) {
-    for (int i = 0; clinica.citas[i].fecha != -1 ; i++) {
+    for (int i = 0; clinica.citas[i].fecha != -1; i++) {
         os << clinica.citas[i] << endl;
     }
 
