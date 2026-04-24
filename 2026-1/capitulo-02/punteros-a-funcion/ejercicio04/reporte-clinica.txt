@@ -1,0 +1,694 @@
+======================================================================================
+                                   REPORTE DE CITAS
+======================================================================================
+
+Paciente: Alonso Fuentes        DNI:  10000017   Edad: 24   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-03   Hora:  17:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000009   Nombre:  Carlos Ibarra   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-08   Hora:  14:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000019   Nombre:  Cesar Alva   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-13   Hora:  10:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000009   Nombre:  Carlos Ibarra   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-18   Hora:  17:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000019   Nombre:  Cesar Alva   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-23   Hora:  14:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000009   Nombre:  Carlos Ibarra   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-28   Hora:  10:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000019   Nombre:  Cesar Alva   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-05   Hora:  17:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000009   Nombre:  Carlos Ibarra   Especialidad: ENDOCRINOLOGIA
+======================================================================================
+
+Paciente: Ana Martinez          DNI:  10000004   Edad: 35   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-01   Hora:  09:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000010   Nombre:  Maria Tapia   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-06   Hora:  16:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000020   Nombre:  Paola Chumbe   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-11   Hora:  12:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000010   Nombre:  Maria Tapia   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-16   Hora:  09:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000020   Nombre:  Paola Chumbe   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-21   Hora:  16:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000010   Nombre:  Maria Tapia   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-26   Hora:  12:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000020   Nombre:  Paola Chumbe   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-03-03   Hora:  09:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000010   Nombre:  Maria Tapia   Especialidad: PSIQUIATRIA
+======================================================================================
+
+Paciente: Andres Torres         DNI:  10000009   Edad: 38   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-02   Hora:  12:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000005   Nombre:  Andres Meza   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-02-07   Hora:  09:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000015   Nombre:  Bruno Estela   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-02-12   Hora:  16:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000005   Nombre:  Andres Meza   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-02-17   Hora:  12:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000015   Nombre:  Bruno Estela   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-02-22   Hora:  09:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000005   Nombre:  Andres Meza   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-02-27   Hora:  16:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000015   Nombre:  Bruno Estela   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-03-04   Hora:  12:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000005   Nombre:  Andres Meza   Especialidad: ORTOPEDIA
+======================================================================================
+
+Paciente: Camila Herrera        DNI:  10000016   Edad: 31   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-03   Hora:  16:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000006   Nombre:  Lucia Campos   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-08   Hora:  12:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000016   Nombre:  Fiorella Arias   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-13   Hora:  09:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000006   Nombre:  Lucia Campos   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-18   Hora:  16:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000016   Nombre:  Fiorella Arias   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-23   Hora:  12:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000006   Nombre:  Lucia Campos   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-28   Hora:  09:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000016   Nombre:  Fiorella Arias   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-05   Hora:  16:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000006   Nombre:  Lucia Campos   Especialidad: PSICOLOGIA
+======================================================================================
+
+Paciente: Carlos Sanchez        DNI:  10000003   Edad: 40   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-01   Hora:  09:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000007   Nombre:  Pedro Valdez   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-06   Hora:  16:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000017   Nombre:  Ivan Chacon   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-11   Hora:  12:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000007   Nombre:  Pedro Valdez   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-16   Hora:  09:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000017   Nombre:  Ivan Chacon   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-21   Hora:  16:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000007   Nombre:  Pedro Valdez   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-26   Hora:  12:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000017   Nombre:  Ivan Chacon   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-03   Hora:  09:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000007   Nombre:  Pedro Valdez   Especialidad: TRAUMATOLOGIA
+======================================================================================
+
+Paciente: Claudia Ponce         DNI:  10000028   Edad: 33   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-05   Hora:  12:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000002   Nombre:  Laura Martinez   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-10   Hora:  09:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000012   Nombre:  Rocio Palomino   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-15   Hora:  16:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000002   Nombre:  Laura Martinez   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-20   Hora:  12:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000012   Nombre:  Rocio Palomino   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-25   Hora:  09:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000002   Nombre:  Laura Martinez   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-03-02   Hora:  16:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000012   Nombre:  Rocio Palomino   Especialidad: NEUROLOGIA
+======================================================================================
+
+Paciente: Daniela Castro        DNI:  10000012   Edad: 29   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-02   Hora:  14:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000014   Nombre:  Karla Villacorta   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-07   Hora:  10:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000004   Nombre:  Sofia Rivas   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-12   Hora:  17:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000014   Nombre:  Karla Villacorta   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-17   Hora:  14:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000004   Nombre:  Sofia Rivas   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-22   Hora:  10:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000014   Nombre:  Karla Villacorta   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-27   Hora:  17:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000004   Nombre:  Sofia Rivas   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-03-04   Hora:  14:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000014   Nombre:  Karla Villacorta   Especialidad: PEDIATRIA
+======================================================================================
+
+Paciente: Diego Lopez           DNI:  10000007   Edad: 45   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-02   Hora:  11:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000019   Nombre:  Cesar Alva   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-07   Hora:  08:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000009   Nombre:  Carlos Ibarra   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-12   Hora:  15:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000019   Nombre:  Cesar Alva   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-17   Hora:  11:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000009   Nombre:  Carlos Ibarra   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-22   Hora:  08:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000019   Nombre:  Cesar Alva   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-27   Hora:  15:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000009   Nombre:  Carlos Ibarra   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-04   Hora:  11:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000019   Nombre:  Cesar Alva   Especialidad: ENDOCRINOLOGIA
+======================================================================================
+
+Paciente: Elena Cabrera         DNI:  10000026   Edad: 30   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-05   Hora:  11:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000016   Nombre:  Fiorella Arias   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-10   Hora:  08:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000006   Nombre:  Lucia Campos   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-15   Hora:  15:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000016   Nombre:  Fiorella Arias   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-20   Hora:  11:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000006   Nombre:  Lucia Campos   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-25   Hora:  08:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000016   Nombre:  Fiorella Arias   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-02   Hora:  15:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000006   Nombre:  Lucia Campos   Especialidad: PSICOLOGIA
+======================================================================================
+
+Paciente: Fernando Nunez        DNI:  10000023   Edad: 39   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-04   Hora:  10:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000007   Nombre:  Pedro Valdez   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-09   Hora:  17:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000017   Nombre:  Ivan Chacon   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-14   Hora:  14:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000007   Nombre:  Pedro Valdez   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-19   Hora:  10:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000017   Nombre:  Ivan Chacon   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-24   Hora:  17:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000007   Nombre:  Pedro Valdez   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-01   Hora:  14:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000017   Nombre:  Ivan Chacon   Especialidad: TRAUMATOLOGIA
+======================================================================================
+
+Paciente: Gabriela Cueva        DNI:  10000022   Edad: 28   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-04   Hora:  09:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000004   Nombre:  Sofia Rivas   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-09   Hora:  16:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000014   Nombre:  Karla Villacorta   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-14   Hora:  12:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000004   Nombre:  Sofia Rivas   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-19   Hora:  09:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000014   Nombre:  Karla Villacorta   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-24   Hora:  16:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000004   Nombre:  Sofia Rivas   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-03-01   Hora:  12:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000014   Nombre:  Karla Villacorta   Especialidad: PEDIATRIA
+======================================================================================
+
+Paciente: Hector Zamora         DNI:  10000025   Edad: 52   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-05   Hora:  11:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000013   Nombre:  Daniel Ordonez   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-10   Hora:  08:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000003   Nombre:  Diego Flores   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-15   Hora:  15:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000013   Nombre:  Daniel Ordonez   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-20   Hora:  11:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000003   Nombre:  Diego Flores   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-25   Hora:  08:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000013   Nombre:  Daniel Ordonez   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-02   Hora:  15:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000003   Nombre:  Diego Flores   Especialidad: DERMATOLOGIA
+======================================================================================
+
+Paciente: Jorge Paredes         DNI:  10000015   Edad: 50   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-03   Hora:  16:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000003   Nombre:  Diego Flores   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-08   Hora:  12:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000013   Nombre:  Daniel Ordonez   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-13   Hora:  09:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000003   Nombre:  Diego Flores   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-18   Hora:  16:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000013   Nombre:  Daniel Ordonez   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-23   Hora:  12:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000003   Nombre:  Diego Flores   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-28   Hora:  09:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000013   Nombre:  Daniel Ordonez   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-05   Hora:  16:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000003   Nombre:  Diego Flores   Especialidad: DERMATOLOGIA
+======================================================================================
+
+Paciente: Juan Perez            DNI:  10000001   Edad: 30   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-01   Hora:  08:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000001   Nombre:  Miguel Garcia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-06   Hora:  15:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000011   Nombre:  Jose Urrutia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-11   Hora:  11:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000001   Nombre:  Miguel Garcia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-16   Hora:  08:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000011   Nombre:  Jose Urrutia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-21   Hora:  15:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000001   Nombre:  Miguel Garcia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-26   Hora:  11:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000011   Nombre:  Jose Urrutia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-03   Hora:  08:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000001   Nombre:  Miguel Garcia   Especialidad: CARDIOLOGIA
+======================================================================================
+
+Paciente: Laura Fernandez       DNI:  10000006   Edad: 32   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-01   Hora:  10:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000016   Nombre:  Fiorella Arias   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-06   Hora:  17:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000006   Nombre:  Lucia Campos   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-11   Hora:  14:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000016   Nombre:  Fiorella Arias   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-16   Hora:  10:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000006   Nombre:  Lucia Campos   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-21   Hora:  17:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000016   Nombre:  Fiorella Arias   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-26   Hora:  14:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000006   Nombre:  Lucia Campos   Especialidad: PSICOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-03   Hora:  10:30   Estado:  CANCELADA
+          Doctor:   DNI:  20000016   Nombre:  Fiorella Arias   Especialidad: PSICOLOGIA
+======================================================================================
+
+Paciente: Lucia Gonzalez        DNI:  10000010   Edad: 27   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-02   Hora:  12:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000008   Nombre:  Ana Salinas   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-07   Hora:  09:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000018   Nombre:  Noelia Pacheco   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-12   Hora:  16:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000008   Nombre:  Ana Salinas   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-17   Hora:  12:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000018   Nombre:  Noelia Pacheco   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-22   Hora:  09:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000008   Nombre:  Ana Salinas   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-27   Hora:  16:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000018   Nombre:  Noelia Pacheco   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-04   Hora:  12:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000008   Nombre:  Ana Salinas   Especialidad: GINECOLOGIA
+======================================================================================
+
+Paciente: Maria Gomez           DNI:  10000002   Edad: 25   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-01   Hora:  08:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000004   Nombre:  Sofia Rivas   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-06   Hora:  15:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000014   Nombre:  Karla Villacorta   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-11   Hora:  11:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000004   Nombre:  Sofia Rivas   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-16   Hora:  08:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000014   Nombre:  Karla Villacorta   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-21   Hora:  15:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000004   Nombre:  Sofia Rivas   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-02-26   Hora:  11:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000014   Nombre:  Karla Villacorta   Especialidad: PEDIATRIA
+        ..............................................................................
+      Fecha:  2026-03-03   Hora:  08:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000004   Nombre:  Sofia Rivas   Especialidad: PEDIATRIA
+======================================================================================
+
+Paciente: Martin Salazar        DNI:  10000013   Edad: 33   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-03   Hora:  15:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000017   Nombre:  Ivan Chacon   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-08   Hora:  11:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000007   Nombre:  Pedro Valdez   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-13   Hora:  08:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000017   Nombre:  Ivan Chacon   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-18   Hora:  15:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000007   Nombre:  Pedro Valdez   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-23   Hora:  11:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000017   Nombre:  Ivan Chacon   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-28   Hora:  08:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000007   Nombre:  Pedro Valdez   Especialidad: TRAUMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-05   Hora:  15:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000017   Nombre:  Ivan Chacon   Especialidad: TRAUMATOLOGIA
+======================================================================================
+
+Paciente: Milagros Silva        DNI:  10000030   Edad: 23   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-05   Hora:  14:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000008   Nombre:  Ana Salinas   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-10   Hora:  10:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000018   Nombre:  Noelia Pacheco   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-15   Hora:  17:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000008   Nombre:  Ana Salinas   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-20   Hora:  14:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000018   Nombre:  Noelia Pacheco   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-25   Hora:  10:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000008   Nombre:  Ana Salinas   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-02   Hora:  17:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000018   Nombre:  Noelia Pacheco   Especialidad: GINECOLOGIA
+======================================================================================
+
+Paciente: Nicolas Aguilar       DNI:  10000021   Edad: 36   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-04   Hora:  09:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000001   Nombre:  Miguel Garcia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-09   Hora:  16:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000011   Nombre:  Jose Urrutia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-14   Hora:  12:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000001   Nombre:  Miguel Garcia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-19   Hora:  09:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000011   Nombre:  Jose Urrutia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-24   Hora:  16:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000001   Nombre:  Miguel Garcia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-01   Hora:  12:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000011   Nombre:  Jose Urrutia   Especialidad: CARDIOLOGIA
+======================================================================================
+
+Paciente: Patricia Leon         DNI:  10000024   Edad: 46   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-04   Hora:  10:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000010   Nombre:  Maria Tapia   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-09   Hora:  17:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000020   Nombre:  Paola Chumbe   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-14   Hora:  14:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000010   Nombre:  Maria Tapia   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-19   Hora:  10:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000020   Nombre:  Paola Chumbe   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-24   Hora:  17:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000010   Nombre:  Maria Tapia   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-03-01   Hora:  14:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000020   Nombre:  Paola Chumbe   Especialidad: PSIQUIATRIA
+======================================================================================
+
+Paciente: Paula Medina          DNI:  10000020   Edad: 34   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-04   Hora:  08:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000018   Nombre:  Noelia Pacheco   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-09   Hora:  15:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000008   Nombre:  Ana Salinas   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-14   Hora:  11:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000018   Nombre:  Noelia Pacheco   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-19   Hora:  08:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000008   Nombre:  Ana Salinas   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-24   Hora:  15:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000018   Nombre:  Noelia Pacheco   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-01   Hora:  11:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000008   Nombre:  Ana Salinas   Especialidad: GINECOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-06   Hora:  08:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000018   Nombre:  Noelia Pacheco   Especialidad: GINECOLOGIA
+======================================================================================
+
+Paciente: Pedro Rodriguez       DNI:  10000005   Edad: 28   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-01   Hora:  10:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000013   Nombre:  Daniel Ordonez   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-06   Hora:  17:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000003   Nombre:  Diego Flores   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-11   Hora:  14:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000013   Nombre:  Daniel Ordonez   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-16   Hora:  10:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000003   Nombre:  Diego Flores   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-21   Hora:  17:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000013   Nombre:  Daniel Ordonez   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-26   Hora:  14:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000003   Nombre:  Diego Flores   Especialidad: DERMATOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-03   Hora:  10:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000013   Nombre:  Daniel Ordonez   Especialidad: DERMATOLOGIA
+======================================================================================
+
+Paciente: Raul Quintana         DNI:  10000029   Edad: 44   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-05   Hora:  14:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000005   Nombre:  Andres Meza   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-02-10   Hora:  10:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000015   Nombre:  Bruno Estela   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-02-15   Hora:  17:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000005   Nombre:  Andres Meza   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-02-20   Hora:  14:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000015   Nombre:  Bruno Estela   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-02-25   Hora:  10:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000005   Nombre:  Andres Meza   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-03-02   Hora:  17:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000015   Nombre:  Bruno Estela   Especialidad: ORTOPEDIA
+======================================================================================
+
+Paciente: Renata Morales        DNI:  10000018   Edad: 37   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-03   Hora:  17:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000012   Nombre:  Rocio Palomino   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-08   Hora:  14:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000002   Nombre:  Laura Martinez   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-13   Hora:  10:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000012   Nombre:  Rocio Palomino   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-18   Hora:  17:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000002   Nombre:  Laura Martinez   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-23   Hora:  14:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000012   Nombre:  Rocio Palomino   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-28   Hora:  10:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000002   Nombre:  Laura Martinez   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-03-05   Hora:  17:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000012   Nombre:  Rocio Palomino   Especialidad: NEUROLOGIA
+======================================================================================
+
+Paciente: Ricardo Navarro       DNI:  10000011   Edad: 41   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-02   Hora:  14:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000011   Nombre:  Jose Urrutia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-07   Hora:  10:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000001   Nombre:  Miguel Garcia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-12   Hora:  17:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000011   Nombre:  Jose Urrutia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-17   Hora:  14:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000001   Nombre:  Miguel Garcia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-22   Hora:  10:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000011   Nombre:  Jose Urrutia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-27   Hora:  17:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000001   Nombre:  Miguel Garcia   Especialidad: CARDIOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-04   Hora:  14:00   Estado:  CANCELADA
+          Doctor:   DNI:  20000011   Nombre:  Jose Urrutia   Especialidad: CARDIOLOGIA
+======================================================================================
+
+Paciente: Sebastian Vega        DNI:  10000019   Edad: 43   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-04   Hora:  08:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000015   Nombre:  Bruno Estela   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-02-09   Hora:  15:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000005   Nombre:  Andres Meza   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-02-14   Hora:  11:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000015   Nombre:  Bruno Estela   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-02-19   Hora:  08:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000005   Nombre:  Andres Meza   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-02-24   Hora:  15:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000015   Nombre:  Bruno Estela   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-03-01   Hora:  11:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000005   Nombre:  Andres Meza   Especialidad: ORTOPEDIA
+        ..............................................................................
+      Fecha:  2026-03-06   Hora:  08:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000015   Nombre:  Bruno Estela   Especialidad: ORTOPEDIA
+======================================================================================
+
+Paciente: Sofia Ramirez         DNI:  10000008   Edad: 22   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-02   Hora:  11:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000002   Nombre:  Laura Martinez   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-07   Hora:  08:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000012   Nombre:  Rocio Palomino   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-12   Hora:  15:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000002   Nombre:  Laura Martinez   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-17   Hora:  11:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000012   Nombre:  Rocio Palomino   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-22   Hora:  08:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000002   Nombre:  Laura Martinez   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-02-27   Hora:  15:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000012   Nombre:  Rocio Palomino   Especialidad: NEUROLOGIA
+        ..............................................................................
+      Fecha:  2026-03-04   Hora:  11:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000002   Nombre:  Laura Martinez   Especialidad: NEUROLOGIA
+======================================================================================
+
+Paciente: Tomas Villanueva      DNI:  10000027   Edad: 27   Genero: M
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-05   Hora:  12:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000019   Nombre:  Cesar Alva   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-10   Hora:  09:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000009   Nombre:  Carlos Ibarra   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-15   Hora:  16:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000019   Nombre:  Cesar Alva   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-20   Hora:  12:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000009   Nombre:  Carlos Ibarra   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-02-25   Hora:  09:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000019   Nombre:  Cesar Alva   Especialidad: ENDOCRINOLOGIA
+        ..............................................................................
+      Fecha:  2026-03-02   Hora:  16:00   Estado:  RESERVADA
+          Doctor:   DNI:  20000009   Nombre:  Carlos Ibarra   Especialidad: ENDOCRINOLOGIA
+======================================================================================
+
+Paciente: Valeria Rojas         DNI:  10000014   Edad: 26   Genero: F
+    ----------------------------------------------------------------------------------
+      Fecha:  2026-02-03   Hora:  15:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000020   Nombre:  Paola Chumbe   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-08   Hora:  11:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000010   Nombre:  Maria Tapia   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-13   Hora:  08:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000020   Nombre:  Paola Chumbe   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-18   Hora:  15:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000010   Nombre:  Maria Tapia   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-23   Hora:  11:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000020   Nombre:  Paola Chumbe   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-02-28   Hora:  08:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000010   Nombre:  Maria Tapia   Especialidad: PSIQUIATRIA
+        ..............................................................................
+      Fecha:  2026-03-05   Hora:  15:30   Estado:  RESERVADA
+          Doctor:   DNI:  20000020   Nombre:  Paola Chumbe   Especialidad: PSIQUIATRIA
+======================================================================================
+
