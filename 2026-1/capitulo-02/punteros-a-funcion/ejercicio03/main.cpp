@@ -4,44 +4,27 @@
 
 using namespace std;
 
-int compararInt(const void* a, const void* b) {
-    int ia = *(int*)a;
-    int ib = *(int*)b;
-
-    if (ia < ib) return -1;
-    if (ia > ib) return 1;
-    return 0;
-}
-
-int compararDouble(const void* a, const void* b) {
-    double ia = *(double*)a;
-    double ib = *(double*)b;
-
-    if (ia < ib) return -1;
-    if (ia > ib) return 1;
-    return 0;
-}
-
-int compararCadenas(const void* a, const void* b) {
-    const char* sa = (const char*)a;
-    const char* sb = (const char*)b;
-    return strcmp(sa, sb);
-}
-
 int main() {
-    const char** cadenas = new const char*[6] { "banana", "apple", "grape", "orange", "kiwi", "melon" };
+    const char** cadenas = new const char*[6] {
+        "banana", "apple", "grape", "orange", "kiwi", "melon"
+    };
+    // const int* numeros = new const int[6] {5, 2, 9, 1, 5, 6};
+
     const void** datos = new const void*[6];
     for (int i = 0; i < 6; ++i) {
+        // datos[i] = &numeros[i];
         datos[i] = cadenas[i];
     }
 
+    // ordenar(datos, 6, compararInt);
     ordenar(datos, 6, compararCadenas);
 
     for (int i = 0; i < 6; i++) {
-        cout << (const char*)datos[i] << " ";
+        cout << (char*)datos[i] << " ";
     }
     cout << endl;
 
+    // delete[] numeros;
     delete[] cadenas;
     delete[] datos;
 

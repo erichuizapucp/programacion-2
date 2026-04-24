@@ -370,27 +370,26 @@ void* buscarPaciente(int dniPaciente, const void* pacientes) {
     const void** regPacientes = (const void**)pacientes;
     if (regPacientes == nullptr) return nullptr;
 
-    void** clavePaciente = new void*[pacNumCampos + 1] {};
+    void** clavePaciente = new void*[pacNumCampos] {};
     clavePaciente[pacDni] = &dniPaciente;
     void* clave = clavePaciente;
 
-    const void* paciente =
+    const void* pacientePtr =
         bsearch(&clave,
             regPacientes,
             numElementos((void**)regPacientes),
             sizeof(int*),
             cmpPacientePorDni);
 
-    if (paciente == nullptr) return nullptr;
-
-    return *(void**)paciente;
+    if (pacientePtr == nullptr) return nullptr;
+    return *(void**)pacientePtr;
 }
 
 void* buscarDoctor(int dniDoctor, const void* doctores) {
     const void** regDoctores = (const void**)doctores;
     if (regDoctores == nullptr) return nullptr;
 
-    void** claveDoctor = new void*[docNumCampos + 1] {};
+    void** claveDoctor = new void*[docNumCampos] {};
     claveDoctor[docDni] = &dniDoctor;
     void* clave = claveDoctor;
 

@@ -48,3 +48,27 @@ void ordenar(void *arreglo,
     ordenar(subArregloIzquierda, cantidadIzquierda, comparar);
     ordenar(subArregloDerecha, cantidadDerecha, comparar);
 }
+
+int compararInt(const void* a, const void* b) {
+    int ia = *(int*)a;
+    int ib = *(int*)b;
+
+    if (ia < ib) return -1;
+    if (ia > ib) return 1;
+    return 0;
+}
+
+int compararDouble(const void* a, const void* b) {
+    double ia = *(double*)a;
+    double ib = *(double*)b;
+
+    if (ia < ib) return -1;
+    if (ia > ib) return 1;
+    return 0;
+}
+
+int compararCadenas(const void* a, const void* b) {
+    const char* sa = (const char*)a;
+    const char* sb = (const char*)b;
+    return strcmp(sa, sb);
+}
