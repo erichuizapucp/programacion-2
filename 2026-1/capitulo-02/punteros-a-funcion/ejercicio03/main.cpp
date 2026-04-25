@@ -10,7 +10,7 @@ int main() {
     };
     // const int* numeros = new const int[6] {5, 2, 9, 1, 5, 6};
 
-    const void** datos = new const void*[6];
+    const void **datos = new const void *[6];
     for (int i = 0; i < 6; ++i) {
         // datos[i] = &numeros[i];
         datos[i] = cadenas[i];
