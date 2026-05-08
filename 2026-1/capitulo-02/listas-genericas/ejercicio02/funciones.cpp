@@ -512,7 +512,7 @@ void encolarCitasPacienteDoctor(void* colaDoctor, const void* paciente, int dniD
         int estadoCita = *(int*)regCita[citaEstado];
 
         if (dniCitaDoctor == dniDoctor && estadoCita == 1) {
-            encolar(colaDoctor, (void*)citas[i]);
+            encolar(colaDoctor, (void*)citas[i]); // se castea a void* porque encolar no admite constante.
         }
     }
 }

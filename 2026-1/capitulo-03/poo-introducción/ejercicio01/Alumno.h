@@ -17,6 +17,28 @@ class Alumno {
     int ciclo;
 public:
     Alumno();
+    Alumno(int dni, int codigo);
+    Alumno(const Alumno&);
+
+    int getDni() const;
+    void setDni(int dni);
+
+    int getCodigo() const;
+    void setCodigo(int codigo);
+
+    char* getNombre() const;
+    void setNombre(char* nombre);
+
+    char* getFacultad() const;
+    void setFacultad(char* facultad);
+
+    int getCiclo() const;
+    void setCiclo(int ciclo);
+
+    Alumno& operator=(const Alumno&);
+
+    ~Alumno();
+
     void imprimir();
 };
 
