@@ -21,7 +21,8 @@ enum Especialidad {
 
 enum Estado {
     RESERVADA,
-    CANCELADA
+    CANCELADA,
+    NA
 };
 
 #endif //EJERCICIO_OPERADORES_CLINICA_ENUMS_H

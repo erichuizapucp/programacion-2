@@ -61,7 +61,7 @@ Paciente& Paciente::operator=(const Paciente& origin) {
 }
 
 Paciente::~Paciente() {
-    delete[] this->nombre;
+    delete[] nombre;
 }
 
 ofstream& operator<<(ofstream& os, const Paciente& paciente) {
@@ -75,12 +75,11 @@ ofstream& operator<<(ofstream& os, const Paciente& paciente) {
 
 ifstream& operator>>(ifstream& archivo, Paciente& paciente) {
     int dni;
-    char* nombre;
-    int edad;
-    char genero;
     if (archivo >> dni) {
+        int edad;
+        char genero;
         archivo.ignore();
-        nombre = leerCadena(archivo);
+        char *nombre = leerCadena(archivo);
         archivo >> edad;
         archivo.ignore();
         archivo >> genero;

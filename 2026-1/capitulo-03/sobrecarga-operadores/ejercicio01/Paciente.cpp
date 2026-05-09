@@ -21,6 +21,9 @@ int Paciente::getDni() const {
 }
 
 char* Paciente::getNombre() const {
+    // char* n = new char[strlen(this->nombre) + 1];
+    // strcpy(n, this->nombre);
+    // return n;
     return nombre;
 }
 

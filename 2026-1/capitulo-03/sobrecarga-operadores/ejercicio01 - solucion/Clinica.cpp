@@ -18,10 +18,6 @@ Clinica::Clinica() {
     capPacientes = 0;
 }
 
-Clinica::Clinica(const Clinica& origin) : Clinica() {
-    *this = origin;
-}
-
 void Clinica::cargarPacientes(const char* nombreArchivo) {
     Paciente paciente;
     ifstream archivo(nombreArchivo, ios::in);
@@ -39,26 +35,42 @@ void Clinica::cargarDoctores(const char* nombreArchivo) {
 }
 
 void Clinica::cargarCitas(const char* nombreArchivo) {
-    Cita cita; // dato, fila
+    Cita cita;
 
     ifstream archivo(nombreArchivo, ios::in);
-    while (archivo >> cita) { // lee una fila en el archivo
+    while (archivo >> cita) {
         *this += cita;
     }
 }
 
-void Clinica::procesarCitas() {
+void Clinica::procesarCitas() const {
     for (int i = 0; i < numeroCitas; i++) {
-        int dniPaciente = citas[i].getDniPaciente();
-        int dniDoctor = citas[i].getDniDoctor();
+        Cita& cita = citas[i];
 
-        citas[i].setPaciente(obtenerPacientePorDni(dniPaciente));
-        citas[i].setDoctor(obtenerDoctorPorDni(dniDoctor));
+        int dniPaciente = cita.getDniPaciente();
+        int dniDoctor = cita.getDniDoctor();
+
+        cita.setPaciente(obtenerPacientePorDni(dniPaciente));
+        cita.setDoctor(obtenerDoctorPorDni(dniDoctor));
     }
 }
 
+void Clinica::insertarOrdenado(const Cita& nuevaCita) {
+    int pos = 0;
+    while (pos < numeroCitas && !(nuevaCita < citas[pos])) {
+        pos++;
+    }
+
+    for (int i = numeroCitas; i > pos; i--) {
+        citas[i] = citas[i - 1];
+    }
+
+    citas[pos] = nuevaCita;
+    numeroCitas++;
+}
+
 Paciente* Clinica::obtenerPacientePorDni(int dni) const {
-    for (int i = 0; numeroPacientes; i++) {
+    for (int i = 0; i < numeroPacientes; i++) {
         if (pacientes[i].getDni() == dni) {
             return &pacientes[i];
         }
@@ -67,7 +79,7 @@ Paciente* Clinica::obtenerPacientePorDni(int dni) const {
 }
 
 Doctor* Clinica::obtenerDoctorPorDni(int dni) const {
-    for (int i = 0; numeroDoctores; i++) {
+    for (int i = 0; i < numeroDoctores; i++) {
         if (doctores[i].getDni() == dni) {
             return &doctores[i];
         }
@@ -75,11 +87,12 @@ Doctor* Clinica::obtenerDoctorPorDni(int dni) const {
     return nullptr;
 }
 
-void Clinica::cancelarCita(int idCita) {
+void Clinica::cancelarCita(int idCita) const {
     if (idCita >= 0 && idCita < numeroCitas) {
         !citas[idCita];
     }
 }
+
 void Clinica::generarReporte(const char* nombreArchivo) const {
     ofstream archivo(nombreArchivo, ios::out);
     archivo << *this;
@@ -89,8 +102,7 @@ Clinica& Clinica::operator+=(const Paciente& paciente) {
     if (numeroPacientes == capPacientes) {
         incrementarPacientes();
     }
-    pacientes[numeroPacientes] = paciente;
-    numeroPacientes++;
+    pacientes[numeroPacientes++] = paciente;
     return *this;
 }
 
@@ -98,8 +110,7 @@ Clinica& Clinica::operator+=(const Doctor& doctor) {
     if (numeroDoctores == capDoctores) {
         incrementarDoctores();
     }
-    doctores[numeroDoctores] = doctor;
-    numeroDoctores++;
+    doctores[numeroDoctores++] = doctor;
     return *this;
 }
 
@@ -107,7 +118,7 @@ Clinica& Clinica::operator+=(const Cita& cita) {
     if (numeroCitas == capCitas) {
         incrementarCitas();
     }
-    citas[numeroCitas++] = cita;
+    insertarOrdenado(cita);
     return *this;
 }
 
@@ -179,7 +190,8 @@ Clinica::~Clinica() {
 
 ofstream& operator<<(ofstream& os, const Clinica& clinica) {
     for (int i = 0; i < clinica.getNumeroCitas(); i++) {
-        os << *clinica.getCita(i) << endl;
+        const Cita& cita = *clinica.getCita(i);
+        os << cita << endl;
     }
 
     return os;

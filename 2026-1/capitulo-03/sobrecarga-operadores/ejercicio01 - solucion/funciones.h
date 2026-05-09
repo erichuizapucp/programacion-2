@@ -14,7 +14,6 @@ using namespace std;
 char* leerCadena(ifstream&, char=',');
 Especialidad convertirEspecialidad(const char*);
 Estado convertirEstado(const char*);
-// void insertarOrdenado(Cita*, int&, const Cita&);
 void imprimirFecha(ostream&, int);
 void imprimirHora(ostream&, int);
 void imprimirEstado(ostream&, Estado);

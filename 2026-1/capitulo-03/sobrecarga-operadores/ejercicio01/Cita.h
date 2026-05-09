@@ -40,11 +40,13 @@ public:
     void setEstado(Estado);
 
     Cita& operator=(const Cita&);
+    bool operator<(const Cita&) const;
+    Cita& operator!();
 
     ~Cita();
 };
 
 ifstream& operator>>(ifstream&, Cita&);
-ofstream& operator<<(ofstream&, Cita&);
+ofstream& operator<<(ofstream&, const Cita&);
 
 #endif //EJERCICIO01_CITA_H

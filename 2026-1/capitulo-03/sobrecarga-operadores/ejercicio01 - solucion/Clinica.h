@@ -37,18 +37,20 @@ class Clinica {
     Paciente* obtenerPacientePorDni(int dni) const;
     Doctor* obtenerDoctorPorDni(int dni) const;
 
-    int getNumeroCitas() const;
-    Cita* getCita(int index) const;
+    void insertarOrdenado(const Cita&);
 public:
     Clinica();
-    Clinica(const Clinica&);
 
     void cargarPacientes(const char*);
     void cargarDoctores(const char*);
     void cargarCitas(const char*);
-    void procesarCitas();
-    void cancelarCita(int);
+    void procesarCitas() const;
+    void cancelarCita(int) const;
     void generarReporte(const char*) const;
+
+    // TODO: Es público temporalmente mientras no vemos funciones Friend.
+    int getNumeroCitas() const;
+    Cita* getCita(int index) const;
 
     ~Clinica();
 };

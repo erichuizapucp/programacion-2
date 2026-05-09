@@ -38,20 +38,6 @@ Estado convertirEstado(const char* estado) {
     return RESERVADA;
 }
 
-// void insertarOrdenado(Cita* citas, int& numCitas, const Cita& nuevaCita) {
-//     int pos = 0;
-//     while (pos < numCitas && !(nuevaCita < citas[pos])) {
-//         pos++;
-//     }
-//
-//     for (int i = numCitas; i > pos; i--) {
-//         citas[i] = citas[i - 1];
-//     }
-//
-//     citas[pos] = nuevaCita;
-//     numCitas++;
-// }
-
 void imprimirFecha(ostream& os, int fecha) {
     int anho = fecha / 10000;
     int mes = (fecha / 100) % 100;
