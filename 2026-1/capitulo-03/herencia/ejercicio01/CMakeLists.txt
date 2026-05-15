@@ -7,4 +7,6 @@ add_executable(ejercicio01 main.cpp
         Persona.cpp
         Persona.h
         Alumno.cpp
-        Alumno.h)
+        Alumno.h
+        Registro.cpp
+        Registro.h)

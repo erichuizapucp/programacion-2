@@ -18,11 +18,18 @@ public:
     Alumno();
     Alumno(const Alumno&);
 
+    int getCodigo() const;
+    char* getFacultad() const;
+
+    void setCodigo(int);
+    void setFacultad(char*);
+
     void leer(ifstream&);
-    void imprimir(ofstream&);
+    void imprimir(ostream&) const;
 
     ~Alumno();
 };
 
+ostream& operator<<(ostream&, const Alumno&);
 
 #endif //EJERCICIO01_ALUMNO_H

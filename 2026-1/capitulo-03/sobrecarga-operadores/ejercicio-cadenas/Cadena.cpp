@@ -100,7 +100,7 @@ Cadena& Cadena::operator=(const char* origin) {
     return *this;
 }
 
-Cadena Cadena::operator+(const Cadena& origin) {
+Cadena Cadena::operator+(const Cadena& origin) const {
     Cadena resultado = *this;
     resultado.append(origin);
     return resultado;

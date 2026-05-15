@@ -37,7 +37,7 @@ public:
 
     Cadena& operator=(const Cadena&);
     Cadena& operator=(const char*);
-    Cadena operator+(const Cadena&);
+    Cadena operator+(const Cadena&) const;
     bool operator>(const Cadena&) const;
     bool operator<(const Cadena&) const;
     bool operator>=(const Cadena&) const;

@@ -8,9 +8,11 @@
 #include <fstream>
 #include <iostream>
 
+#include "Registro.h"
+
 using namespace std;
 
-class Persona {
+class Persona : public Registro {
     int dni;
     char* nombre;
     int edad;
@@ -22,11 +24,16 @@ public:
     char* getNombre() const;
     int getEdad() const;
 
+    void setDni(int);
+    void setNombre(char*);
+    void setEdad(int);
+
     void leer(ifstream&);
-    void imprimir(ofstream&);
+    void imprimir(ostream&) const;
 
     ~Persona();
 };
 
+ostream& operator<<(ostream&, const Persona&);
 
 #endif //EJERCICIO01_PERSONA_H
