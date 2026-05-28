@@ -4,7 +4,7 @@
 
 #include "Doctor.h"
 
-Doctor::Doctor() : Persona() {
+Doctor::Doctor() {
 }
 
 Doctor::Doctor(const Doctor& origin) : Persona(origin) {
@@ -29,9 +29,6 @@ ofstream& Doctor::imprimir(ofstream& os) const {
     Persona::imprimir(os);
 
     return os;
-}
-
-Doctor::~Doctor() {
 }
 
 ifstream& operator>> (ifstream& archivo, Doctor& doctor) {

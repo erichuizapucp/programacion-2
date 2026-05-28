@@ -53,8 +53,8 @@ ifstream& Persona::leer(ifstream& archivo) {
 }
 
 ofstream& Persona::imprimir(ofstream& archivo) const {
-    archivo << "DNI: " << this->dni << endl;
-    archivo << "Nombre: " << this->nombre << endl;
+    archivo << "DNI: " << this->getDni() << endl;
+    archivo << "Nombre: " << this->getNombre() << endl;
 
     return archivo;
 }

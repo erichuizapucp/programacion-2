@@ -3,14 +3,13 @@
 //
 
 #include "CitaPresencial.h"
-#include <iomanip>
 
-CitaPresencial::CitaPresencial() : Cita() {
+CitaPresencial::CitaPresencial() {
 	consultorio = nullptr;
 	sede = nullptr;
 }
 
-CitaPresencial::CitaPresencial(const CitaPresencial& origin) : Cita(origin) {
+CitaPresencial::CitaPresencial(const CitaPresencial& origin) : CitaPresencial() {
 	consultorio = nullptr;
 	sede = nullptr;
 	*this = origin;
@@ -60,9 +59,8 @@ ifstream& CitaPresencial::leer(ifstream& archivo) {
 
 ofstream& CitaPresencial::imprimir(ofstream& archivo) const {
 	Cita::imprimir(archivo);
-	archivo << left << setw(20) << this->consultorio;
-	archivo << this->sede;
-
+	archivo << left << setw(20) << getConsultorio();
+	archivo << getSede();
 	return archivo;
 }
 

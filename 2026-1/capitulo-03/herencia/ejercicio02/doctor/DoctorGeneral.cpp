@@ -4,15 +4,26 @@
 
 #include "DoctorGeneral.h"
 
-DoctorGeneral::DoctorGeneral() : Doctor() {
+DoctorGeneral::DoctorGeneral() {
+    consultorio = 0;
 }
 
-DoctorGeneral::DoctorGeneral(const DoctorGeneral& origin) : Doctor(origin) {
+DoctorGeneral::DoctorGeneral(const DoctorGeneral& origin) : DoctorGeneral() {
+    *this = origin;
+}
+
+int DoctorGeneral::getConsultorio() const {
+    return consultorio;
+}
+
+void DoctorGeneral::setConsultorio(int consultorio) {
+    this->consultorio = consultorio;
 }
 
 DoctorGeneral& DoctorGeneral::operator=(const DoctorGeneral& origin) {
     if (this != &origin) {
         Doctor::operator=(origin);
+        this->setConsultorio(origin.getConsultorio());
     }
     return *this;
 }
@@ -22,8 +33,9 @@ ifstream& DoctorGeneral::leer(ifstream& archivo) {
         return archivo;
     }
 
-    char* descartado = leerCadena(archivo, '\n');
-    delete[] descartado;
+    int consultorio;
+    archivo >> consultorio;
+    this->setConsultorio(consultorio);
 
     return archivo;
 }
@@ -31,6 +43,7 @@ ifstream& DoctorGeneral::leer(ifstream& archivo) {
 ofstream& DoctorGeneral::imprimir(ofstream& archivo) const {
     archivo << "Tipo Doctor: GENERAL" << endl;
     Doctor::imprimir(archivo);
+    archivo << "Consultorio: " << this->getConsultorio() << endl;
 
     return archivo;
 }

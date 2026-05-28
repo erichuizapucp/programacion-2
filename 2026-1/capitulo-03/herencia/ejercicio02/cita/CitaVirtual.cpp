@@ -3,14 +3,13 @@
 //
 
 #include "CitaVirtual.h"
-#include <iomanip>
 
-CitaVirtual::CitaVirtual() : Cita() {
+CitaVirtual::CitaVirtual() {
 	plataforma = nullptr;
 	enlace = nullptr;
 }
 
-CitaVirtual::CitaVirtual(const CitaVirtual& origin) : Cita(origin) {
+CitaVirtual::CitaVirtual(const CitaVirtual& origin) : CitaVirtual() {
 	plataforma = nullptr;
 	enlace = nullptr;
 	*this = origin;

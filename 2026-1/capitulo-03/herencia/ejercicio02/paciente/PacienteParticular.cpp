@@ -4,15 +4,26 @@
 
 #include "PacienteParticular.h"
 
-PacienteParticular::PacienteParticular() : Paciente() {
+PacienteParticular::PacienteParticular() {
+    categoria = 'N';
 }
 
-PacienteParticular::PacienteParticular(const PacienteParticular& origin) : Paciente(origin) {
+PacienteParticular::PacienteParticular(const PacienteParticular& origin) : PacienteParticular() {
+    *this = origin;
+}
+
+char PacienteParticular::getCategoria() const {
+    return categoria;
+}
+
+void PacienteParticular::setCategoria(char categoria) {
+    this->categoria = categoria;
 }
 
 PacienteParticular& PacienteParticular::operator=(const PacienteParticular& origin) {
     if (this != &origin) {
         Paciente::operator=(origin);
+        this->setCategoria(origin.getCategoria());
     }
     return *this;
 }
@@ -22,10 +33,9 @@ ifstream& PacienteParticular::leer(ifstream& archivo) {
         return archivo;
     }
 
-    char* descartado = leerCadena(archivo);
-    delete[] descartado;
-    descartado = leerCadena(archivo, '\n');
-    delete[] descartado;
+    char categoria;
+    archivo >> categoria;
+    this->setCategoria(categoria);
 
     return archivo;
 }
@@ -33,6 +43,7 @@ ifstream& PacienteParticular::leer(ifstream& archivo) {
 ofstream& PacienteParticular::imprimir(ofstream& archivo) const {
     archivo << "Tipo Paciente: PARTICULAR" << endl;
     Paciente::imprimir(archivo);
+    archivo << "Categoria: " << this->getCategoria() << endl;
 
     return archivo;
 }

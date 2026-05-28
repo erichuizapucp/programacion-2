@@ -5,12 +5,15 @@
 #ifndef EJERCICIO01_CITA_H
 #define EJERCICIO01_CITA_H
 
+#include <iomanip>
+
 #include "../Registro.h"
 #include "../enums.h"
 #include "../doctor/DoctorEspecialista.h"
 #include "../doctor/DoctorGeneral.h"
 #include "../paciente/PacienteAsegurado.h"
 #include "../paciente/PacienteParticular.h"
+#include "../funciones.h"
 
 using namespace std;
 
@@ -19,12 +22,15 @@ class Cita : public Registro {
     int hora;
     int dniPaciente;
     int dniDoctor;
-    const PacienteParticular* pacienteParticular;
-    const PacienteAsegurado* pacienteAsegurado;
-    const DoctorGeneral* doctorGeneral;
-    const DoctorEspecialista* doctorEspecialista;
+
+    PacienteParticular* pacienteParticular;
+    PacienteAsegurado* pacienteAsegurado;
+    DoctorGeneral* doctorGeneral;
+    DoctorEspecialista* doctorEspecialista;
+
     char tipoPaciente;
     char tipoDoctor;
+
     Estado estado;
 public:
     Cita();

@@ -27,7 +27,7 @@ public:
     ifstream& leer(ifstream&);
     ofstream& imprimir(ofstream&) const;
 
-    ~Paciente();
+    ~Paciente() = default;
 };
 
 ifstream& operator>>(ifstream&, Paciente&);

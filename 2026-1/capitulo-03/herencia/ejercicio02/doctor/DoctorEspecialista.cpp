@@ -3,13 +3,12 @@
 //
 
 #include "DoctorEspecialista.h"
-#include "../funciones.h"
 
-DoctorEspecialista::DoctorEspecialista() : Doctor() {
+DoctorEspecialista::DoctorEspecialista() {
     especialidad = GENERAL;
 }
 
-DoctorEspecialista::DoctorEspecialista(const DoctorEspecialista& origin) : Doctor(origin) {
+DoctorEspecialista::DoctorEspecialista(const DoctorEspecialista& origin) : DoctorEspecialista() {
     *this = origin;
 }
 

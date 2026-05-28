@@ -7,6 +7,7 @@
 
 #include "Doctor.h"
 #include "../enums.h"
+#include "../funciones.h"
 
 class DoctorEspecialista : public Doctor {
     Especialidad especialidad;

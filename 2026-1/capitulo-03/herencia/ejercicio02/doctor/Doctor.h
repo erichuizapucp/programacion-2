@@ -4,6 +4,7 @@
 
 #ifndef EJERCICIO01_DOCTOR_H
 #define EJERCICIO01_DOCTOR_H
+
 #include "../Persona.h"
 
 using namespace std;
@@ -18,7 +19,7 @@ public:
     ifstream& leer(ifstream&);
     ofstream& imprimir(ofstream&) const;
 
-    ~Doctor();
+    ~Doctor() = default;
 };
 
 ifstream& operator>> (ifstream&, Doctor&);

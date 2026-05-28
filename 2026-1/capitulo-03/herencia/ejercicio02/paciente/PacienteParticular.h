@@ -8,14 +8,20 @@
 #include "Paciente.h"
 
 class PacienteParticular : public Paciente {
+    char categoria;
 public:
     PacienteParticular();
     PacienteParticular(const PacienteParticular&);
+
+    char getCategoria() const;
+    void setCategoria(char);
 
     PacienteParticular& operator=(const PacienteParticular&);
 
     ifstream& leer(ifstream&);
     ofstream& imprimir(ofstream&) const;
+
+    ~PacienteParticular() = default;
 };
 
 ifstream& operator>>(ifstream&, PacienteParticular&);

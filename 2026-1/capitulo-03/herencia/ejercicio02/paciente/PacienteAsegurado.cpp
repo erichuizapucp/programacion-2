@@ -4,14 +4,12 @@
 
 #include "PacienteAsegurado.h"
 
-PacienteAsegurado::PacienteAsegurado() : Paciente() {
+PacienteAsegurado::PacienteAsegurado() {
 	aseguradora = nullptr;
 	plan = nullptr;
 }
 
-PacienteAsegurado::PacienteAsegurado(const PacienteAsegurado& origin) : Paciente(origin) {
-	aseguradora = nullptr;
-	plan = nullptr;
+PacienteAsegurado::PacienteAsegurado(const PacienteAsegurado& origin) : PacienteAsegurado() {
 	*this = origin;
 }
 
@@ -60,8 +58,8 @@ ifstream& PacienteAsegurado::leer(ifstream& archivo) {
 ofstream& PacienteAsegurado::imprimir(ofstream& archivo) const {
 	archivo << "Tipo Paciente: ASEGURADO" << endl;
 	Paciente::imprimir(archivo);
-	archivo << "Aseguradora: " << this->aseguradora << endl;
-	archivo << "Plan: " << this->plan << endl;
+	archivo << "Aseguradora: " << this->getAseguradora() << endl;
+	archivo << "Plan: " << this->getPlan() << endl;
 
 	return archivo;
 }

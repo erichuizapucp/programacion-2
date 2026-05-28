@@ -6,6 +6,7 @@
 #define EJERCICIO02_CITAPRESENCIAL_H
 
 #include "Cita.h"
+#include <iomanip>
 
 class CitaPresencial : public Cita {
 	char* consultorio;

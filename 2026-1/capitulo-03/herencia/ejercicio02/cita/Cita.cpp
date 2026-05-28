@@ -3,22 +3,18 @@
 //
 
 #include "Cita.h"
-#include "../doctor/DoctorEspecialista.h"
-#include "../doctor/DoctorGeneral.h"
-#include "../paciente/PacienteAsegurado.h"
-#include "../paciente/PacienteParticular.h"
-#include "../funciones.h"
-#include <iomanip>
 
 Cita::Cita() {
     fecha = 0;
     hora = 0;
     dniPaciente = 0;
     dniDoctor = 0;
+
     pacienteParticular = nullptr;
     pacienteAsegurado = nullptr;
     doctorGeneral = nullptr;
     doctorEspecialista = nullptr;
+
     tipoPaciente = 'N';
     tipoDoctor = 'N';
     estado = NA;
@@ -73,27 +69,65 @@ void Cita::setDniDoctor(int dniDoctor) {
 }
 
 void Cita::setPaciente(const PacienteParticular* paciente) {
-    this->pacienteParticular = paciente;
+    delete this->pacienteParticular;
     this->pacienteAsegurado = nullptr;
-    this->tipoPaciente = paciente ? 'P' : 'N';
+
+    if (paciente) {
+        this->pacienteParticular = new PacienteParticular();
+        *this->pacienteParticular = *paciente;
+        this->tipoPaciente = 'P';
+    }
+    else {
+        this->pacienteParticular = nullptr;
+        this->tipoPaciente = 'P';
+    }
 }
 
 void Cita::setPaciente(const PacienteAsegurado* paciente) {
+    delete this->pacienteAsegurado;
     this->pacienteParticular = nullptr;
-    this->pacienteAsegurado = paciente;
-    this->tipoPaciente = paciente ? 'A' : 'N';
+
+    if (paciente) {
+        this->pacienteAsegurado = new PacienteAsegurado();
+        *this->pacienteAsegurado = *paciente;
+        this->tipoPaciente = 'A';
+    }
+    else {
+        this->pacienteAsegurado = nullptr;
+        this->tipoPaciente = 'A';
+    }
+
 }
 
 void Cita::setDoctor(const DoctorGeneral* doctor) {
-    this->doctorGeneral = doctor;
+    delete this->doctorGeneral;
     this->doctorEspecialista = nullptr;
-    this->tipoDoctor = doctor ? 'G' : 'N';
+
+    if (doctor) {
+        this->doctorGeneral = new DoctorGeneral();
+        *this->doctorGeneral = *doctor;
+        this->tipoDoctor = 'G';
+    }
+    else {
+        this->doctorGeneral = nullptr;
+        this->tipoDoctor = 'G';
+    }
+
 }
 
 void Cita::setDoctor(const DoctorEspecialista* doctor) {
+    delete this->doctorEspecialista;
     this->doctorGeneral = nullptr;
-    this->doctorEspecialista = doctor;
-    this->tipoDoctor = doctor ? 'E' : 'N';
+
+    if (doctor) {
+        this->doctorEspecialista = new DoctorEspecialista();
+        *this->doctorEspecialista = *doctor;
+        this->tipoDoctor = 'E';
+    }
+    else {
+        this->doctorEspecialista = nullptr;
+        this->tipoDoctor = 'E';
+    }
 }
 
 void Cita::setEstado(Estado estado) {
@@ -106,13 +140,20 @@ Cita& Cita::operator=(const Cita& cita) {
         this->setHora(cita.getHora());
         this->setDniPaciente(cita.getDniPaciente());
         this->setDniDoctor(cita.getDniDoctor());
-        if (cita.tipoPaciente == 'P') this->setPaciente(cita.pacienteParticular);
-        else if (cita.tipoPaciente == 'A') this->setPaciente(cita.pacienteAsegurado);
-        else this->setPaciente((PacienteParticular*)nullptr);
 
-        if (cita.tipoDoctor == 'G') this->setDoctor(cita.doctorGeneral);
-        else if (cita.tipoDoctor == 'E') this->setDoctor(cita.doctorEspecialista);
-        else this->setDoctor((DoctorGeneral*)nullptr);
+        if (cita.tipoPaciente == 'P') {
+            this->setPaciente(cita.pacienteParticular);
+        }
+        else {
+            this->setPaciente(cita.pacienteAsegurado);
+        }
+
+        if (cita.tipoDoctor == 'G') {
+            this->setDoctor(cita.doctorGeneral);
+        }
+        else {
+            this->setDoctor(cita.doctorEspecialista);
+        }
 
         this->setEstado(cita.getEstado());
     }
@@ -160,8 +201,6 @@ ifstream& Cita::leer(ifstream& archivo) {
         this->setHora(hora);
         this->setDniPaciente(dniPaciente);
         this->setDniDoctor(dniDoctor);
-        this->setPaciente((PacienteParticular*)nullptr);
-        this->setDoctor((DoctorGeneral*)nullptr);
         this->setEstado(convertirEstado(estado));
 
         delete[] estado;
@@ -171,31 +210,35 @@ ifstream& Cita::leer(ifstream& archivo) {
 }
 
 ofstream& Cita::imprimir(ofstream& os) const {
-    const char* estado = "NA";
-    if (getEstado() == RESERVADA) estado = "RESERVADA";
-    else if (getEstado() == CANCELADA) estado = "CANCELADA";
+    const char* estadoCita;
+    if (getEstado() == RESERVADA) {
+        estadoCita = "RESERVADA";
+    }
+    else {
+        estadoCita = "CANCELADA";
+    }
 
-    const char* nombrePaciente = "NO_ASIGNADO";
-    if (tipoPaciente == 'P' && pacienteParticular) {
+    const char* nombrePaciente;
+    if (tipoPaciente == 'P') {
         nombrePaciente = pacienteParticular->getNombre();
     }
-    else if (tipoPaciente == 'A' && pacienteAsegurado) {
+    else {
         nombrePaciente = pacienteAsegurado->getNombre();
     }
 
-    const char* nombreDoctor = "NO_ASIGNADO";
-    if (tipoDoctor == 'G' && doctorGeneral) {
+    const char* nombreDoctor;
+    if (tipoDoctor == 'G') {
         nombreDoctor = doctorGeneral->getNombre();
     }
-    else if (tipoDoctor == 'E' && doctorEspecialista) {
+    else {
         nombreDoctor = doctorEspecialista->getNombre();
     }
 
-    const char* especialidad = "NA";
-    if (tipoDoctor == 'G' && doctorGeneral) {
+    const char* especialidad;
+    if (tipoDoctor == 'G') {
         especialidad = "GENERAL";
     }
-    else if (tipoDoctor == 'E' && doctorEspecialista) {
+    else {
         switch (doctorEspecialista->getEspecialidad()) {
             case CARDIOLOGIA:
                 especialidad = "CARDIOLOGIA";
@@ -240,12 +283,16 @@ ofstream& Cita::imprimir(ofstream& os) const {
     os << right << setw(10) << getDniDoctor() << " ";
     os << left << setw(20) << nombreDoctor;
     os << left << setw(16) << especialidad;
-    os << left << setw(12) << estado;
+    os << left << setw(12) << estadoCita;
 
     return os;
 }
 
 Cita::~Cita() {
+    delete pacienteParticular;
+    delete pacienteAsegurado;
+    delete doctorGeneral;
+    delete doctorEspecialista;
 }
 
 ifstream& operator>>(ifstream& archivo, Cita& cita) {

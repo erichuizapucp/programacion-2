@@ -6,6 +6,7 @@
 #define EJERCICIO02_CITAVIRTUAL_H
 
 #include "Cita.h"
+#include <iomanip>
 
 class CitaVirtual : public Cita {
 	char* plataforma;

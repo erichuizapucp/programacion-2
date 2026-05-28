@@ -4,7 +4,7 @@
 
 #include "Paciente.h"
 
-Paciente::Paciente() : Persona() {
+Paciente::Paciente() {
     edad = 0;
     genero = 0;
 }
@@ -58,13 +58,10 @@ ifstream& Paciente::leer(ifstream& archivo) {
 
 ofstream& Paciente::imprimir(ofstream& os) const {
     Persona::imprimir(os);
-    os << "Edad: " << this->edad << endl;
-    os << "Genero: " << this->genero << endl;
+    os << "Edad: " << this->getEdad() << endl;
+    os << "Genero: " << this->getGenero() << endl;
 
     return os;
-}
-
-Paciente::~Paciente() {
 }
 
 ifstream& operator>>(ifstream& archivo, Paciente& paciente) {

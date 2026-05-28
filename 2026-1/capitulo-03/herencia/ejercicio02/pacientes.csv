@@ -1,10 +1,10 @@
-P,10000001,Juan Perez,30,M,-,-
+P,10000001,Juan Perez,30,M,A
 A,10000002,Maria Gomez,25,F,Rimac,Premium
-P,10000003,Carlos Sanchez,40,M,-,-
+P,10000003,Carlos Sanchez,40,M,B
 A,10000004,Ana Martinez,35,F,Pacifica,Integral
-P,10000005,Pedro Rodriguez,28,M,-,-
+P,10000005,Pedro Rodriguez,28,M,A
 A,10000006,Laura Fernandez,32,F,Mapfre,Clasico
-P,10000007,Diego Lopez,45,M,-,-
+P,10000007,Diego Lopez,45,M,C
 A,10000008,Sofia Ramirez,22,F,Rimac,Basico
-P,10000009,Andres Torres,38,M,-,-
+P,10000009,Andres Torres,38,M,B
 A,10000010,Lucia Gonzalez,27,F,Pacifica,Premium
