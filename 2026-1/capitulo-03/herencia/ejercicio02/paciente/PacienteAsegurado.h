@@ -20,10 +20,10 @@ public:
     void setAseguradora(char*);
     void setPlan(char*);
 
-    PacienteAsegurado& operator=(const PacienteAsegurado&);
-
     ifstream& leer(ifstream&);
     ofstream& imprimir(ofstream&) const;
+
+    PacienteAsegurado& operator=(const PacienteAsegurado&);
 
     ~PacienteAsegurado();
 };

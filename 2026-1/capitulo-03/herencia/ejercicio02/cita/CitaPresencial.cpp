@@ -10,8 +10,6 @@ CitaPresencial::CitaPresencial() {
 }
 
 CitaPresencial::CitaPresencial(const CitaPresencial& origin) : CitaPresencial() {
-	consultorio = nullptr;
-	sede = nullptr;
 	*this = origin;
 }
 

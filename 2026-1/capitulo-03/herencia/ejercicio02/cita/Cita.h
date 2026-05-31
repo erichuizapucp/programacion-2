@@ -54,12 +54,12 @@ public:
     void setDoctor(const DoctorEspecialista*);
     void setEstado(Estado);
 
+    ifstream& leer(ifstream&);
+    ofstream& imprimir(ofstream&) const;
+
     Cita& operator=(const Cita&);
     bool operator<(const Cita&) const;
     Cita& operator!();
-
-    ifstream& leer(ifstream&);
-    ofstream& imprimir(ofstream&) const;
 
     ~Cita();
 };

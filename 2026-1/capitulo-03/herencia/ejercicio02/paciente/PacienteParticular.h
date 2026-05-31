@@ -16,7 +16,7 @@ public:
     char getCategoria() const;
     void setCategoria(char);
 
-    PacienteParticular& operator=(const PacienteParticular&);
+    PacienteParticular& operator=(const PacienteParticular&);\
 
     ifstream& leer(ifstream&);
     ofstream& imprimir(ofstream&) const;

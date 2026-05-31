@@ -18,10 +18,10 @@ public:
     Especialidad getEspecialidad() const;
     void setEspecialidad(Especialidad);
 
-    DoctorEspecialista& operator=(const DoctorEspecialista&);
-
     ifstream& leer(ifstream&);
     ofstream& imprimir(ofstream&) const;
+
+    DoctorEspecialista& operator=(const DoctorEspecialista&);
 };
 
 ifstream& operator>>(ifstream&, DoctorEspecialista&);
