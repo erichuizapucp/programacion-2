@@ -1,0 +1,7 @@
+N, ABC123, El libro de la Selva, 1, 3, Aventura, 0.75
+N, ABC321, El libro de la Costa, 2, 2, Historia, 1.00
+N, CBA123, El libro de la Sierra, 1, 4, Comedia, 0.75
+N, DDA123, El libro de la Montana, 4, 4, Aventura, 1.20
+E, EFG123, La enciclopedia de la Vida, 2, 4, 1, 6.30
+E, EFG321, La enciclopedia de la Muerte, 2, 3, 2, 2.00
+N, CCC123, NO SE PUDO COLOCAR, 11, 5, Terror, 2.80
