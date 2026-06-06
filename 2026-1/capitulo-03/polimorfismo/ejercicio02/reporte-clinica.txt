@@ -1,0 +1,12 @@
+CITAS
+FECHA    HORA DNI_PAC    NOMBRE_PAC          DNI_DOC    NOMBRE_DOC          ESPECIALIDAD    ESTADO      ATENCION            REFERENCIA
+20260201 0800   10000001 Juan Perez            20000001 Miguel Garcia       GENERAL         CANCELADA   Consultorio-01      Sede-Centro
+20260201 0830   10000002 Maria Gomez           20000002 Laura Martinez      NEUROLOGIA      CANCELADA   GoogleMeet        meet.google.com/a1b2-c3d4
+20260201 0900   10000003 Carlos Sanchez        20000003 Diego Flores        GENERAL         RESERVADA   Consultorio-02      Sede-Sur
+20260201 0930   10000004 Ana Martinez          20000004 Sofia Rivas         PEDIATRIA       RESERVADA   Zoom              zoom.us/j/900000004
+20260201 1000   10000005 Pedro Rodriguez       20000005 Andres Meza         GENERAL         RESERVADA   Consultorio-05      Sede-Norte
+20260201 1030   10000006 Laura Fernandez       20000006 Lucia Campos        PSICOLOGIA      CANCELADA   Teams             teams.microsoft.com/l/100006
+20260202 1100   10000007 Diego Lopez           20000007 Pedro Valdez        GENERAL         RESERVADA   Consultorio-03      Sede-Centro
+20260202 1130   10000008 Sofia Ramirez         20000008 Ana Salinas         GINECOLOGIA     RESERVADA   GoogleMeet        meet.google.com/x7y8-z9k0
+20260202 1200   10000009 Andres Torres         20000009 Carlos Ibarra       GENERAL         RESERVADA   Consultorio-04      Sede-Sur
+20260202 1230   10000010 Lucia Gonzalez        20000010 Maria Tapia         PSIQUIATRIA     RESERVADA   Zoom              zoom.us/j/900000010
